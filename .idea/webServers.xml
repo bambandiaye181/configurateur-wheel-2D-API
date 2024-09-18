@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c5f95648-c8f3-4d21-9f02-f00f653412ff" name="PP">
+        <fileTransfer rootFolder="/themes/reisen-child" accessType="SFTP" host="access-5014093001.webspace-host.com" port="22" sshConfigId="c07f0667-a2e2-422b-9457-1227f76ee661" sshConfig="a345307@access-5014093001.webspace-host.com:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
