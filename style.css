@@ -1,0 +1,25 @@
+@charset 'utf-8';
+/*
+ Theme Name:   Reisen Child
+ Theme URI:    https://reisen.themerex.net/
+ Description:  Reisen - Fully Responsive and Mobile Friendly theme
+ Author:       ThemeREX
+ Author URI:   https://themerex.net/
+ Template:     reisen
+ Version:      1.0
+ Tags:         light, inheritable theme-options
+ Text Domain:  reisen
+*/
+
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+@import url("../Reisen/style.css")
+@font-face{
+
+    font-family: 'My font';
+
+    src: url('https://paris-performance.com/wp-content/themes/reisen/css/font-face/Protrakt/Protrakt-Regular.otf');
+
+}
+
