@@ -1068,7 +1068,7 @@
                                                                         </button>
                                                                     </div>
                                                                 </div>
-                                                                <div id="divWheelOption" style="margin-left: -50px;">
+                                                                <div id="divWheelOption" style="margin-left: -50px;display: none">
                                                                     <div class="card-content" style="margin-left: 35px;">
                                                                         <table>
                                                                             <tr>
@@ -1270,8 +1270,8 @@
         // Step 4: Modification
         const modifications = modificationsData;
         limit = modifications.length;
-        items = modifications.slice(currentSlide, currentSlide + maxVisibleItems).map(modif => `<div class="slider-item"><button class="modif-option" onclick="selectModification(this,'${modif.slug}','${modif.name}')">${modif.name}<span class="badgemodifright" >${modif.engine.power.hp+" HP"}</span>
-                         <span class="badgemodifleft" >${modif.engine.type}</span></button></div>`);
+        items = modifications.slice(currentSlide, currentSlide + maxVisibleItems).map(modif => `<div class="slider-item"><button class="modif-option" onclick="selectModification(this,'${modif.slug}','${modif.name}')">${modif.name}<span class="badgemodifright label" style="display: none">${modif.engine.power.hp+" HP"}</span>
+                         <span class="badgemodifleft label" style="display: none">${modif.engine.type}</span></button></div>`);
         pagination.innerText = `${currentSlide + 1}/${limit}`;
         stepTitle.innerText = 'Étape 1';
         stepDescription.innerText = `Choix du Véhicule - Motorisation`;
@@ -1281,8 +1281,6 @@
                 stepTitle.innerText = 'Étape 2';
                 stepDescription.innerText = `Choix des paramètres`;
                 stepChoice.innerText = '';
-                const divParam = document.getElementById('divParam');
-                divParam.setAttribute("style", "margin-top: 150px;display:block");
         }else if (currentStep === 5) {
             // Step 6: Paramètrage
             const wheelOptions = wheelOptionsData;
@@ -1359,8 +1357,23 @@
             stepTitle.innerText = 'Étape 2';
             stepDescription.innerText = `Choix des paramètres`;
             stepChoice.innerText = '';
-
         }
+        // display or hide blocks
+        if (currentStep === 4){
+            divParam("block");
+            controlButton("none");
+            divWheelOption("none");
+        }else if(currentStep === 5){
+            divParam("none");
+            controlButton("none");
+            divWheelOption("block");
+        }else {
+            controlButton("block");
+            divParam("none");
+            divWheelOption("none");
+        }
+
+
 
         // Update slider items
         sliderItems.innerHTML = items.join('');
@@ -1430,6 +1443,25 @@
             currentSlide = 0;
         }
         updateSlider();
+    }
+
+    function controlButton(value) {
+        let navigationButton1 = document.getElementsByClassName("arrow");
+        let navigationButton2 = document.getElementsByClassName("pagination");
+        for (let i = 0; i < navigationButton1.length; i++) {
+            navigationButton1[i].style.display = value;
+        }
+        for (let i = 0; i < navigationButton2.length; i++) {
+            navigationButton2[i].style.display = value;
+        }
+    }
+    function divParam(value) {
+        const divParam = document.getElementById('divParam');
+        divParam.setAttribute("style", "margin-top: 150px;display:"+value+"");
+    }
+    function divWheelOption(value) {
+        const divWheelOption = document.getElementById('divWheelOption');
+        divWheelOption.setAttribute("style", "margin-left: -50px;display:"+value+"");
     }
 
     // Initialize the slider
@@ -1567,6 +1599,18 @@
     function selectModification(element, id,name) {
         resetSelect('.modif-option');
         element.classList.add('selected');
+        let labels = document.getElementsByClassName("label");
+        for (let i = 0; i < labels.length; i++) {
+            labels[i].style.display = 'none';
+        }
+        const children = element.children;
+
+        for (let i = 0; i < children.length; i++) {
+            const child = children[i];
+
+                child.style.display = 'block';
+
+        }
         document.getElementById('stepChoice').textContent = name;
         modificationId = id;
         selectedModification = name;
