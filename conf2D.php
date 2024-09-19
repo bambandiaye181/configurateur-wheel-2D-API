@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="icon" type="image/x-icon" href="https://paris-performance.com/wp-content/uploads/2024/09/PARIS_PERFORMANCE_no_text_blk_bg-v2.png">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
 
 
@@ -213,7 +213,8 @@
             align-items: center;
             background-repeat: no-repeat;
             background-size: cover;
-            background-position: center
+            background-position: center;
+            margin-left: -5px;
         }
 
         .slider-slide[_ngcontent-bic-c84] img[_ngcontent-bic-c84] {
@@ -951,7 +952,23 @@
         /* margin-right: 10px; */
     }
 </style>
+<style>
+    .btn-plat {
+        background-color: #f0f0f0; /* Couleur de fond du bouton */
+        border: none; /* Supprime la bordure par défaut */
+        color: #333; /* Couleur du texte */
+        padding: 10px 20px; /* Espacement interne */
+        cursor: pointer; /* Change le curseur en pointeur au survol */
+        border-radius: 5px; /* Arrondis les coins */
+        transition: background-color 0.3s ease;
+        margin-left: 50px;
+    }
 
+    .btn-plat:hover {
+        background-color: #e0e0e0; /* Change la couleur de fond au survol */
+    }
+
+</style>
 
 
 
@@ -961,6 +978,14 @@
 <app-root >
     <app-model-selection>
         <app-configuration-area >
+            <div>
+                <button id="menuButton" class="btn-plat">
+                    <i id="iconMenuButton" class="fa-solid fa-circle-xmark" style="font-size: x-large;"></i>
+                </button>
+                <button id="bgButton" class="btn-plat" >
+                    <i class="fa-solid fa-repeat" style="font-size: x-large;"></i> <span style="font-size: x-large;">Background</span>
+                </button>
+            </div>
             <div _ngcontent-bic-c80="" class="container">
                 <div _ngcontent-bic-c80="" class="view-port ">
                     <app-car-viewer _nghost-bic-c88="" >
@@ -969,7 +994,7 @@
                                 <div _ngcontent-bic-c84="" class="slider" style="height: 100%;">
                                     <div _ngcontent-bic-c84="" class="slider-container">
                                         <div _ngcontent-bic-c84="" id="render-container" class="slider-slide " style="background-image: url(&quot;https://paris-performance.com/wp-content/uploads/2024/09/Blackroom_frontleft.jpg&quot;);">
-                                            <div style="background-image: url(&quot;https://paris-performance.com/wp-content/uploads/2024/09/chevrolet-blazer-idle.png&quot;);" class="slider-slide" _ngcontent-bic-c84=""></div>
+                                            <div id="car" style="background-image: url(&quot;https://paris-performance.com/wp-content/uploads/2024/09/chevrolet-blazer-idle.png&quot;);" class="slider-slide" _ngcontent-bic-c84=""></div>
                                         </div>
                                         <!---->
                                     </div>
@@ -987,7 +1012,7 @@
                         </div>
                     </app-car-viewer>
                 </div>
-                <div _ngcontent-bic-c80="" class="config-panel ng-trigger ng-trigger-navFadeInOutFromRight">
+                <div _ngcontent-bic-c80="" id="menu" class="config-panel ng-trigger ng-trigger-navFadeInOutFromRight">
                     <app-configuration-panel >
                         <div _ngcontent-bic-c76="" class="configuration-container">
                             <app-navigation>
@@ -1063,7 +1088,7 @@
                                                                             <span class="badge" data-tooltip="Nous vous donnons les commandes, vous êtes totalement libre et responsable dans le choix des paramètres">?</span>
                                                                         </button>
                                                                         <hr style="border: 0; height: 2px; background-color: #c9c9c9; width: 20%;margin-bottom:40px;margin-top: 40px;">
-                                                                        <button style="--clr: #ffffff; height: 50px; width: 260px" class="param-option" onclick="selectParam(this, 'recommanded')"> PARAMÈTRES CONSEILLÉS
+                                                                        <button style="--clr: #ffffff; height: 50px; width: 260px;margin-bottom: 100px;" class="param-option" onclick="selectParam(this, 'recommanded')"> PARAMÈTRES CONSEILLÉS
                                                                             <span class="badge" data-tooltip="Nous vous proposons le plus large choix de paramétrage adapté pour vous ainsi que votre véhicule">?</span>
                                                                         </button>
                                                                     </div>
@@ -1090,7 +1115,7 @@
                                                                             <tr>
                                                                                 <td><span>Entraxe :</span></td>
                                                                                 <td>
-                                                                                    <select  class="dynamic-select" id="front_rim">
+                                                                                    <select  class="dynamic-select" id="bolt_pattern">
                                                                                         <!-- Ajoutez d'autres options si nécessaire -->
                                                                                     </select>
                                                                                 </td>
@@ -1117,7 +1142,51 @@
 
                                                                         <div class="checkbox">
                                                                             <span style="margin-right: 200px;">Conserver les mêmes paramètres <br>avant et arrière</span>
-                                                                            <input type="checkbox" id="conserver" >
+                                                                            <input type="checkbox" id="keepParamFrontBack" >
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                                <div id="divWheelFreeOption" style="margin-left: -50px;display: none">
+                                                                    <div class="card-content" style="margin-left: 35px;">
+                                                                        <table>
+                                                                            <tr>
+                                                                                <td><span>Taille :</span></td>
+                                                                                <td>
+                                                                                    <input type="text" style="width: 90px;" class="dynamic-select" id="rim_diameter">
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Alesage Central :</span></td>
+                                                                                <td>
+                                                                                    <input type="text" style="width: 90px;" class="dynamic-select" id="centre_bore">
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Entraxe :</span></td>
+                                                                                <td>
+                                                                                    <input type="text" style="width: 90px;" class="dynamic-select" id="bolt_pattern">
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Déport :</span></td>
+                                                                                <td>
+                                                                                    <input type="text" style="width: 90px;" class="dynamic-select" id="rim_offset">
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Taille de Filletage :</span></td>
+                                                                                <td>
+                                                                                    <input type="text" style="width: 90px;" class="dynamic-select" id="thread_size">
+                                                                                </td>
+                                                                            </tr>
+
+                                                                        </table>
+                                                                        <br>
+
+                                                                        <div class="checkbox">
+                                                                            <span style="margin-right: 200px;">Conserver les mêmes paramètres <br>avant et arrière</span>
+                                                                            <input type="checkbox" id="keepParamFrontBack" >
                                                                         </div>
 
                                                                     </div>
@@ -1214,6 +1283,7 @@
     let brandsData = [];
     let modelsData = [];
     let modificationsData = [];
+    let templatesData = [];
     let wheelOptionsData = [];
 
     //var
@@ -1225,6 +1295,14 @@
     let selectedModification = null;
     let modificationId= null;
     let param_selected = null;
+
+    let  taille = null;
+    let  alesageCentral = null;
+    let  entraxe = null;
+    let  deport = null;
+    let  filletage = null;
+    let  keepParamFrontBack = null;
+
 
     function updateSlider() {
         const sliderItems = document.getElementById('sliderItems');
@@ -1288,30 +1366,44 @@
             limit = wheelOptions.length;
             const select = document.getElementById('rim_diameter');
             const select1 = document.getElementById('centre_bore');
-            const select2 = document.getElementById('front_rim');
+            const select2 = document.getElementById('bolt_pattern');
             const select3 = document.getElementById('rim_offset');
             const select4 = document.getElementById('thread_size');
+
             select.innerHTML = ""; // Clear previous options
+            select1.innerHTML = ""; // Clear previous options
+            select2.innerHTML = ""; // Clear previous options
+            select3.innerHTML = ""; // Clear previous options
+            select4.innerHTML = ""; // Clear previous options
 
             items = wheelOptions.slice(currentSlide, currentSlide + maxVisibleItems).map(wheelOption=> {
-            for (let i = 0; i < wheelOption.wheels.length; i++) {
-                let option = document.createElement("option");
-                option.value = wheelOption.wheels[i].front.rim_diameter; // Use the slug as the value
-                option.textContent = wheelOption.wheels[i].front.rim_diameter+"\"";
-                select.appendChild(option);
-            }
+
+                let tailles = [];
+
+                for (let i = 0; i < wheelOption.wheels.length; i++) {
+                    tailles.push(wheelOption.wheels[i].front.rim_diameter);
+                }
+                let newTailles = [...new Set(tailles)].sort((a, b) => a - b);
+
+                newTailles.forEach(value => {
+                    let option = document.createElement("option");
+                    option.value = value;
+                    option.textContent = value+"\"";
+                    select.appendChild(option);
+                });
+
+
 
                 let option1 = document.createElement("option");
                 option1.value = wheelOption.technical.centre_bore; // Use the slug as the value
                 option1.textContent = wheelOption.technical.centre_bore;
                 select1.appendChild(option1);
 
-                for (let i = 0; i < wheelOption.wheels.length; i++) {
-                    let option2 = document.createElement("option");
-                    option2.value = wheelOption.wheels[i].front.rim; // Use the slug as the value
-                    option2.textContent = wheelOption.wheels[i].front.rim;
-                    select2.appendChild(option2);
-                }
+                let option2 = document.createElement("option");
+                option2.value = wheelOption.technical.bolt_pattern;
+                option2.textContent = wheelOption.technical.bolt_pattern;
+                select2.appendChild(option2);
+
 
                 
                 let deports = [];
@@ -1362,15 +1454,23 @@
         if (currentStep === 4){
             divParam("block");
             controlButton("none");
-            divWheelOption("none");
-        }else if(currentStep === 5){
+            divWheelOption("none","divWheelOption");
+            divWheelOption("none","divWheelFreeOption");
+        }else if(currentStep === 5 && param_selected == "recommanded"){
             divParam("none");
             controlButton("none");
-            divWheelOption("block");
+            divWheelOption("block","divWheelOption");
+            divWheelOption("none","divWheelFreeOption");
+        }else if(currentStep === 5 && param_selected == "free"){
+            divParam("none");
+            controlButton("none");
+            divWheelOption("none","divWheelOption");
+            divWheelOption("block","divWheelFreeOption");
         }else {
             controlButton("block");
             divParam("none");
-            divWheelOption("none");
+            divWheelOption("none","divWheelOption");
+            divWheelOption("none","divWheelFreeOption");
         }
 
 
@@ -1431,6 +1531,19 @@
             currentSlide = 0;
             fetchWheelOption();
         }else if (currentStep === 5) {
+
+            taille = document.getElementById('rim_diameter').value;
+            alesageCentral = document.getElementById('centre_bore').value;
+            entraxe = document.getElementById('bolt_pattern').value;
+            deport = document.getElementById('rim_offset').value;
+            filletage = document.getElementById('thread_size').value;
+
+            const checkbox = document.getElementById("keepParamFrontBack");
+            const isChecked = checkbox.checked;
+            console.log("Checkbox value:", isChecked);
+            keepParamFrontBack = isChecked;
+            console.log(taille);
+
             alert(`Vous avez sélectionné: ${selectedBrand.name}, ${selectedModel.name}, ${selectedModel.engines[currentSlide]}`);
             return;
         }
@@ -1459,8 +1572,8 @@
         const divParam = document.getElementById('divParam');
         divParam.setAttribute("style", "margin-top: 150px;display:"+value+"");
     }
-    function divWheelOption(value) {
-        const divWheelOption = document.getElementById('divWheelOption');
+    function divWheelOption(value,id) {
+        const divWheelOption = document.getElementById(id);
         divWheelOption.setAttribute("style", "margin-left: -50px;display:"+value+"");
     }
 
@@ -1538,6 +1651,7 @@
 
                 modificationsData = data.data;
                 console.log(modificationsData);
+
                 updateSlider();
 
 
@@ -1551,6 +1665,73 @@
 
     }
 
+        function fetchTemplatesVehicule() {
+        let apiUrl = "https://api.wheel-size.com/v2/configurator/templates/?make="+brandSlug+"&model="+modelSlug+"&year="+selectedYear+"&user_key=a77861354fca6475fa1ec64b00bed407";
+        //let apiUrl = "";
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+
+                templatesData = data.data;
+                data.data.forEach(function(item) {
+                    let id = item.id;
+                    console.log(id);
+                    fetchVehiculeColor(id);
+
+                })
+
+
+
+            })
+            .catch(error => {
+                console.error("Error fetching data:", error);
+            });
+
+    }
+    function fetchVehiculeColor(id) {
+
+        let wheelValue = "PP-O1 : LUTECE";
+        console.log(wheelValue);
+        let imgUrl = "";
+        if(wheelValue == "PP-O1 : LUTECE") {
+            imgUrl = "https://paris-performance.com/wp-content/uploads/2023/11/i1t.png";
+        }else if(wheelValue == "PP-O2 : BOHEME") {
+            imgUrl = "https://paris-performance.com/wp-content/uploads/2023/11/vlcsnap-2023-11-27-22h54m31s309-removebg-preview.png";
+        }else if(wheelValue == "PP-O3 : SEINE") {
+            imgUrl = "https://paris-performance.com/wp-content/uploads/2023/11/i7-removebg-preview.png";
+        }else if(wheelValue == "PP-O4 : GALION") {
+            imgUrl = "https://paris-performance.com/wp-content/uploads/2023/11/i1t.png";
+        }
+
+        // Replace NEW_API_URL with your actual API endpoint
+
+        let apiUrl = "https://api.wheel-size.com/v2/configurator/templates/"+id+"/fit/?url="+imgUrl+"&user_key=a77861354fca6475fa1ec64b00bed407";
+        //let apiUrl = "";
+        console.log(apiUrl);
+
+        let requestOptions = {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        };
+
+        let responseData = fetch(apiUrl, requestOptions).then(response => response.json());
+        fetch(apiUrl, requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                // Process the retrieved data and populate select fields
+
+                let car = document.getElementById("car");
+                    car.style.backgroundImage = `url('${data.image}')`;
+
+            })
+            .catch(error => {
+                console.error("Error fetching data:", error);
+            });
+
+
+    }
     function fetchWheelOption() {
 
         let apiUrl = "https://api.wheel-size.com/v2/search/by_model/?make="+brandSlug+"&model="+modelSlug+"&modification="+modificationId+"&year="+selectedYear+"&user_key=a77861354fca6475fa1ec64b00bed407";
@@ -1595,6 +1776,7 @@
         document.getElementById('stepChoice').textContent = model;
         selectedModel = model;
         modelSlug = slug;
+        //fetchTemplatesVehicule();
     }
     function selectModification(element, id,name) {
         resetSelect('.modif-option');
@@ -1643,4 +1825,30 @@
         optionType.forEach(option => option.classList.remove('selected'));
 
     }
+
+    const button = document.getElementById('menuButton');
+    const menu = document.getElementById('menu');
+
+    button.addEventListener('click', () => {
+        if (menu.style.display === 'none') {
+            menu.style.display = 'block';
+            document.getElementById("iconMenuButton").setAttribute("class","fa-solid fa-circle-xmark");
+        } else {
+            menu.style.display = 'none';
+            document.getElementById("iconMenuButton").setAttribute("class","fa-solid fa-bars");
+        }
+    });
+
+    const bgButton = document.getElementById('bgButton');
+    const bg = document.getElementById('render-container');
+    let compteur = 0;
+    const images = [
+        'https://paris-performance.com/wp-content/uploads/2024/09/Blackroom_frontleft.jpg',
+        'https://paris-performance.com/wp-content/uploads/2024/09/Withroom_frontleft1.jpg'
+    ]; // Remplacez par vos images
+
+    bgButton.addEventListener('click', () => {
+        compteur = (compteur + 1) % images.length;
+        bg.style.backgroundImage = `url('${images[compteur]}')`;
+    });
 </script>
