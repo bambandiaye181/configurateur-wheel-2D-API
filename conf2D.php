@@ -951,6 +951,24 @@
         padding: 4px 4px 20px 40px;
         /* margin-right: 10px; */
     }
+
+    .wheel-option {
+        border-radius: 10%;
+        transition: transform 0.2s;
+        cursor: pointer;
+        border: 2px solid transparent;
+        object-fit: cover;
+        width: auto;
+    }
+
+    .wheel-option:hover {
+       /* transform: scale(1.1);*/
+    }
+
+    .wheel-option.selected {
+        border: 2px solid #ffffff;
+        /*transform: scale(1.1);*/
+    }
 </style>
 <style>
     .btn-plat {
@@ -1080,7 +1098,6 @@
 
                                                             </div> -->
                                                             <div class="slider1-container">
-
                                                                 <div class="container" id="divParam" style="margin-top: 150px;display: none">
                                                                     <div class="card-content" >
                                                                         <button style="--clr: #ffffff; height: 50px; width: 260px" class="param-option" onclick="selectParam(this, 'free')">
@@ -1142,7 +1159,7 @@
 
                                                                         <div class="checkbox">
                                                                             <span style="margin-right: 200px;">Conserver les mêmes paramètres <br>avant et arrière</span>
-                                                                            <input type="checkbox" id="keepParamFrontBack" >
+                                                                            <input type="checkbox" id="keepParamFrontBack" checked>
                                                                         </div>
 
                                                                     </div>
@@ -1188,6 +1205,93 @@
                                                                             <span style="margin-right: 200px;">Conserver les mêmes paramètres <br>avant et arrière</span>
                                                                             <input type="checkbox" id="keepParamFrontBack" >
                                                                         </div>
+
+                                                                    </div>
+                                                                </div>
+                                                                <div id="divResume" style="margin-left: -50px;display: none">
+                                                                    <div class="card-content" style="margin-left: 35px;">
+                                                                        <table>
+                                                                            <tr>
+                                                                                <td colspan="2">VEHICULE</td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Année</span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_year"><span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Marque </span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_brand"><span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Modèle </span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_model"><span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Motorisation </span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_modification"><span>
+                                                                                </td>
+                                                                            </tr>
+
+                                                                        </table>
+                                                                        <br>
+                                                                        <table>
+                                                                            <tr><td colspan="2">PARAMETRES CHOISIS</td></tr>
+                                                                            <tr>
+                                                                                <td><span>Taille </span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_rim_diameter"><span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Alesage Central </span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_centre_bore"><span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Entraxe </span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_bolt_pattern"><span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Déport </span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_rim_offset"><span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Taille de Filletage </span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_thread_size"><span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Conserver les mêmes paramètres <br>avant et arrière </span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_keepParamFrontBack"><span>
+                                                                                </td>
+                                                                            </tr>
+
+                                                                        </table>
+                                                                        <br>
+                                                                        <table>
+                                                                            <tr><td colspan="2"> JANTES </td></tr>
+                                                                            <tr>
+                                                                                <td>MODELE</td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_wheel"><span>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
 
                                                                     </div>
                                                                 </div>
@@ -1272,11 +1376,11 @@
 <script>
 
 
-    let currentStep = 0; // 0: Brand, 1: Model, 2: Engine
+    let currentStep = 0;
     let currentSlide = 0;
 
 
-    const maxVisibleItems = 5;
+    let maxVisibleItems = 5;
 
     // Data for each step
     let yearsData = [];
@@ -1285,6 +1389,7 @@
     let modificationsData = [];
     let templatesData = [];
     let wheelOptionsData = [];
+    let wheelPPData = [];
 
     //var
     let selectedYear = null;
@@ -1295,6 +1400,8 @@
     let selectedModification = null;
     let modificationId= null;
     let param_selected = null;
+    let wheel_selected = null;
+    let templateId = null;
 
     let  taille = null;
     let  alesageCentral = null;
@@ -1387,7 +1494,7 @@
 
                 newTailles.forEach(value => {
                     let option = document.createElement("option");
-                    option.value = value;
+                    option.value = value+"\"";
                     option.textContent = value+"\"";
                     select.appendChild(option);
                 });
@@ -1433,7 +1540,7 @@
 // Ajouter aussi les nouvelles valeurs dans le select
                 newDeports.forEach(value => {
                     let option = document.createElement("option");
-                    option.value = value;
+                    option.value = "ET" + value;
                     option.textContent = "ET" + value;
                     select3.appendChild(option);
                 });
@@ -1449,30 +1556,61 @@
             stepTitle.innerText = 'Étape 2';
             stepDescription.innerText = `Choix des paramètres`;
             stepChoice.innerText = '';
+        }else if (currentStep === 6) {
+            // Step 3: Wheel
+               const wheels = [
+                    { name: 'PP-O1 : LUTECE', image: 'https://paris-performance.com/wp-content/uploads/2024/06/main.29V2-1-scaled-e1718040438520.jpg'},
+                    { name: 'PP-O2 : BOHEME', image: 'https://paris-performance.com/wp-content/uploads/2024/06/main.23-scaled.jp'},
+                    { name: 'PP-O3 : SEINE', image: 'https://paris-performance.com/wp-content/uploads/2024/06/main.28v2-scaled.jpg'},
+                    { name: 'PP-O4 : GALION', image: 'https://paris-performance.com/wp-content/uploads/2024/06/main.30v2-scaled.jpg'}];
+
+            wheelPPData = wheels;
+            maxVisibleItems = 1;
+            limit = wheels.length;
+            items = wheels.slice(currentSlide, currentSlide + 1).map(wheel => `<div class="slider-item"><img src="${wheel.image}" alt="${wheel.name}" class="wheel-option" style="width: 250px;height: 230px;" onclick="selectWheel(this, '${wheel.name}')"><label style="font-size: xx-large;margin-top: 10px;">${wheel.name}</label></div>`);
+            pagination.innerText = `${currentSlide + 1}/${limit}`;
+            stepTitle.innerText = 'Étape 3';
+            stepDescription.innerText = `Configuration - MODELE`;
+            stepChoice.innerText = '';
+        }else if (currentStep === 7) {
+            stepTitle.innerText = 'Résumé';
+            stepDescription.innerText = `Votre vehicule`;
+            stepChoice.innerText = '';
         }
+
+
         // display or hide blocks
         if (currentStep === 4){
             divParam("block");
             controlButton("none");
             divWheelOption("none","divWheelOption");
             divWheelOption("none","divWheelFreeOption");
+            divWheelOption("none","divResume");
         }else if(currentStep === 5 && param_selected == "recommanded"){
             divParam("none");
             controlButton("none");
             divWheelOption("block","divWheelOption");
             divWheelOption("none","divWheelFreeOption");
+            divWheelOption("none","divResume");
         }else if(currentStep === 5 && param_selected == "free"){
             divParam("none");
             controlButton("none");
             divWheelOption("none","divWheelOption");
             divWheelOption("block","divWheelFreeOption");
-        }else {
+            divWheelOption("none","divResume");
+        }else if(currentStep === 7){
+            divParam("none");
+            controlButton("none");
+            divWheelOption("none","divWheelOption");
+            divWheelOption("none","divWheelFreeOption");
+            divWheelOption("block","divResume");
+        }else{
             controlButton("block");
             divParam("none");
             divWheelOption("none","divWheelOption");
             divWheelOption("none","divWheelFreeOption");
+            divWheelOption("none","divResume");
         }
-
 
 
         // Update slider items
@@ -1485,7 +1623,7 @@
 
     function nextSlide() {
         const limit = currentStep === 0 ? yearsData.length :
-            currentStep === 1 ? brandsData.length : currentStep === 2 ? modelsData.length : currentStep === 3 ? modificationsData.length : currentStep === 5 ? wheelOptionsData.length : null;
+            currentStep === 1 ? brandsData.length : currentStep === 2 ? modelsData.length : currentStep === 3 ? modificationsData.length : currentStep === 5 ? wheelOptionsData.length : currentStep === 6 ? wheelPPData.length : null;
 
         if (currentSlide + maxVisibleItems < limit) {
             currentSlide++;
@@ -1500,7 +1638,7 @@
             currentSlide--;
         } else {
             const limit = currentStep === 0 ? yearsData.length :
-                currentStep === 1 ? brandsData.length : currentStep === 2 ? modelsData.length : currentStep === 3 ? modificationsData.length : currentStep === 5 ? wheelOptionsData.length : null;
+                currentStep === 1 ? brandsData.length : currentStep === 2 ? modelsData.length : currentStep === 3 ? modificationsData.length : currentStep === 5 ? wheelOptionsData.length : currentStep === 6 ? wheelPPData.length : null;
             currentSlide = limit - maxVisibleItems;
         }
         updateSlider();
@@ -1543,6 +1681,28 @@
             console.log("Checkbox value:", isChecked);
             keepParamFrontBack = isChecked;
             console.log(taille);
+            currentStep++;
+            currentSlide = 0;
+
+        }else if (currentStep === 6) {
+            currentStep++;
+            currentSlide = 0;
+            console.log("ok");
+            document.getElementById('resume_year').textContent = selectedYear;
+            document.getElementById('resume_brand').textContent = selectedBrand;
+            document.getElementById('resume_model').textContent = selectedModel;
+            document.getElementById('resume_modification').textContent = selectedModification;
+
+            document.getElementById('resume_rim_diameter').textContent = taille;
+            document.getElementById('resume_centre_bore').textContent = alesageCentral;
+            document.getElementById('resume_bolt_pattern').textContent = entraxe;
+            document.getElementById('resume_rim_offset').textContent = deport;
+            document.getElementById('resume_thread_size').textContent = filletage;
+            document.getElementById('resume_keepParamFrontBack').textContent = keepParamFrontBack ? "OUI" : "NON";
+
+            document.getElementById('resume_wheel').textContent = wheel_selected;
+
+        }else if (currentStep === 7) {
 
             alert(`Vous avez sélectionné: ${selectedBrand.name}, ${selectedModel.name}, ${selectedModel.engines[currentSlide]}`);
             return;
@@ -1579,7 +1739,6 @@
 
     // Initialize the slider
     fetchYear();
-
 
     //Conf2D API
     function fetchYear(){
@@ -1676,7 +1835,8 @@
                 data.data.forEach(function(item) {
                     let id = item.id;
                     console.log(id);
-                    fetchVehiculeColor(id);
+                    templateId = item.id;
+                    fetchVehiculeColor("PP-O1 : LUTECE");
 
                 })
 
@@ -1688,9 +1848,9 @@
             });
 
     }
-    function fetchVehiculeColor(id) {
+    function fetchVehiculeColor(wheel) {
 
-        let wheelValue = "PP-O1 : LUTECE";
+        let wheelValue = wheel;
         console.log(wheelValue);
         let imgUrl = "";
         if(wheelValue == "PP-O1 : LUTECE") {
@@ -1705,7 +1865,7 @@
 
         // Replace NEW_API_URL with your actual API endpoint
 
-        let apiUrl = "https://api.wheel-size.com/v2/configurator/templates/"+id+"/fit/?url="+imgUrl+"&user_key=a77861354fca6475fa1ec64b00bed407";
+        let apiUrl = "https://api.wheel-size.com/v2/configurator/templates/"+templateId+"/fit/?url="+imgUrl+"&user_key=a77861354fca6475fa1ec64b00bed407";
         //let apiUrl = "";
         console.log(apiUrl);
 
@@ -1760,6 +1920,7 @@
         element.classList.add('selected');
         document.getElementById('stepChoice').textContent = year;
         selectedYear = year;
+        nextStep();
     }
 
     function selectBrand(element,slug,brand) {
@@ -1768,6 +1929,7 @@
         document.getElementById('stepChoice').textContent = brand;
         selectedBrand = brand;
         brandSlug = slug;
+        nextStep();
     }
 
     function selectModel(element,slug,model) {
@@ -1777,6 +1939,7 @@
         selectedModel = model;
         modelSlug = slug;
         //fetchTemplatesVehicule();
+        nextStep();
     }
     function selectModification(element, id,name) {
         resetSelect('.modif-option');
@@ -1796,7 +1959,7 @@
         document.getElementById('stepChoice').textContent = name;
         modificationId = id;
         selectedModification = name;
-
+        nextStep();
     }
 
     function selectParam(button, param) {
@@ -1817,6 +1980,14 @@
             console.log(param);
             param_selected = param;
         }
+        nextStep();
+    }
+
+    function selectWheel(element, wheelName) {
+        resetSelect('.wheel-option');
+        element.classList.add('selected');
+        //fetchVehiculeColor(wheelName);
+        wheel_selected = wheelName;
     }
 
 
@@ -1851,4 +2022,5 @@
         compteur = (compteur + 1) % images.length;
         bg.style.backgroundImage = `url('${images[compteur]}')`;
     });
+
 </script>
