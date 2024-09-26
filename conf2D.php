@@ -11,7 +11,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="icon" type="image/x-icon" href="https://paris-performance.com/wp-content/uploads/2024/09/PARIS_PERFORMANCE_no_text_blk_bg-v2.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
+    <style> 
 
 
         @media (min-width: 2100px) and (max-width: 2570px) {
@@ -116,13 +116,12 @@
 
         .logo-and-controls[_ngcontent-bic-c88] {
             position: absolute;
-            top: 15px;
-            left: 45px;
+            top: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: calc(100vw - 600px)
         }
+
 
         @media (orientation: portrait) and (max-width: 440px) {
             .logo-and-controls[_ngcontent-bic-c88] {
@@ -156,6 +155,19 @@
             }
         }
 
+        .background-change{
+            position: absolute;
+            top: 15px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            right: 40px;
+        }
+        @media (min-width: 2500px){
+            .background-change{
+                right: 150px;
+            }
+        }
 
     </style>
 
@@ -290,6 +302,14 @@
             margin-top: 20px
         }
 
+        @media (min-width: 2500px) {
+            height: calc(100vh - 139px);
+            overflow: auto;
+            margin-top: 20px;
+            margin-bottom: -400px;
+        }
+
+
         @media (orientation: portrait) and (max-width: 440px) {
             .nav-bar .tab-group-container .tab-content {
                 margin-bottom:20px
@@ -304,8 +324,8 @@
         }
 
         .nav-bar .tab-group-container .tab-content .item-container {
-            width: 446px;
-            margin: 45px
+            /*width: 446px;
+            margin: 45px*/
         }
 
         @media (orientation: portrait) and (max-width: 440px) {
@@ -379,7 +399,8 @@
             bottom: 0;
             display: flex;
             flex-direction: column;
-            z-index: 1
+            z-index: 1;
+            align-items: flex-end;
         }
 
 
@@ -663,13 +684,44 @@
         }
 
 
+        .containerParam[_ngcontent-bic-c69] {
+            cursor: pointer;
+            border-bottom: solid 1px #ccc;
+            padding: 0 0 45px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media (min-width: 2500px) {
+            .containerParam[_ngcontent-bic-c69] {
+                cursor: pointer;
+                border-bottom: solid 1px #ccc;
+                padding: 0 0 45px;
+                display: flex;
+                justify-content: space-between;
+                /*height: 800px;*/
+            }
+        }
 
         .container[_ngcontent-bic-c69] {
             cursor: pointer;
-            border-bottom: solid 1px #5b5b5b;
+            /*border-bottom: solid 1px #5b5b5b;*/
             padding: 0 0 45px;
             display: flex;
-            justify-content: space-between
+            justify-content: space-between;
+            margin-left: 25%;
+        }
+
+        @media (min-width: 2500px) {
+            .container[_ngcontent-bic-c69] {
+                cursor: pointer;
+                /*border-bottom: solid 1px #5b5b5b;*/
+                padding: 0 0 45px;
+                display: flex;
+                justify-content: space-between;
+                margin-left: 25%;
+                /*height: 800px;*/
+            }
         }
 
         @media (orientation: portrait) and (max-width: 440px) {
@@ -754,7 +806,7 @@
         max-width: 300px;
         position: relative;
         padding: 20px;
-        border: 1px solid #ccc;
+        /*border: 1px solid #ccc;*/
         border-radius: 10px;
     }
 
@@ -777,14 +829,33 @@
     }
 
     /* Vertical slider container */
-    .slider-items {
-        max-height: 300px;
-        overflow: hidden;
-        margin: 20px 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    @media (max-width: 2300px) {
+        .slider-items {
+            max-height: 300px;
+            overflow: hidden;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+    }
+    @media (min-width: 2300px) {
+        .slider-items {
+            overflow: hidden;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+    }
+
+    .slider-items.animate {
+        opacity: 0;
+        transform: translateY(-20px);
     }
 
     .slider-item {
@@ -817,6 +888,7 @@
         margin-top: 20px;
         display: flex;
         justify-content: space-between;
+        padding: 10px;
     }
 
     .step-buttons button {
@@ -952,6 +1024,10 @@
         /* margin-right: 10px; */
     }
 
+    .scheme_original td, .scheme_original th {
+        border-color: rgba(79, 89, 102, .08);
+    }
+
     .wheel-option {
         border-radius: 10%;
         transition: transform 0.2s;
@@ -968,6 +1044,18 @@
     .wheel-option.selected {
         border: 2px solid #ffffff;
         /*transform: scale(1.1);*/
+    }
+
+    .page_content_wrap {
+        padding: 0;
+        margin-left: -260px;
+    }
+
+    @media (max-width: 1990px) {
+        .page_content_wrap {
+            padding: 0;
+            margin-left: -110px;
+        }
     }
 </style>
 <style>
@@ -987,7 +1075,35 @@
     }
 
 </style>
+<style>
+    .action-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        width: 50px;
+        position: relative;
+    }
 
+    .action-panel i {
+        font-size: 24px;
+        color: #333;
+        cursor: pointer;
+        margin: 15px 0;
+    }
+
+    .menu {
+        display: none; /* Cacher par défaut */
+    }
+
+    /* Add class for showing menu */
+    .show-menu {
+        display: block;
+    }
+</style>
 
 
 </head>
@@ -997,12 +1113,6 @@
     <app-model-selection>
         <app-configuration-area >
             <div>
-                <button id="menuButton" class="btn-plat">
-                    <i id="iconMenuButton" class="fa-solid fa-circle-xmark" style="font-size: x-large;"></i>
-                </button>
-                <button id="bgButton" class="btn-plat" >
-                    <i class="fa-solid fa-repeat" style="font-size: x-large;"></i> <span style="font-size: x-large;">Background</span>
-                </button>
             </div>
             <div _ngcontent-bic-c80="" class="container">
                 <div _ngcontent-bic-c80="" class="view-port ">
@@ -1024,7 +1134,15 @@
                         </div>
                         <div _ngcontent-bic-c88="" class="logo-and-controls ng-trigger ng-trigger-fadeInOut">
                             <div _ngcontent-bic-c88="" class="logo-container">
-                                <img _ngcontent-bic-c88=""  src="https://paris-performance.com/wp-content/uploads/2024/09/PARIS_PERFORMANCE_no_text_blk_bg-v2.png">
+                                <button id="menuButtonClose" style="display: none" class="btn-plat">
+                                    <i id="iconMenuButtonClose" class="fa-solid fa-bars" style="font-size: x-large;"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                        <div _ngcontent-bic-c88="" class="logo-and-controls ng-trigger ng-trigger-fadeInOut background-change" >
+                            <div _ngcontent-bic-c88="" class="logo-container">
+                                <img _ngcontent-bic-c88=""  id="bgButton" style="background-color: white;border-radius: 15px;" src="https://paris-performance.com/wp-content/uploads/2024/09/icon-background.png">
                             </div>
 
                         </div>
@@ -1035,6 +1153,12 @@
                         <div _ngcontent-bic-c76="" class="configuration-container">
                             <app-navigation>
                                 <div class="nav-bar">
+                                    <div style="text-align: end;padding: 10px;">
+                                        <button id="menuButton" class="btn-plat">
+                                            <i id="iconMenuButton" class="fa-solid fa-circle-xmark" style="font-size: x-large;"></i>
+                                        </button>
+                                    </div>
+
                                     <div id="tabGroupContainer" class="tab-group-container">
                                         <mat-tab-group >
                                             <mat-tab-header class="mat-tab-header">
@@ -1083,6 +1207,420 @@
                                                 <!---->
                                             </div>
                                         </mat-tab-group>
+                                        <div class="tab-content" id="divWheelOption" style="display: none;">
+                                            <div class="item-container ng-star-inserted" id="0" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Taille</span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <select  class="dynamic-select" id="rim_diameter">
+                                                                    <!-- Ajoutez d'autres options si nécessaire -->
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" id="1" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Alesage Central</span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <select  class="dynamic-select" id="centre_bore">
+                                                                    <!-- Ajoutez d'autres options si nécessaire -->
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" id="2" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Entraxe</span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <select  class="dynamic-select" id="bolt_pattern">
+                                                                    <!-- Ajoutez d'autres options si nécessaire -->
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" id="3" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Déport</span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <select  class="dynamic-select" id="rim_offset">
+                                                                    <!-- Ajoutez d'autres options si nécessaire -->
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" id="4" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Taille de Filletage </span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <select  class="dynamic-select" id="thread_size">
+                                                                    <!-- Ajoutez d'autres options si nécessaire -->
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" id="5" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <div class="checkbox">
+                                                                    <span style="margin-right: 200px;font-size: large;">Conserver les mêmes paramètres <br>avant et arrière</span>
+                                                                    <input type="checkbox" id="keepParamFrontBack" checked>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                        </div>
+                                        <div class="tab-content" id="divWheelFreeOption" style="display: none;">
+                                            <div class="item-container ng-star-inserted" id="0" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Taille</span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <input type="text" style="width: 90px;" class="dynamic-select" id="rim_diameter">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" id="1" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Alesage Central</span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <input type="text" style="width: 90px;" class="dynamic-select" id="centre_bore">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" id="2" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Entraxe</span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <input type="text" style="width: 90px;" class="dynamic-select" id="bolt_pattern">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" id="3" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Déport</span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <input type="text" style="width: 90px;" class="dynamic-select" id="rim_offset">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" id="4" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Taille de Filletage </span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <input type="text" style="width: 90px;" class="dynamic-select" id="thread_size">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" id="5" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <div class="checkbox">
+                                                                    <span style="margin-right: 200px;font-size: large;">Conserver les mêmes paramètres <br>avant et arrière</span>
+                                                                    <input type="checkbox" id="keepParamFrontBack" checked>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                        </div>
+                                        <div class="tab-content" id="divResume" style="display: none;">
+                                            <div class="item-container ng-star-inserted" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Marque</span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <span style="text-transform: uppercase;font-size: larger;" id="resume_brand"><span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Année</span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <span style="text-transform: uppercase;font-size: larger;" id="resume_year"><span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Modele</span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <span style="text-transform: uppercase;font-size: larger;" id="resume_model"><span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Motorisation</span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <span style="text-transform: uppercase;font-size: larger;" id="resume_modification"><span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: #f0ebff;text-transform: uppercase;">paramètres jantes</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Taille</span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <span style="text-transform: uppercase;font-size: larger;" id="resume_rim_diameter"><span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Alesage Central</span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <span style="text-transform: uppercase;font-size: larger;" id="resume_centre_bore"><span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Entraxe</span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <span style="text-transform: uppercase;font-size: larger;" id="resume_bolt_pattern"><span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Déport</span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <span style="text-transform: uppercase;font-size: larger;" id="resume_rim_offset"><span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Taille de Filletage </span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <span style="text-transform: uppercase;font-size: larger;" id="resume_thread_size"><span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <div class="checkbox">
+                                                                    <span style="margin-right: 200px;font-size: large;">Conserver les mêmes paramètres <br>avant et arrière</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <span style="text-transform: uppercase;font-size: larger;" id="resume_keepParamFrontBack"><span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                                <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: #f0ebff;text-transform: uppercase;">Jante choisie</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" style="margin-top: 50px;">
+                                                <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                               <span style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;" id="resume_wheel"><span>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/06/main.29V2-1-scaled-e1718040438520.jpg"  class="wheel-option" style="width: 100px">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                        </div>
                                         <div id="navigation-content" class="tab-content">
 
                                             <div class="item-container " id="24">
@@ -1098,26 +1636,26 @@
 
                                                             </div> -->
                                                             <div class="slider1-container">
-                                                                <div class="container" id="divParam" style="margin-top: 150px;display: none">
+                                                                <div class="container" id="divParam" style="margin-top: 150px;margin-left:-30%;display: none">
                                                                     <div class="card-content" >
                                                                         <button style="--clr: #ffffff; height: 50px; width: 260px" class="param-option" onclick="selectParam(this, 'free')">
                                                                             PARAMÈTRES LIBRES
                                                                             <span class="badge" data-tooltip="Nous vous donnons les commandes, vous êtes totalement libre et responsable dans le choix des paramètres">?</span>
                                                                         </button>
-                                                                        <hr style="border: 0; height: 2px; background-color: #c9c9c9; width: 20%;margin-bottom:40px;margin-top: 40px;">
+                                                                        <hr style="border: 0; height: 2px; background-color: #c9c9c9; width: 20%;margin-bottom:40px;margin-top: 40px;margin-left: 110px">
                                                                         <button style="--clr: #ffffff; height: 50px; width: 260px;margin-bottom: 100px;" class="param-option" onclick="selectParam(this, 'recommanded')"> PARAMÈTRES CONSEILLÉS
                                                                             <span class="badge" data-tooltip="Nous vous proposons le plus large choix de paramétrage adapté pour vous ainsi que votre véhicule">?</span>
                                                                         </button>
                                                                     </div>
                                                                 </div>
-                                                                <div id="divWheelOption" style="margin-left: -50px;display: none">
+                                                                <!--<div id="divWheelOption" style="margin-left: -50px;display: none">
                                                                     <div class="card-content" style="margin-left: 35px;">
+
                                                                         <table>
                                                                             <tr>
                                                                                 <td><span>Taille :</span></td>
                                                                                 <td>
                                                                                     <select  class="dynamic-select" id="rim_diameter">
-                                                                                        <!-- Ajoutez d'autres options si nécessaire -->
                                                                                     </select>
                                                                                 </td>
                                                                             </tr>
@@ -1125,7 +1663,6 @@
                                                                                 <td><span>Alesage Central :</span></td>
                                                                                 <td>
                                                                                     <select  class="dynamic-select" id="centre_bore">
-                                                                                        <!-- Ajoutez d'autres options si nécessaire -->
                                                                                     </select>
                                                                                 </td>
                                                                             </tr>
@@ -1133,7 +1670,6 @@
                                                                                 <td><span>Entraxe :</span></td>
                                                                                 <td>
                                                                                     <select  class="dynamic-select" id="bolt_pattern">
-                                                                                        <!-- Ajoutez d'autres options si nécessaire -->
                                                                                     </select>
                                                                                 </td>
                                                                             </tr>
@@ -1141,7 +1677,6 @@
                                                                                 <td><span>Déport :</span></td>
                                                                                 <td>
                                                                                     <select  class="dynamic-select" id="rim_offset">
-                                                                                        <!-- Ajoutez d'autres options si nécessaire -->
                                                                                     </select>
                                                                                 </td>
                                                                             </tr>
@@ -1149,7 +1684,6 @@
                                                                                 <td><span>Taille de Filletage :</span></td>
                                                                                 <td>
                                                                                     <select  class="dynamic-select" id="thread_size">
-                                                                                        <!-- Ajoutez d'autres options si nécessaire -->
                                                                                     </select>
                                                                                 </td>
                                                                             </tr>
@@ -1294,7 +1828,7 @@
                                                                         </table>
 
                                                                     </div>
-                                                                </div>
+                                                                </div>-->
                                                                 <div class="arrow arrow-up" onclick="previousSlide()">&#9650;</div>
                                                                 <div class="slider-items" id="sliderItems">
                                                                     <!-- 5 items will be dynamically displayed here -->
@@ -1305,10 +1839,7 @@
                                                                     <span id="pagination">1/4</span>
                                                                 </div>
 
-                                                                <div class="step-buttons">
-                                                                    <button id="prevButton" onclick="previousStep()" disabled>Précédent</button>
-                                                                    <button id="nextButton" onclick="nextStep()">Suivant</button>
-                                                                </div>
+
                                                             </div>
                                                         </div>
                                                         <!--<div _ngcontent-bic-c69="" class="img-area">
@@ -1317,7 +1848,11 @@
                                                            </div>
 
                                                        </div>-->
-                                                        
+
+                                                    </div>
+                                                    <div class="step-buttons">
+                                                        <button id="prevButton" onclick="previousStep()" disabled>Précédent</button>
+                                                        <button id="nextButton" onclick="nextStep()">Suivant</button>
                                                     </div>
                                                 </app-list-item>
                                             </div>
@@ -1327,9 +1862,20 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="configuration-actions-container">
-                                    <app-configuration-actions _nghost-bic-c105="" class="ng-tns-c105-10 ">
-                                        <!---->
+                                <div class="configuration-actions-container" style="display: none">
+                                    <div class="action-panel">
+                                        <!-- Download Icon -->
+                                        <i class="fas fa-download menu"></i>
+
+                                        <!-- Send Icon -->
+                                        <i class="fas fa-paper-plane menu"></i>
+
+                                        <!-- Ellipsis Icon (Toggles Menu) -->
+                                        <i class="fas fa-ellipsis-vertical" id="menuToggle"></i>
+
+                                    </div>
+                                    <!--<app-configuration-actions _nghost-bic-c105="" class="ng-tns-c105-10 ">
+
                                         <div _ngcontent-bic-c105="" class="config-actions-container ng-tns-c105-10">
                                             <div _ngcontent-bic-c105="" class="shadow ng-tns-c105-10"></div>
                                             <div _ngcontent-bic-c105="" class="actions-container ng-tns-c105-10">
@@ -1338,12 +1884,11 @@
                                                 </div>
                                                 <div _ngcontent-bic-c105="" class="menu-button ng-tns-c105-10">
                                                     <div _ngcontent-bic-c105="" class="pp-dots ng-tns-c105-10 "></div>
-                                                    <!---->
-                                                    <!---->
+
                                                 </div>
                                             </div>
                                         </div>
-                                    </app-configuration-actions>
+                                    </app-configuration-actions>-->
                                     <!---->
                                     <!---->
                                 </div>
@@ -1418,12 +1963,30 @@
         const stepDescription = document.getElementById('stepDescription');
         const stepChoice = document.getElementById('stepChoice');
 
+        // Add animation class to trigger fade out
+        sliderItems.classList.add('animate');
 
+        // Allow the animation to complete before changing content
+        setTimeout(() => {
         let items = [];
         let limit = 0;
 
+        let stepData = [];
+
         if (currentStep === 0) {
-            // Step 1: Year
+            // Step 1: Brand
+            const brands = brandsData;
+            limit = brands.length;
+
+            items = brands.slice(currentSlide, currentSlide + maxVisibleItems).map(brand => `<div class="slider-item"><img class="make-option" src="${brand.logo}" alt="${brand.name}" onclick="selectBrand(this,'${brand.slug}','${brand.name}')"><label>${brand.name}</label></div>`);
+            pagination.innerText = `${currentSlide + 1}/${limit}`;
+            stepTitle.innerText = 'Étape 1';
+            stepDescription.innerText = `Choix du Véhicule - Marque`;
+            stepChoice.innerText = '';
+
+        } else if (currentStep === 1) {
+
+            // Step 2: Year
             const years = yearsData;
             console.log(years);
             limit = years.length;
@@ -1433,15 +1996,6 @@
             stepDescription.innerText = 'Choix du Véhicule - Année';
             stepChoice.innerText = '';
 
-        } else if (currentStep === 1) {
-            // Step 2: Brand
-            const brands = brandsData;
-            limit = brands.length;
-            items = brands.slice(currentSlide, currentSlide + maxVisibleItems).map(brand => `<div class="slider-item"><img class="make-option" src="${brand.logo}" alt="${brand.name}" onclick="selectBrand(this,'${brand.slug}','${brand.name}')"><label>${brand.name}</label></div>`);
-            pagination.innerText = `${currentSlide + 1}/${limit}`;
-            stepTitle.innerText = 'Étape 1';
-            stepDescription.innerText = `Choix du Véhicule - Marque`;
-            stepChoice.innerText = '';
         } else if (currentStep === 2) {
             // Step 3: Model
             const models = modelsData;
@@ -1451,6 +2005,7 @@
             stepTitle.innerText = 'Étape 1';
             stepDescription.innerText = `Choix du Véhicule - Modèle`;
             stepChoice.innerText = '';
+
         } else if (currentStep === 3) {
         // Step 4: Modification
         const modifications = modificationsData;
@@ -1567,7 +2122,7 @@
             wheelPPData = wheels;
             maxVisibleItems = 1;
             limit = wheels.length;
-            items = wheels.slice(currentSlide, currentSlide + 1).map(wheel => `<div class="slider-item"><img src="${wheel.image}" alt="${wheel.name}" class="wheel-option" style="width: 250px;height: 230px;" onclick="selectWheel(this, '${wheel.name}')"><label style="font-size: xx-large;margin-top: 10px;">${wheel.name}</label></div>`);
+            items = wheels.slice(currentSlide, currentSlide + 1).map(wheel => `<div class="slider-item"><img src="${wheel.image}" alt="${wheel.name}" class="wheel-option" style="width: 250px;height: 190px;border-radius: 200px;object-fit: cover;" onclick="selectWheel(this, '${wheel.name}')"><label style="font-size: x-large;margin-top: 10px;">${wheel.name}</label></div>`);
             pagination.innerText = `${currentSlide + 1}/${limit}`;
             stepTitle.innerText = 'Étape 3';
             stepDescription.innerText = `Configuration - MODELE`;
@@ -1612,24 +2167,35 @@
             divWheelOption("none","divResume");
         }
 
+        if(currentStep === 6){
+            maxVisibleItems = 1;
+        }else{
+            maxVisibleItems = 5;
+        }
+
 
         // Update slider items
         sliderItems.innerHTML = items.join('');
 
+        // Remove animation class to trigger fade in
+        sliderItems.classList.remove('animate');
+
         // Update button states
         document.getElementById('prevButton').disabled = (currentStep === 0 && currentSlide === 0);
         document.getElementById('nextButton').disabled = false;
+        }, 500);  // Wait for the fade-out animation to complete (0.5s)
     }
 
     function nextSlide() {
-        const limit = currentStep === 0 ? yearsData.length :
-            currentStep === 1 ? brandsData.length : currentStep === 2 ? modelsData.length : currentStep === 3 ? modificationsData.length : currentStep === 5 ? wheelOptionsData.length : currentStep === 6 ? wheelPPData.length : null;
+        const limit = currentStep === 0 ? brandsData.length :
+            currentStep === 1 ? yearsData.length : currentStep === 2 ? modelsData.length : currentStep === 3 ? modificationsData.length : currentStep === 5 ? wheelOptionsData.length : currentStep === 6 ? wheelPPData.length : null;
 
-        if (currentSlide + maxVisibleItems < limit) {
+        /*if (currentSlide + maxVisibleItems < limit) {
             currentSlide++;
         } else {
             currentSlide = 0;
-        }
+        }*/
+        currentSlide = (currentSlide + maxVisibleItems) % limit; // Incrémenter par 5 et boucler
         updateSlider();
     }
 
@@ -1637,16 +2203,18 @@
         if (currentSlide > 0) {
             currentSlide--;
         } else {
-            const limit = currentStep === 0 ? yearsData.length :
-                currentStep === 1 ? brandsData.length : currentStep === 2 ? modelsData.length : currentStep === 3 ? modificationsData.length : currentStep === 5 ? wheelOptionsData.length : currentStep === 6 ? wheelPPData.length : null;
-            currentSlide = limit - maxVisibleItems;
+            const limit = currentStep === 0 ? brandsData.length :
+                currentStep === 1 ? yearsData.length : currentStep === 2 ? modelsData.length : currentStep === 3 ? modificationsData.length : currentStep === 5 ? wheelOptionsData.length : currentStep === 6 ? wheelPPData.length : null;
+            //currentSlide = limit - maxVisibleItems;
+            currentSlide = (currentSlide - maxVisibleItems + limit) % limit; // Décrémenter par 5 et boucler
         }
+
         updateSlider();
     }
 
     function nextStep() {
         if (currentStep === 0) {
-            fetchMake();
+            fetchYear();
             currentStep++;
             currentSlide = 0;
         } else if (currentStep === 1) {
@@ -1730,21 +2298,22 @@
     }
     function divParam(value) {
         const divParam = document.getElementById('divParam');
-        divParam.setAttribute("style", "margin-top: 150px;display:"+value+"");
+        divParam.setAttribute("style", "margin-top: 150px;margin-left:-30%;display:"+value+"");
     }
     function divWheelOption(value,id) {
         const divWheelOption = document.getElementById(id);
-        divWheelOption.setAttribute("style", "margin-left: -50px;display:"+value+"");
+        divWheelOption.setAttribute("style", "display:"+value+"");
     }
 
     // Initialize the slider
-    fetchYear();
+    fetchMake();
 
     //Conf2D API
     function fetchYear(){
 
-        let apiUrl = "https://api.wheel-size.com/v2/configurator/years/?user_key=a77861354fca6475fa1ec64b00bed407";
+        let apiUrl = "https://api.wheel-size.com/v2/years/?make="+brandSlug+"&user_key=a77861354fca6475fa1ec64b00bed407";
         //let apiUrl = "";
+        console.log(apiUrl);
 
             fetch(apiUrl)
                 .then(response => response.json())
@@ -1760,7 +2329,7 @@
                 });
     }
     function fetchMake(){
-        let apiUrl = "https://api.wheel-size.com/v2/configurator/makes/?year="+selectedYear+"&user_key=a77861354fca6475fa1ec64b00bed407";
+        let apiUrl = "https://api.wheel-size.com/v2/configurator/makes/?user_key=a77861354fca6475fa1ec64b00bed407";
         //let apiUrl = "";
 
         fetch(apiUrl)
@@ -1769,19 +2338,15 @@
                 brandsData = data.data;
                 console.log(brandsData);
                 updateSlider();
-
             })
             .catch(error => {
                 console.error("Error fetching data:", error);
             });
 
-
     }
     function fetchModel(){
-        let apiUrl = "https://api.wheel-size.com/v2/configurator/models/?make="+brandSlug+"&year="+selectedYear+"&user_key=a77861354fca6475fa1ec64b00bed407";
+        let apiUrl = "https://api.wheel-size.com/v2/models/?make="+brandSlug+"&user_key=a77861354fca6475fa1ec64b00bed407";
         //let apiUrl = "";
-
-
 
         fetch(apiUrl)
             .then(response => response.json())
@@ -1789,8 +2354,6 @@
                 modelsData = data.data;
                 console.log(modelsData);
                 updateSlider();
-
-
 
             })
             .catch(error => {
@@ -1813,9 +2376,6 @@
 
                 updateSlider();
 
-
-
-
             })
             .catch(error => {
                 console.error("Error fetching data:", error);
@@ -1836,14 +2396,9 @@
                     let id = item.id;
                     console.log(id);
                     templateId = item.id;
-                    fetchVehiculeColor("PP-O1 : LUTECE");
+                    //fetchVehiculeColor("PP-O1 : LUTECE");
 
-                })
-
-
-
-            })
-            .catch(error => {
+                })}).catch(error => {
                 console.error("Error fetching data:", error);
             });
 
@@ -1905,8 +2460,6 @@
                 wheelOptionsData = data.data;
                 console.log(wheelOptionsData);
                 updateSlider();
-
-
             })
             .catch(error => {
                 console.error("Error fetching data:", error);
@@ -1918,28 +2471,29 @@
     function selectYear(element, year) {
         resetSelect('.year-option');
         element.classList.add('selected');
-        document.getElementById('stepChoice').textContent = year;
+        //document.getElementById('stepChoice').textContent = year;
         selectedYear = year;
-        nextStep();
+        fetchTemplatesVehicule();
+        setTimeout(nextStep, 500);
     }
 
     function selectBrand(element,slug,brand) {
         resetSelect('.make-option');
         element.classList.add('selected');
-        document.getElementById('stepChoice').textContent = brand;
+        //document.getElementById('stepChoice').textContent = brand;
         selectedBrand = brand;
         brandSlug = slug;
-        nextStep();
+        setTimeout(nextStep, 500);
     }
 
     function selectModel(element,slug,model) {
         resetSelect('.year-option');
         element.classList.add('selected');
-        document.getElementById('stepChoice').textContent = model;
+        //document.getElementById('stepChoice').textContent = model;
         selectedModel = model;
         modelSlug = slug;
-        //fetchTemplatesVehicule();
-        nextStep();
+
+        setTimeout(nextStep, 500);
     }
     function selectModification(element, id,name) {
         resetSelect('.modif-option');
@@ -1952,14 +2506,12 @@
 
         for (let i = 0; i < children.length; i++) {
             const child = children[i];
-
-                child.style.display = 'block';
-
+            child.style.display = 'block';
         }
-        document.getElementById('stepChoice').textContent = name;
+        //document.getElementById('stepChoice').textContent = name;
         modificationId = id;
         selectedModification = name;
-        nextStep();
+        setTimeout(nextStep, 500);
     }
 
     function selectParam(button, param) {
@@ -1980,7 +2532,7 @@
             console.log(param);
             param_selected = param;
         }
-        nextStep();
+        setTimeout(nextStep, 500);
     }
 
     function selectWheel(element, wheelName) {
@@ -1998,16 +2550,18 @@
     }
 
     const button = document.getElementById('menuButton');
+    const button1 = document.getElementById('menuButtonClose');
     const menu = document.getElementById('menu');
 
     button.addEventListener('click', () => {
-        if (menu.style.display === 'none') {
-            menu.style.display = 'block';
-            document.getElementById("iconMenuButton").setAttribute("class","fa-solid fa-circle-xmark");
-        } else {
-            menu.style.display = 'none';
-            document.getElementById("iconMenuButton").setAttribute("class","fa-solid fa-bars");
-        }
+        menu.style.display = 'none';
+        button1.style.display = 'block';
+    });
+
+    button1.addEventListener('click', () => {
+        menu.style.display = 'block';
+        button1.style.display = 'none';
+
     });
 
     const bgButton = document.getElementById('bgButton');
@@ -2023,4 +2577,27 @@
         bg.style.backgroundImage = `url('${images[compteur]}')`;
     });
 
+</script>
+<script>
+    // Check if Font Awesome is loaded
+    document.addEventListener("DOMContentLoaded", function() {
+        if (!document.querySelector('.fas')) {
+            alert('Font Awesome did not load. Please check your connection.');
+        }
+    });
+
+    // Toggle menu display
+    document.getElementById('menuToggle').addEventListener('click', function() {
+        let menu = document.getElementsByClassName('menu');
+
+        for (let i = 0; i < menu.length; i++) {
+            if (menu[i].style.display === "none" || menu[i].style.display === "") {
+                menu[i].style.display = "block"; // Afficher le menu
+                this.className = "fa-solid fa-xmark"; // Remplacer l'icône par "xmark"
+            } else {
+                menu[i].style.display = "none"; // Cacher le menu
+                this.className = "fas fa-ellipsis-vertical"; // Remplacer l'icône par "ellipsis"
+            }
+        }
+    });
 </script>
