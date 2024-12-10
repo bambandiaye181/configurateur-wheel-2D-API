@@ -21,13 +21,13 @@
             }
         }
 
-        @media (min-width: 1600px) and (max-width: 1920px) {
+        @media (min-width: 1600px) and (max-width: 2099px) {
             .slider_boxed, .content_wrap, .content_container {
                 width: 1900px;
                 margin: 0 auto;
             }
         }
-        @media (min-width: 1200px) and (max-width: 1440px) {
+        @media (min-width: 1200px) and (max-width: 1599px) {
             .slider_boxed, .content_wrap, .content_container {
                 width: 1300px;
                 margin: 0 auto;
@@ -395,12 +395,12 @@
 
         .configuration-actions-container {
             width: 100%;
-            position: fixed;
             bottom: 0;
             display: flex;
             flex-direction: column;
             z-index: 1;
             align-items: flex-end;
+            margin-left: -15px;
         }
 
 
@@ -1262,7 +1262,7 @@
     }
 </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
+    <script src="https://unpkg.com/merge-images"></script>
 </head>
 <body >
 
@@ -1282,37 +1282,6 @@
                                         <div _ngcontent-bic-c84="" id="render-container" class="slider-slide " style="background-image: url(&quot;https://paris-performance.com/wp-content/uploads/2024/09/Withroom_frontleft1.jpg&quot;);">
                                             <div id="car" style="background-image: url(&quot;https://paris-performance.com/wp-content/uploads/2024/10/car_default_2.png&quot;);background-size: 80% auto;margin-left: 180px;" class="slider-slide" _ngcontent-bic-c84=""></div>
                                         </div>
-                                        <!---->w
-                                    </div>
-                                    <div class="configuration-actions-container" id="menuAction" style="display: none">
-                                        <div class="action-panel">
-                                            <!-- Download Icon -->
-                                            <i class="fas fa-download menu" onclick="generatePDF()"></i>
-
-                                            <!-- Send Icon -->
-                                            <i class="fas fa-paper-plane menu"></i>
-
-                                            <!-- Ellipsis Icon (Toggles Menu) -->
-                                            <i class="fas fa-ellipsis-vertical" id="menuToggle"></i>
-
-                                        </div>
-
-                                        <!--<app-configuration-actions _nghost-bic-c105="" class="ng-tns-c105-10 ">
-
-                                            <div _ngcontent-bic-c105="" class="config-actions-container ng-tns-c105-10">
-                                                <div _ngcontent-bic-c105="" class="shadow ng-tns-c105-10"></div>
-                                                <div _ngcontent-bic-c105="" class="actions-container ng-tns-c105-10">
-                                                    <div _ngcontent-bic-c105="" class="save-button ng-tns-c105-10">
-                                                        <span _ngcontent-bic-c105="" class="ng-tns-c105-10">Enregistrer et demander</span>
-                                                    </div>
-                                                    <div _ngcontent-bic-c105="" class="menu-button ng-tns-c105-10">
-                                                        <div _ngcontent-bic-c105="" class="pp-dots ng-tns-c105-10 "></div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </app-configuration-actions>-->
-                                        <!---->
                                         <!---->
                                     </div>
                                     <div class="step-buttons" id="stepButtons">
@@ -1795,15 +1764,70 @@
                                                         <div _ngcontent-bic-c69="" class="text-area">
                                                             <div _ngcontent-bic-c69="" class="title-section">
                                                                 <span _ngcontent-bic-c69="" style="font-size: x-large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Cache moyeux</span>
+                                                                <span id="resume_CM_Color_name" style="font-size: small;"></span>
                                                             </div>
                                                         </div>
                                                         <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
                                                             <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/09/PNTA_000880227.png"  id="resume_wheelImg" class="wheel-option" style="width: 70px;height: 70px;border-radius: 50%;margin-top: -30px;">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/09/PNTA_000880227.png"  id="resume_CM_Img" onclick="toggleMenu(3)" class="wheel-option" style="width: 70px;height: 70px;border-radius: 50%;margin-top: -30px;">
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </app-list-item>
+                                            </div>
+                                            <div id="circleMenu3" class="circle-menu">
+                                                <p>GLOSS</p>
+                                                <div class="circle-slider">
+                                                    <button id="leftBtn5" class="slider-btn disabled" onclick="slideLeft(5)">&#10094;</button>
+                                                    <div class="slider-container-pallet">
+                                                        <div id="sliderTrack5" class="slider-track">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-chrome.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'gloss-chrome')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-metallic-black.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'gloss-metallic-black')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-metallic-silver.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'gloss-metallic-silver')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-white.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'gloss-white')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-anthracite.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'gloss-anthracite')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-champagne-gold-metallic.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'gloss-champagne-gold-metallic')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-gold-glitter.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'gloss-gold-glitter')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-aubergine-bronze.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'gloss-aubergine-bronze')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-cinder-rose-metallic.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'gloss-cinder-rose-metallic')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-amber-gold.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'gloss-amber-gold')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-bronze.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'gloss-bronze')">
+                                                        </div>
+                                                    </div>
+                                                    <button id="rightBtn5" class="slider-btn" onclick="slideRight(5)">&#10095;</button>
+                                                </div>
+                                                <p>MATTE</p>
+                                                <div class="circle-slider">
+                                                    <button id="leftBtn6" class="slider-btn disabled" onclick="slideLeft(6)">&#10094;</button>
+                                                    <div class="slider-container-pallet">
+                                                        <div id="sliderTrack6" class="slider-track">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-silver.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'matte-metallic-silver')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-white.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'matte-white')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-aubergine-bronze.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'matte-aubergine-bronze')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-silver-rose.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'matte-cinder-rose-metallic')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-bronze.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'matte-bronze')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-blue.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'matte-metallic-blue')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-copper-brown.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'matte-metallic-copper-brown')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-grey.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'matte-metallic-grey')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-midnight-purple.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'matte-midnight-purple')">
+                                                        </div>
+                                                    </div>
+                                                    <button id="rightBtn6" class="slider-btn" onclick="slideRight(6)">&#10095;</button>
+                                                </div>
+                                                <p>SATIN</p>
+                                                <div class="circle-slider">
+                                                    <button id="leftBtn7" class="slider-btn disabled" onclick="slideLeft(7)">&#10094;</button>
+                                                    <div class="slider-container-pallet">
+                                                        <div id="sliderTrack7" class="slider-track">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-black.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'satin-black')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-graphite-metallic.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'satin-graphite-metallic')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-dark-basalt-metallic.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'satin-dark-basalt-metallic')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-kaki-green.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'satin-kaki-green')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-rose-gold.png" class="circle" onclick="selectCacheMoyeuxColor(this, 'satin-rose-gold')">
+                                                        </div>
+                                                    </div>
+                                                    <button id="rightBtn7" class="slider-btn" onclick="slideRight(7)">&#10095;</button>
+                                                </div>
                                             </div>
                                             <div class="item-container ng-star-inserted" id="2" style="margin-top: 50px;">
                                                 <app-list-item _nghost-bic-c69="">
@@ -1815,11 +1839,65 @@
                                                         </div>
                                                         <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
                                                             <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/09/PNTA_000880227.png"  id="resume_wheelImg" class="wheel-option" style="width: 70px;height: 70px;border-radius: 50%;margin-top: -30px;">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/09/PNTA_000880227.png"  id="resume_Boulons_Img" onclick="toggleMenu(4)" class="wheel-option" style="width: 70px;height: 70px;border-radius: 50%;margin-top: -30px;">
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </app-list-item>
+                                            </div>
+                                            <div id="circleMenu4" class="circle-menu">
+                                                <p>GLOSS</p>
+                                                <div class="circle-slider">
+                                                    <button id="leftBtn8" class="slider-btn disabled" onclick="slideLeft(8)">&#10094;</button>
+                                                    <div class="slider-container-pallet">
+                                                        <div id="sliderTrack8" class="slider-track">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-chrome.png" class="circle" onclick="selectBoulonsColor(this, 'gloss-chrome')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-metallic-black.png" class="circle" onclick="selectBoulonsColor(this, 'gloss-metallic-black')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-metallic-silver.png" class="circle" onclick="selectBoulonsColor(this, 'gloss-metallic-silver')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-white.png" class="circle" onclick="selectBoulonsColor(this, 'gloss-white')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-anthracite.png" class="circle" onclick="selectBoulonsColor(this, 'gloss-anthracite')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-champagne-gold-metallic.png" class="circle" onclick="selectBoulonsColor(this, 'gloss-champagne-gold-metallic')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-gold-glitter.png" class="circle" onclick="selectBoulonsColor(this, 'gloss-gold-glitter')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-aubergine-bronze.png" class="circle" onclick="selectBoulonsColor(this, 'gloss-aubergine-bronze')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-cinder-rose-metallic.png" class="circle" onclick="selectBoulonsColor(this, 'gloss-cinder-rose-metallic')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-amber-gold.png" class="circle" onclick="selectBoulonsColor(this, 'gloss-amber-gold')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-bronze.png" class="circle" onclick="selectBoulonsColor(this, 'gloss-bronze')">
+                                                        </div>
+                                                    </div>
+                                                    <button id="rightBtn8" class="slider-btn" onclick="slideRight(8)">&#10095;</button>
+                                                </div>
+                                                <p>MATTE</p>
+                                                <div class="circle-slider">
+                                                    <button id="leftBtn9" class="slider-btn disabled" onclick="slideLeft(9)">&#10094;</button>
+                                                    <div class="slider-container-pallet">
+                                                        <div id="sliderTrack9" class="slider-track">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-silver.png" class="circle" onclick="selectBoulonsColor(this, 'matte-metallic-silver')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-white.png" class="circle" onclick="selectBoulonsColor(this, 'matte-white')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-aubergine-bronze.png" class="circle" onclick="selectBoulonsColor(this, 'matte-aubergine-bronze')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-silver-rose.png" class="circle" onclick="selectBoulonsColor(this, 'matte-cinder-rose-metallic')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-bronze.png" class="circle" onclick="selectBoulonsColor(this, 'matte-bronze')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-blue.png" class="circle" onclick="selectBoulonsColor(this, 'matte-metallic-blue')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-copper-brown.png" class="circle" onclick="selectBoulonsColor(this, 'matte-metallic-copper-brown')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-grey.png" class="circle" onclick="selectBoulonsColor(this, 'matte-metallic-grey')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-midnight-purple.png" class="circle" onclick="selectBoulonsColor(this, 'matte-midnight-purple')">
+                                                        </div>
+                                                    </div>
+                                                    <button id="rightBtn9" class="slider-btn" onclick="slideRight(9)">&#10095;</button>
+                                                </div>
+                                                <p>SATIN</p>
+                                                <div class="circle-slider">
+                                                    <button id="leftBtn10" class="slider-btn disabled" onclick="slideLeft(10)">&#10094;</button>
+                                                    <div class="slider-container-pallet">
+                                                        <div id="sliderTrack10" class="slider-track">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-black.png" class="circle" onclick="selectBoulonsColor(this, 'satin-black')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-graphite-metallic.png" class="circle" onclick="selectBoulonsColor(this, 'satin-graphite-metallic')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-dark-basalt-metallic.png" class="circle" onclick="selectBoulonsColor(this, 'satin-dark-basalt-metallic')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-kaki-green.png" class="circle" onclick="selectBoulonsColor(this, 'satin-kaki-green')">
+                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-rose-gold.png" class="circle" onclick="selectBoulonsColor(this, 'satin-rose-gold')">
+                                                        </div>
+                                                    </div>
+                                                    <button id="rightBtn10" class="slider-btn" onclick="slideRight(10)">&#10095;</button>
+                                                </div>
                                             </div>
                                             <div class="item-container ng-star-inserted" id="3" style="margin-top: 50px;">
                                                 <app-list-item _nghost-bic-c69="">
@@ -1837,6 +1915,34 @@
                                                     </div>
                                                 </app-list-item>
                                             </div>
+                                            <div class="item-container ng-star-inserted" id="3" style="margin-top: 50px;">
+                                            <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                            <button style="--clr: #ffffff; height: 50px; width: 260px;margin-left: 90px;" class="param-option" onclick="selectParam(this, 'free')">
+                                                                DEMANDER UN DEVIS
+                                                            </button>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-top:-12px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                            <div class="configuration-actions-container" id="menuAction" >
+                                                            <div class="action-panel">
+                                                                <i class="fas fa-download menu" onclick="generatePDF()"></i>
+
+                                                                <i class="fas fa-paper-plane menu"></i>
+
+                                                                    <i class="fas fa-ellipsis-vertical" id="menuToggle"></i>
+
+                                                            </div>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            
                                         </div>
                                         <div class="tab-content" id="divResume" style="display: none;">
                                             <div class="item-container ng-star-inserted" style="margin-top: 50px;">
@@ -2403,6 +2509,11 @@
     let wheelName_selected = null;
     let wheelImg_selected = null;
     let wheelColorName_selected = null;
+    let wheelColorImg_selected = null;
+    let CM_ColorName_selected = null;
+    let CM_ColorImg_selected = null;
+    let Boulons_ColorName_selected = null;
+    let Boulons_ColorImg_selected = null;
     let templateId = null;
 
     let  taille = null;
@@ -2993,7 +3104,7 @@
     }
     function fetchVehiculeColor(wheel) {
 
-        console.log(wheelName_selected);
+        /*console.log(wheelName_selected);
         let wheelImgUrl = "";
         switch (wheelName_selected) {
             case "PP-O1 : LUTECE":
@@ -3014,10 +3125,9 @@
                 break;
             default:
                 wheelImgUrl = "https://m.media-amazon.com/images/I/61N5BogXB7L._AC_SL1000_.jpg";
-        }
+        }*/
 
-        console.log(wheelName_selected);
-
+        let wheelImgUrl = wheel;
         console.log(wheelImgUrl);
 
         // Replace NEW_API_URL with your actual API endpoint
@@ -3213,6 +3323,74 @@
         document.getElementById('resume_wheelColor_name').innerHTML = wheelColorName.replaceAll("-", " ")
     }
 
+    async function selectCacheMoyeuxColor(element, colorName) {
+        resetSelect('.circle');
+        element.classList.add('selected');
+
+        document.getElementById('resume_CM_Img').src = element.src;
+
+        //fetchVehiculeColor(wheelColorName);
+        CM_ColorName_selected = colorName;
+        CM_ColorImg_selected = element.src;
+        console.log(CM_ColorName_selected);
+        console.log(CM_ColorImg_selected);
+        document.getElementById('resume_CM_Color_name').innerHTML = colorName.replaceAll("-", " ");
+
+         // Define image URLs
+        const imageJanteCombine = wheelColorImg_selected;
+        const imageCachemoyeuxCombine = CM_ColorImg_selected;
+        const imageBoulonCombine = 'https://paris-performance.com/wp-content/uploads/2024/12/amber.png';
+
+        //mergeAndDisplayImages([imageJanteCombine, imageCachemoyeuxCombine, imageBoulonCombine]);
+       // Appel de la fonction
+       try {
+        const url = await mergeThreeImages(imageJanteCombine, imageCachemoyeuxCombine, imageBoulonCombine);
+        console.log('Image fusionnée:', url);
+        //fetchVehiculeColor(url);
+        
+        // Si vous voulez utiliser l'URL fusionnée, par exemple pour l'afficher
+        // document.getElementById('quelqueImage').src = url;
+        
+    } catch (error) {
+        console.error('Erreur lors de la fusion des images:', error);
+    }
+        
+    }
+
+    async function selectBoulonsColor(element, colorName) {
+        resetSelect('.circle');
+        element.classList.add('selected');
+
+        document.getElementById('resume_Boulons_Img').src = element.src;
+
+        //fetchVehiculeColor(wheelColorName);
+        Boulons_ColorName_selected = colorName;
+        Boulons_ColorImg_selected = element.src;
+        console.log(Boulons_ColorName_selected);
+        console.log(Boulons_ColorImg_selected);
+        document.getElementById('resume_Boulons_Color_name').innerHTML = colorName.replaceAll("-", " ");
+
+         // Define image URLs
+        const imageJanteCombine = wheelColorImg_selected;
+        const imageCachemoyeuxCombine = CM_ColorImg_selected;
+        const imageBoulonCombine = Boulons_ColorImg_selected;
+
+        //mergeAndDisplayImages([imageJanteCombine, imageCachemoyeuxCombine, imageBoulonCombine]);
+       // Appel de la fonction
+       try {
+        const url = await mergeThreeImages(imageJanteCombine, imageCachemoyeuxCombine, imageBoulonCombine);
+        console.log('Image fusionnée:', url);
+        //fetchVehiculeColor(url);
+        
+        // Si vous voulez utiliser l'URL fusionnée, par exemple pour l'afficher
+        // document.getElementById('quelqueImage').src = url;
+        
+    } catch (error) {
+        console.error('Erreur lors de la fusion des images:', error);
+    }
+        
+    }
+
     function handleRimOffsetChange(selectElement) {
         var selectedValue = selectElement.value.replace('"', '');
         console.log('Selected value:', selectedValue);
@@ -3261,6 +3439,27 @@
     }
 </script>
 <script>
+    async function mergeThreeImages(url1, url2, url3) {
+    try {
+        // Vérification des paramètres
+        if (!url1 || !url2 || !url3) {
+            throw new Error('Les trois URLs sont requises');
+        }
+
+        // Fusion des images
+        const resultat = await ImageMerger.mergeAndSaveImages([url1, url2, url3]);
+        
+        // Retourne uniquement l'URL de l'image fusionnée
+        return resultat.url;
+
+    } catch (error) {
+        console.error('Erreur pendant la fusion:', error);
+        throw error; // Propagation de l'erreur
+    }
+}
+
+</script>
+<script>
     // Check if Font Awesome is loaded
     document.addEventListener("DOMContentLoaded", function() {
         if (!document.querySelector('.fas')) {
@@ -3287,16 +3486,19 @@
 <script>
     // Toggle the foldable menu visibility for a specific menu
     function toggleMenu(menuIndex) {
+        console.log('Toggling menu:', menuIndex);
+        
         let menu = document.getElementById('circleMenu' + menuIndex);
         menu.classList.toggle('active');
-
+        console.log(menu);
+        
         if(menuIndex === 1){
             let resume_wheel_option = document.getElementById("resume_wheel_option");
 
-// Get all images with class 'wheel-option-1'
+            // Get all images with class 'wheel-option-1'
             const wheelOptions = document.getElementsByClassName('wheel-option-1');
 
-// Loop through each image and check if the src matches
+            // Loop through each image and check if the src matches
             for (let i = 0; i < wheelOptions.length; i++) {
                 if (wheelOptions[i].src === resume_wheel_option.src) {
                     // If src matches, apply a selected style or class
@@ -3309,7 +3511,6 @@
     function toogleMenuJante() {
         toggleMenu(1);
         toggleMenu(2);
-
     }
 
     // Horizontal slider functionality for specific sliders with disabling of buttons
@@ -3318,8 +3519,15 @@
         { position: 0, visibleCircles: 4, circleWidth: 70, totalCircles: 4 },  // For "Jante"
         { position: 0, visibleCircles: 5, circleWidth: 70, totalCircles: 11 },  // For "Finition GLOSS"
         { position: 0, visibleCircles: 5, circleWidth: 70, totalCircles: 9 },  // For "Finition MATTE"
-        { position: 0, visibleCircles: 5, circleWidth: 70, totalCircles: 5 }   // For "Finition SATIN"
-    ];
+        { position: 0, visibleCircles: 5, circleWidth: 70, totalCircles: 5 },   // For "Finition SATIN"
+        { position: 0, visibleCircles: 5, circleWidth: 70, totalCircles: 11 },  // For "Finition GLOSS CM"
+        { position: 0, visibleCircles: 5, circleWidth: 70, totalCircles: 9 },  // For "Finition MATTE CM"
+        { position: 0, visibleCircles: 5, circleWidth: 70, totalCircles: 5 },   // For "Finition SATIN CM"
+        { position: 0, visibleCircles: 5, circleWidth: 70, totalCircles: 11 },  // For "Finition GLOSS Boulon"
+        { position: 0, visibleCircles: 5, circleWidth: 70, totalCircles: 9 },  // For "Finition MATTE Boulon"
+        { position: 0, visibleCircles: 5, circleWidth: 70, totalCircles: 5 }   // For "Finition SATIN Boulon"
+    
+        ];
 
     function updateButtons(menuIndex) {
         const sliderData = sliders[menuIndex];

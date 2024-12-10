@@ -295,6 +295,7 @@ function api_calling()
 
         //include 'slider.php';
         include 'conf2D.php';
+        include 'save_image.php';
 
     }
 
