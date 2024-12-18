@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -1081,7 +1082,7 @@
     }
 
     .dynamic-select{
-        background-color: #ffffff;
+        background-color: #ffffff !important;
     }
     .dynamic-select option {
         background-color: rgba(0, 0, 0, 0.2);
@@ -1281,6 +1282,10 @@
                                     <div _ngcontent-bic-c84="" class="slider-container">
                                         <div _ngcontent-bic-c84="" id="render-container" class="slider-slide " style="background-image: url(&quot;https://paris-performance.com/wp-content/uploads/2024/09/Withroom_frontleft1.jpg&quot;);">
                                             <div id="car" style="background-image: url(&quot;https://paris-performance.com/wp-content/uploads/2024/10/car_default_2.png&quot;);background-size: 80% auto;margin-left: 180px;" class="slider-slide" _ngcontent-bic-c84=""></div>
+                                            <div id="loader" style="display:none; text-align:center; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">
+                                                <img src="https://paris-performance.com/wp-content/uploads/2024/12/208-1.gif" style="margin-left: 400px;width:100px" alt="Chargement...">
+                                            </div>
+
                                         </div>
                                         <!---->
                                     </div>
@@ -1379,7 +1384,7 @@
                                                     <div _ngcontent-bic-c69="" class="text-area">
                                                         <div class="slider-item">
                                                             <label>Région</label>
-                                                            <select name="region" id="region" onchange="selectRegion()" style="width: 150px;text-align: center;">
+                                                            <select name="region" id="region" onchange="selectRegion()" style="width: 150px;text-align: center;background-color: #fff;border-color: #aaa;">
                                                                 <option value="usdm">USA+</option>
                                                                 <option value="cdm">Canada</option>
                                                                 <option value="mxndm">Mexico</option>
@@ -1395,6 +1400,15 @@
                                                                 <option value="sadm">South Africa</option>
                                                                 <option value="audm">Oceania</option>
                                                             </select>
+                                                          
+                                                               
+                                                                
+                                                    
+                                                              
+
+
+
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1915,33 +1929,7 @@
                                                     </div>
                                                 </app-list-item>
                                             </div>
-                                            <div class="item-container ng-star-inserted" id="3" style="margin-top: 50px;">
-                                            <app-list-item _nghost-bic-c69="">
-                                                    <div _ngcontent-bic-c69="" class="containerParam">
-                                                        <div _ngcontent-bic-c69="" class="text-area">
-                                                            <div _ngcontent-bic-c69="" class="title-section">
-                                                            <button style="--clr: #ffffff; height: 50px; width: 260px;margin-left: 90px;" class="param-option" onclick="selectParam(this, 'free')">
-                                                                DEMANDER UN DEVIS
-                                                            </button>
-                                                            </div>
-                                                        </div>
-                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-top:-12px;">
-                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
-                                                            <div class="configuration-actions-container" id="menuAction" >
-                                                            <div class="action-panel">
-                                                                <i class="fas fa-download menu" onclick="generatePDF()"></i>
-
-                                                                <i class="fas fa-paper-plane menu"></i>
-
-                                                                    <i class="fas fa-ellipsis-vertical" id="menuToggle"></i>
-
-                                                            </div>
-                                                            </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </app-list-item>
-                                            </div>
+                                            
                                             
                                         </div>
                                         <div class="tab-content" id="divResume" style="display: none;">
@@ -2167,6 +2155,36 @@
                                                         <div _ngcontent-bic-c69="" class="img-area" style="margin-right: 30px;">
                                                             <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
                                                                 <img src="https://paris-performance.com/wp-content/uploads/2024/06/main.29V2-1-scaled-e1718040438520.jpg"  id="resume_wheel_color_img" class="wheel-option" style="width: 90px;height: 90px;border-radius: 50%;margin-top: -40px;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </div>
+                                            <div class="item-container ng-star-inserted" style="margin-top: 50px;margin-bottom: 150px;">
+                                            <app-list-item _nghost-bic-c69="">
+                                                    <div _ngcontent-bic-c69="" class="containerParam">
+                                                        <div _ngcontent-bic-c69="" class="text-area">
+                                                            <div _ngcontent-bic-c69="" class="title-section">
+                                                            <button onclick="checkout()">
+                                                                Commander
+                                                                </button>
+                                                            <button style="--clr: #ffffff; height: 50px; width: 260px;margin-left: 10px;" class="param-option" onclick="selectParam(this, 'free')">
+                                                                se faire accompagner
+                                                            </button>
+                                                            </div>
+                                                        </div>
+                                                        <div _ngcontent-bic-c69="" class="img-area" style="margin-top:-12px;">
+                                                            <div _ngcontent-bic-c69="" class="img-container ng-star-inserted">
+                                                            <div class="configuration-actions-container" id="menuAction" >
+                                                            <div class="action-panel">
+                                                                <i class="fas fa-download menu" onclick="generatePDF()"></i>
+
+                                                                <i class="fas fa-paper-plane menu"></i>
+
+                                                                    <i class="fas fa-ellipsis-vertical" id="menuToggle"></i>
+
+                                                            </div>
+                                                            </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -2414,7 +2432,6 @@
                                                                                 </div>
                                                                             </div>
                                                                         </app-list-item>
-
                                                                     </div>
                                                                     <div class="item-container ng-star-inserted" id="sliderItems" style="margin-top: 50px;">
 
@@ -2523,6 +2540,7 @@
     let  filletage = null;
     let  keepParamFrontBack = null;
 
+    let wheelId = null;
 
 
     function updateSlider() {
@@ -2774,7 +2792,7 @@
         }else if (currentStep === 6) {
             // Step 3: Wheel
                const wheels = [
-                    { name: 'PP-O1 : LUTECE', image: 'https://paris-performance.com/wp-content/uploads/2024/06/main.29V2-1-scaled-e1718040438520.jpg'},
+                    { name: 'PP-O1 : LUTECE', image: 'https://paris-performance.com/wp-content/uploads/2024/12/pp01_lutece1.png'},
                     { name: 'PP-O2 : BOHEME', image: 'https://paris-performance.com/wp-content/uploads/2024/06/main.23-scaled.jpg'},
                     { name: 'PP-O3 : SEINE', image: 'https://paris-performance.com/wp-content/uploads/2024/06/main.28v2-scaled.jpg'},
                     { name: 'PP-O4 : GALION', image: 'https://paris-performance.com/wp-content/uploads/2024/06/main.30v2-scaled.jpg'}];
@@ -3104,28 +3122,7 @@
     }
     function fetchVehiculeColor(wheel) {
 
-        /*console.log(wheelName_selected);
-        let wheelImgUrl = "";
-        switch (wheelName_selected) {
-            case "PP-O1 : LUTECE":
-                wheelImgUrl = "https://paris-performance.com/wp-content/uploads/2024/10/pp01-"+wheel+".png";
-                console.log(wheelImgUrl);
-                break;
-            case "PP-O2 : BOHEME":
-                wheelImgUrl = "https://paris-performance.com/wp-content/uploads/2024/10/pp02-"+wheel+".png";
-                console.log(wheelImgUrl);
-                break;
-            case "PP-O3 : SEINE":
-                wheelImgUrl = "https://paris-performance.com/wp-content/uploads/2024/10/pp03-"+wheel+".png";
-                console.log(wheelImgUrl);
-                break;
-            case "PP-O4 : GALION":
-                wheelImgUrl = "https://paris-performance.com/wp-content/uploads/2024/10/pp04-"+wheel+".png";
-                console.log(wheelImgUrl);
-                break;
-            default:
-                wheelImgUrl = "https://m.media-amazon.com/images/I/61N5BogXB7L._AC_SL1000_.jpg";
-        }*/
+
 
         let wheelImgUrl = wheel;
         console.log(wheelImgUrl);
@@ -3137,6 +3134,10 @@
 
         console.log(apiUrl);
 
+        // Afficher le loader avant d'effectuer la requête
+        document.getElementById('loader').style.display = 'block';
+        document.getElementById('car').style.display = 'none';
+
         let requestOptions = {
             method: "PUT",
             headers: {
@@ -3144,19 +3145,28 @@
             }
         };
 
-        let responseData = fetch(apiUrl, requestOptions).then(response => response.json());
         fetch(apiUrl, requestOptions)
             .then(response => response.json())
             .then(data => {
-                // Process the retrieved data and populate select fields
-
-                let car = document.getElementById("car");
-                    car.style.backgroundImage = `url('${data.image}')`;
-
+                let img = new Image();
+                img.src = data.image;
+                
+                img.onload = () => {
+                    let car = document.getElementById("car");
+                        car.style.display = 'block';
+                        car.style.backgroundImage = `url('${data.image}')`;
+                    
+                    // Masquer le loader une fois l'image chargée
+                    document.getElementById('loader').style.display = 'none';
+                };
             })
             .catch(error => {
-                console.error("Error fetching data:", error);
+                console.error("Erreur lors de la récupération des données:", error);
+                
+                // Masquer le loader en cas d'erreur également
+                document.getElementById('loader').style.display = 'none';
             });
+
 
 
     }
@@ -3209,7 +3219,7 @@
         //document.getElementById('stepChoice').textContent = model;
         selectedModel = model;
         modelSlug = slug;
-        //fetchTemplatesVehicule();
+        fetchTemplatesVehicule();
         setTimeout(nextStep, 500);
     }
     function selectModification(element, id,name) {
@@ -3269,7 +3279,36 @@
         }
 
 
+
     }
+     function getWheelColor(wheel){
+        let wheelImgUrl = "";
+        switch (wheelName_selected) {
+            case "PP-O1 : LUTECE":
+                wheelImgUrl = "https://paris-performance.com/wp-content/uploads/2024/10/pp01-"+wheel+".png";
+                console.log(wheelImgUrl);
+                wheelId = 1101;
+                break;
+            case "PP-O2 : BOHEME":
+                wheelImgUrl = "https://paris-performance.com/wp-content/uploads/2024/10/pp02-"+wheel+".png";
+                console.log(wheelImgUrl);
+                wheelId = 1191;
+                break;
+            case "PP-O3 : SEINE":
+                wheelImgUrl = "https://paris-performance.com/wp-content/uploads/2024/10/pp03-"+wheel+".png";
+                console.log(wheelImgUrl);
+                wheelId = 1201;
+                break;
+            case "PP-O4 : GALION":
+                wheelImgUrl = "https://paris-performance.com/wp-content/uploads/2024/10/pp04-"+wheel+".png";
+                console.log(wheelImgUrl);
+                wheelId = 1211;
+                break;
+            default:
+                wheelImgUrl = "https://m.media-amazon.com/images/I/61N5BogXB7L._AC_SL1000_.jpg";
+        }
+        return wheelImgUrl;
+     }
 
 
     function resetSelect(option) {
@@ -3318,7 +3357,7 @@
 
         //fetchVehiculeColor(wheelColorName);
         wheelColorName_selected = wheelColorName;
-        wheelColorImg_selected = element.src;
+        wheelColorImg_selected = getWheelColor(wheelColorName);
         console.log(wheelColorImg_selected);
         document.getElementById('resume_wheelColor_name').innerHTML = wheelColorName.replaceAll("-", " ")
     }
@@ -3331,13 +3370,15 @@
 
         //fetchVehiculeColor(wheelColorName);
         CM_ColorName_selected = colorName;
-        CM_ColorImg_selected = element.src;
-        console.log(CM_ColorName_selected);
+        CM_ColorImg_selected = "https://paris-performance.com/wp-content/uploads/2024/12/amber_cap.png";
         console.log(CM_ColorImg_selected);
+        console.log(wheelColorImg_selected);
+        
         document.getElementById('resume_CM_Color_name').innerHTML = colorName.replaceAll("-", " ");
 
          // Define image URLs
-        const imageJanteCombine = wheelColorImg_selected;
+        //const imageJanteCombine = wheelColorImg_selected;
+        const imageJanteCombine = 'https://paris-performance.com/wp-content/uploads/2024/12/pp01-gloss-chrome.png';
         const imageCachemoyeuxCombine = CM_ColorImg_selected;
         const imageBoulonCombine = 'https://paris-performance.com/wp-content/uploads/2024/12/amber.png';
 
@@ -3346,7 +3387,7 @@
        try {
         const url = await mergeThreeImages(imageJanteCombine, imageCachemoyeuxCombine, imageBoulonCombine);
         console.log('Image fusionnée:', url);
-        //fetchVehiculeColor(url);
+        fetchVehiculeColor(url);
         
         // Si vous voulez utiliser l'URL fusionnée, par exemple pour l'afficher
         // document.getElementById('quelqueImage').src = url;
@@ -3573,59 +3614,215 @@
  <!--<button onclick="generatePDF()">Télécharger</button>-->
 
 <script>
-    async function convertImgToBase64(url) {
-        // Convertir l'image de l'URL en base64
-        const response = await fetch(url);
-        const blob = await response.blob();
-        return new Promise((resolve) => {
-            const reader = new FileReader();
-            reader.onloadend = () => resolve(reader.result);
-            reader.readAsDataURL(blob);
-        });
+function getCarImageUrl(elementId) {
+    const element = document.getElementById(elementId);
+    if (!element) {
+        console.error(`L'élément avec l'ID "${elementId}" est introuvable.`);
+        return null;
     }
 
-    async function generatePDF() {
-        // Initialiser jsPDF
+    // Récupérer le style inline ou calculé
+    const style = window.getComputedStyle(element);
+    const backgroundImage = style.backgroundImage;
+
+    // Extraire l'URL de l'image
+    const urlMatch = backgroundImage.match(/url\(["']?(.*?)["']?\)/);
+    return urlMatch ? urlMatch[1] : null;
+}
+
+async function convertImgToBase64(url) {
+    try {
+        // Vérifier si l'URL est valide
+        if (!url) {
+            throw new Error("URL de l'image non fournie.");
+        }
+
+        // Convertir l'image de l'URL en base64
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Erreur lors de la récupération de l'image : ${response.statusText}`);
+        }
+
+        const blob = await response.blob();
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onloadend = () => resolve(reader.result);
+            reader.onerror = () => reject("Erreur lors de la lecture du fichier.");
+            reader.readAsDataURL(blob);
+        });
+    } catch (error) {
+        console.error("Erreur dans convertImgToBase64:", error.message);
+        throw error;
+    }
+}
+
+async function generatePDF() {
+    try {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
 
-        // Ajouter du texte au PDF
+        // Obtenir les dimensions de la page PDF
+        const pageWidth = doc.internal.pageSize.getWidth();
+        const pageHeight = doc.internal.pageSize.getHeight();
+
+        // Ajouter des informations sur le véhicule
         doc.setFontSize(16);
-        doc.text("Paris Performance", 10, 10);
-
-        // Simuler quelques options du fichier PDF
+        doc.text("Configuration du véhicule", 10, 10);
         doc.setFontSize(12);
-        doc.text("Marque Audi", 10, 20);
-        doc.text("Année 2023", 10, 30);
+        doc.text(`Marque : ${selectedBrand}`, 10, 20);
+        doc.text(`Année : ${selectedYear}`, 10, 30);
+        doc.text(`Modèle : ${selectedModel}`, 10, 40);
+        doc.text(`Motorisation : ${selectedModification}`, 10, 50);
 
-        console.log()
-        // Ajouter des images depuis des URLs
-        const imgUrl1 = document.getElementById("car").src;
-        const imgUrl2 = wheelImg_selected;
+        // Ajouter des paramètres des jantes
+        doc.text(`Paramètres des Jantes : ${param_selected === "free" ? "Libre" : "Recommandé" }`, 10, 70);
+        doc.text(`Taille : ${taille}`, 10, 80);
+        doc.text(`Alesage central : ${alesageCentral}`, 10, 90);
+        doc.text(`Entraxe : ${entraxe}`, 10, 100);
+        doc.text(`Déport : ${deport}`, 10, 110);
+        doc.text(`Taille de Filetage : ${filletage}`, 10, 120);
+        doc.text(`Paramètres avant et arrière identiques : ${keepParamFrontBack ? "Oui" : "Non"}`, 10, 130);
+        // Ajouter des informations sur la jante choisie
+        doc.text("Jante Choisie", 10, 150);
+        doc.text(`Modèle : ${wheelName_selected}`, 10, 160);
+        doc.text(`Couleur : ${CM_ColorName_selected}`, 10, 170);
 
-        console.log(imgUrl1);
-        console.log(imgUrl2);
-        // Convertir les images en base64 et les ajouter au PDF
+        // Ajouter des informations supplémentaires
+        doc.text(`Cache moyeux : ${CM_ColorName_selected}`, 10, 190);
+        doc.text(`Boulons : ${Boulons_ColorName_selected}`, 10, 200);
+
+        console.log("pdf"+wheelColorImg_selected);
+        
+        // Récupérer et ajouter les images
+        const imgUrl1 = getCarImageUrl('car');
         const imgData1 = await convertImgToBase64(imgUrl1);
-        const imgData2 = await convertImgToBase64(imgUrl2);
+        const imgData2 = await convertImgToBase64(wheelColorImg_selected);
 
-        // Ajouter les images à des positions spécifiques dans le PDF
-        doc.addImage(imgData1, 'PNG', 10, 50, 50, 20);  // Image 1 (logo)
-        doc.addImage(imgData2, 'JPEG', 10, 80, 80, 50);  // Image 2 (car)
+       doc.addImage(imgData2, 'PNG', 10, 320, 80, 80); // Position fixe pour la roue
+
+         // Ajouter une nouvelle page pour l'image de la voiture
+        doc.addPage();
+        doc.text("Image de la voiture", 10, 10);
+        const imgWidth = pageWidth; // Largeur maximale
+        const imgHeight = (100 / 200) * imgWidth; // Exemple de proportions fixes
+        doc.addImage(imgData1, 'PNG', 0, 20, imgWidth, imgHeight);
 
         // Ajouter un pied de page
         doc.setFontSize(10);
-        doc.text("Copyright PP 2024 - All rights reserved", 10, 280);
+        doc.text("Copyright PP 2024 - All rights reserved", 10, pageHeight - 10);
 
         // Télécharger le PDF
         doc.save("configuration-paris-performance.pdf");
+    } catch (error) {
+        console.error("Erreur dans generatePDF:", error.message);
+        alert(`Erreur lors de la génération du PDF : ${error.message}`);
     }
+}
 
-    function handleKeyPress(event ){
+window.productAmount = 1000; // Montant en centimes
+window.productId = 123; // ID du produit WooCommerce
+
+
+   /* function handleKeyPress(event ){
         if(event.key === 'd' || event.key === 'D'){
             generatePDF();
         }
     }
 
-    document.addEventListener('keydown',handleKeyPress);
+    document.addEventListener('keydown',handleKeyPress);*/
 </script>
+
+<script>
+/*function checkout() {
+    // Variables personnalisées
+    const productId = 1101;        // ID produit WooCommerce (si le produit existe déjà)
+    const customPrice = 29.99;    // Prix personnalisé en euros
+    const customQuantity = 2;     // Quantité souhaitée
+    const customDescription = "Mon produit personnalisé"; // Description personnalisée
+
+    // Récupérer l'URL de la page de paiement WooCommerce
+    const checkoutUrl = "<?php echo wc_get_checkout_url(); ?>";
+
+    // Construire la requête AJAX
+    // On ajoute nos paramètres customPrice et customDescription
+    // Notez l'action 'woocommerce_ajax_add_to_cart' qui sera gérée côté PHP
+    const bodyData = 
+        `action=woocommerce_ajax_add_to_cart` +
+        `&product_id=${productId}` +
+        `&quantity=${customQuantity}` +
+        `&price=${encodeURIComponent(customPrice)}` + 
+        `&description=${encodeURIComponent(customDescription)}`;
+
+    fetch(wc_add_to_cart_params.ajax_url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: bodyData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            console.log("Produit ajouté au panier avec succès.");
+            // Redirection vers la page de paiement
+            window.location.href = checkoutUrl;
+        } else {
+            console.error("Erreur lors de l'ajout au panier : ", data);
+        }
+    })
+    .catch(error => console.error("Erreur réseau : ", error));
+};*/
+<?php
+// Ajoutez ceci dans votre thème ou plugin
+add_action('wp_footer', 'add_custom_checkout_script');
+function add_custom_checkout_script() {
+    ?>
+    <script>
+    function checkout() {
+    const bodyData = new URLSearchParams({
+        action: 'woocommerce_ajax_add_to_cart',
+        product_id: wheelId,
+        quantity: 1,
+        selectedBrand: selectedBrand,
+        selectedYear: selectedYear,
+        selectedModel: selectedModel,
+        selectedModification: selectedModification,
+        param_selected: param_selected,
+        taille: taille,
+        alesageCentral: alesageCentral,
+        entraxe: entraxe,
+        deport: deport,
+        filletage: filletage,
+        keepParamFrontBack: keepParamFrontBack,
+        wheelName_selected: wheelName_selected,
+        CM_ColorName_selected: CM_ColorName_selected,
+        Boulons_ColorName_selected: Boulons_ColorName_selected
+    });
+
+    fetch(wc_add_to_cart_params.ajax_url, {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Cache-Control': 'no-cache',
+        },
+        body: bodyData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            window.location.href = data.data.redirect;
+        } else {
+            alert("Erreur lors de l'ajout au panier");
+        }
+    })
+    .catch(error => {
+        alert("Erreur de connexion");
+    });
+}
+    </script>
+    <?php
+}
+?>
+</script>
+
