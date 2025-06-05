@@ -481,7 +481,8 @@
         .mat-tab-list {
             flex-grow: 1;
             position: relative;
-            transition: transform 500ms cubic-bezier(0.35, 0, 0.25, 1)
+            transition: transform 500ms cubic-bezier(0.35, 0, 0.25, 1);
+            width: 500px;
         }
 
         .mat-ink-bar {
@@ -887,6 +888,7 @@
             width: 100%;
             display: flex;
             justify-content: center;
+            margin-left: 450px;
         }
 
         .arrow-up {
@@ -1300,6 +1302,16 @@
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://unpkg.com/merge-images"></script>
+    <style>
+        button,
+        .btn-plat,
+        .param-option,
+        .year-option,
+        .make-option,
+        .modif-option {
+            color: #000 !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -1329,23 +1341,23 @@
                                                 </div>
 
                                             </div>
-                                            <!---->
+                                          
                                         </div>
-                                        <div class="step-buttons" id="stepButtons">
+                                        <!--<div class="step-buttons" id="stepButtons">
                                             <button id="prevButton" onclick="previousStep()" disabled><i
                                                     class="fa-solid fa-circle-chevron-left"
                                                     style="font-size: x-large"></i></button>&nbsp;
                                             <button id="nextButton" onclick="nextStep()"><i
                                                     class="fa-solid fa-circle-chevron-right"
                                                     style="font-size: x-large"></i></button>
-                                        </div>
+                                        </div>-->
                                     </div>
-                                    <!---->
+                                  
 
                                 </rt-render-slider>
 
-                                <!---->
-                                <!---->
+                              
+                              
                             </div>
 
                             <div _ngcontent-bic-c88="" class="logo-and-controls ng-trigger ng-trigger-fadeInOut">
@@ -1365,7 +1377,6 @@
                                         src="https://paris-performance.com/wp-content/uploads/2024/09/icon-background.png">
                                 </div>
                             </div>
-
                         </app-car-viewer>
                     </div>
                     <div _ngcontent-bic-c80="" id="menu"
@@ -1383,11 +1394,21 @@
                                         </div>
                                         <div id="tabGroupContainer" class="tab-group-container">
                                             <mat-tab-group>
-                                                <mat-tab-header class="mat-tab-header">
+                                                <!-- <mat-tab-header class="mat-tab-header">
 
                                                     <div class="mat-tab-label-container">
                                                         <div role="tablist" class="mat-tab-list"
                                                             style="transform: translateX(0px);">
+                                                            <div id="customTabs" class="custom-tabs">
+                                                                <div class="custom-tab" id="tab-etape-1"
+                                                                    onclick="goToStep(0)">Étape 1</div>
+                                                                <div class="custom-tab" id="tab-etape-2"
+                                                                    onclick="goToStep(4)">Étape 2</div>
+                                                                <div class="custom-tab" id="tab-etape-3"
+                                                                    onclick="goToStep(6)">Étape 3</div>
+                                                                <div class="custom-tab" id="tab-resume"
+                                                                    onclick="goToStep(8)">Résumé</div>
+                                                            </div>
                                                             <div class="mat-tab-labels">
                                                                 <div role="tab" mattablabelwrapper="" mat-ripple=""
                                                                     cdkmonitorelementfocus=""
@@ -1397,35 +1418,25 @@
                                                                     aria-controls="mat-tab-content-2-0"
                                                                     aria-selected="true" aria-disabled="false">
                                                                     <div class="mat-tab-label-content">
-                                                                        <!--<span class="section ">Extérieur</span>-->
-                                                                        <h2 id="stepTitle">Étape 1</h2>
-                                                                        <br>
                                                                         <span id="stepDescription"
-                                                                            style="margin-top: 70px;padding-left: 15px;">Choix
+                                                                            style="padding-left: 15px;left: 44px;font-size: medium">Choix
                                                                             du Véhicule - Année</span>
                                                                         <span id="stepChoice"
                                                                             style="margin-top: 70px;padding-left: 15px;font-size: x-large;"></span>
-                                                                        <!---->
-                                                                        <!---->
-                                                                        <!---->
-
                                                                     </div>
 
                                                                 </div>
 
                                                             </div>
-                                                            <mat-ink-bar class="mat-ink-bar"
-                                                                style="visibility: visible; left: 50px; width: 94px;"></mat-ink-bar>
-
+                                                            <div class="arrow arrow-down" id="arrow-next" onclick="nextStep()">&#9654;</div>
                                                         </div>
-
                                                     </div>
                                                     <button aria-hidden="true" type="button" mat-ripple="" tabindex="-1"
                                                         class="mat-ripple mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-tab-header-pagination-disabled"
                                                         disabled="">
                                                         <div class="mat-tab-header-pagination-chevron"></div>
                                                     </button>
-                                                </mat-tab-header>
+                                                </mat-tab-header> -->
                                                 <div class="mat-tab-body-wrapper">
                                                     <mat-tab-body role="tabpanel"
                                                         class="mat-tab-body ng-tns-c37-11  mat-tab-body-active"
@@ -1433,8 +1444,8 @@
                                                         <div cdkscrollable=""
                                                             class="mat-tab-body-content ng-tns-c37-11 ng-trigger ng-trigger-translateTab"
                                                             style="transform: none;">
-                                                            <!---->
-                                                            <!---->
+                                                          
+                                                          
                                                         </div>
                                                     </mat-tab-body>
                                                     <mat-tab-body role="tabpanel" class="mat-tab-body ng-tns-c37-12 "
@@ -1442,7 +1453,7 @@
                                                         <div cdkscrollable=""
                                                             class="mat-tab-body-content ng-tns-c37-12 ng-trigger ng-trigger-translateTab"
                                                             style="transform: translate3d(100%, 0px, 0px); min-height: 1px; visibility: hidden;">
-                                                            <!---->
+                                                          
                                                         </div>
                                                     </mat-tab-body>
                                                     <mat-tab-body role="tabpanel" class="mat-tab-body ng-tns-c37-13 "
@@ -1450,10 +1461,10 @@
                                                         <div cdkscrollable=""
                                                             class="mat-tab-body-content ng-tns-c37-13 ng-trigger ng-trigger-translateTab"
                                                             style="transform: translate3d(100%, 0px, 0px); min-height: 1px; visibility: hidden;">
-                                                            <!---->
+                                                          
                                                         </div>
                                                     </mat-tab-body>
-                                                    <!---->
+                                                  
                                                 </div>
                                                 <app-list-item _nghost-bic-c69="" id="region-section"
                                                     style="display: none;">
@@ -1783,7 +1794,7 @@
                                                     </app-list-item>
                                                 </div>
                                             </div>
-                                            <div class="tab-content" id="divPalletOption" style="display:none;">
+                                            <div class="tab-content" id="divPalletOption" style="display:block;">
                                                 <div class="item-container ng-star-inserted" id="0"
                                                     style="margin-top: 50px;">
                                                     <app-list-item _nghost-bic-c69="">
@@ -2303,6 +2314,26 @@
 
 
                                             </div>
+                                            <div class="tab-content" id="divCarColor" style="display: none;">
+                                                <div id="circleMenu0" class="circle-menu-wheel">
+                                                    <div class="circle-slider">
+                                                        <button id="leftBtn0" class="slider-btn disabled"
+                                                            onclick="slideLeft(0)">&#10094;</button>
+                                                        <div class="slider-container">
+                                                            <div id="sliderTrack0" class="slider-track">
+                                                                <div class="car-color"></div>
+                                                                <div class="car-color"></div>
+                                                                <div class="car-color"></div>
+                                                                <div class="car-color"></div>
+                                                                <div class="car-color"></div>
+                                                                <div class="car-color"></div>
+                                                            </div>
+                                                        </div>
+                                                        <button id="rightBtn0" class="slider-btn"
+                                                            onclick="slideRight(0)">&#10095;</button>
+                                                    </div>
+                                                </div>
+                                            </div>    
                                             <div class="tab-content" id="divResume" style="display: none;">
                                                 <div class="item-container ng-star-inserted" style="margin-top: 50px;">
                                                     <app-list-item _nghost-bic-c69="">
@@ -2951,39 +2982,39 @@
                                                 <div class="item-container " id="25">
                                                 </div>
 
-                                                <!---->
+                                              
                                             </div>
                                         </div>
                                     </div>
 
                                 </app-navigation>
 
-                                <!---->
+                              
                             </div>
                         </app-configuration-panel>
 
-                        <!---->
+                      
 
                     </div>
 
-                    <!---->
-                    <!---->
-                    <!---->
+                  
+                  
+                  
                 </div>
                 <div _ngcontent-bic-c80="" class="loading-indicator ">
                     <div _ngcontent-bic-c80="" class="slider-container "></div>
                 </div>
                 <div _ngcontent-bic-c80="" class="loading-indicator-spinner "></div>
                 <div _ngcontent-bic-c80="" class="loading-indicator-turntable ">
-                    <!---->
-                    <!---->
-                    <!---->
+                  
+                  
+                  
                 </div>
-                <!---->
+              
             </app-configuration-area>
-            <!---->
+          
         </app-model-selection>
-        <!---->
+      
         <div class="loading-indicator"></div>
     </app-root>
     <script>
@@ -3075,7 +3106,7 @@
             </app-list-item>`);
 
                     //pagination.innerText = `${currentSlide + 1}/${limit}`;
-                    stepTitle.innerText = 'Étape 1';
+                    //stepTitle.innerText = 'Étape 1';
                     stepDescription.innerText = `Choix du Véhicule - Marque`;
                     stepChoice.innerText = '';
 
@@ -3097,7 +3128,7 @@
                     </div>
                 </app-list-item>`);
                     //pagination.innerText = `${currentSlide + 1}/${limit}`;
-                    stepTitle.innerText = 'Étape 1';
+                    //stepTitle.innerText = 'Étape 1';
                     stepDescription.innerText = 'Choix du Véhicule - Année';
                     stepChoice.innerText = '';
 
@@ -3114,7 +3145,7 @@
                     </div>
                 </app-list-item>`);
                     //pagination.innerText = `${currentSlide + 1}/${limit}`;
-                    stepTitle.innerText = 'Étape 1';
+                    //stepTitle.innerText = 'Étape 1';
                     stepDescription.innerText = `Choix du Véhicule - Modèle`;
                     stepChoice.innerText = '';
 
@@ -3132,12 +3163,12 @@
                     </div>
                 </app-list-item>`);
                     //pagination.innerText = `${currentSlide + 1}/${limit}`;
-                    stepTitle.innerText = 'Étape 1';
+                    //stepTitle.innerText = 'Étape 1';
                     stepDescription.innerText = `Choix du Véhicule - Motorisation`;
                     stepChoice.innerText = '';
                 } else if (currentStep === 4) {
                     // Step 5: Paramètrage
-                    stepTitle.innerText = 'Étape 2';
+                    //stepTitle.innerText = 'Étape 2';
                     stepDescription.innerText = `Choix des paramètres`;
                     stepChoice.innerText = '';
                 } else if (currentStep === 5) {
@@ -3277,7 +3308,7 @@
                     })
 
                     //pagination.innerText = `${currentSlide + 1}/${limit}`;
-                    stepTitle.innerText = 'Étape 2';
+                    //stepTitle.innerText = 'Étape 2';
                     stepDescription.innerText = `Choix des paramètres`;
                     stepChoice.innerText = '';
                 } else if (currentStep === 6) {
@@ -3294,15 +3325,15 @@
                     maxVisibleItems = limit;
                     items = wheels.slice(currentSlide, currentSlide + maxVisibleItems).map((wheel, index) => `<div class="slider-item"><img src="${wheel.image}" alt="${wheel.name}" class="wheel-option ${index === 0 ? 'selected' : ''}" style="width: 154px;height: 154px;border-radius: 200px;object-fit: cover;" onclick="selectWheel(this, '${wheel.name}','${wheel.image}')"><label style="font-size: x-large;margin-top: 20px;">${wheel.name}</label></div>`);
                     //pagination.innerText = `${currentSlide + 1}/${limit}`;
-                    stepTitle.innerText = 'Étape 3';
+                    //stepTitle.innerText = 'Étape 3';
                     stepDescription.innerText = `Configuration - MODELE`;
                     stepChoice.innerText = '';
                 } else if (currentStep === 7) {
-                    stepTitle.innerText = 'Étape 3';
+                    //stepTitle.innerText = 'Étape 3';
                     stepDescription.innerText = `Configuration`;
                     stepChoice.innerText = '';
                 } else if (currentStep === 8) {
-                    stepTitle.innerText = 'Résumé';
+                    //stepTitle.innerText = 'Résumé';
                     stepDescription.innerText = `Votre vehicule`;
                     stepChoice.innerText = '';
                 }
@@ -3360,6 +3391,12 @@
                     maxVisibleItems = 5;
                 }
 
+                if (currentStep === 5 || currentStep === 6 || currentStep === 7) {
+                    document.getElementById('arrow-next').style.display = 'block';
+                } else {
+                    document.getElementById('arrow-next').style.display = 'none';
+                }
+
                 if (currentStep === 0) {
                     divWheelOption("block", "region-section");
                 } else {
@@ -3376,7 +3413,11 @@
 
                 // Update button states
                 document.getElementById('prevButton').disabled = (currentStep === 0 && currentSlide === 0);
-                document.getElementById('nextButton').disabled = false;
+                if (currentStep === 0 && brandSlug === null) {
+                    document.getElementById('nextButton').disabled = true;
+                } else {
+                    document.getElementById('nextButton').disabled = false;
+                }
             }, 500);  // Wait for the fade-out animation to complete (0.5s)
         }
 
@@ -4024,7 +4065,9 @@
             let menu = document.getElementById('circleMenu' + menuIndex);
             menu.classList.toggle('active');
             console.log(menu);
-
+            if (menuIndex === 0) {
+                divWheelOption("block", "divCarColor");
+            }
             if (menuIndex === 1) {
                 let resume_wheel_option = document.getElementById("resume_wheel_option");
 
@@ -4317,4 +4360,66 @@
         <?php
         }
         ?>
+    </script>
+
+    <style>
+        .custom-tabs {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0 10px 0;
+            gap: 10px;
+        }
+
+        .custom-tab {
+            padding: 10px 24px;
+            background: #fff;
+            color: #222;
+            border-radius: 8px 8px 0 0;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            cursor: pointer;
+            font-weight: bold;
+            opacity: 0.7;
+            transition: background 0.2s, color 0.2s, opacity 0.2s;
+        }
+
+        .custom-tab.active {
+            background: #222;
+            color: #fff;
+            opacity: 1;
+            border-bottom: 2px solid #da291c;
+        }
+
+        .custom-tab.disabled {
+            background: #eee;
+            color: #aaa;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    </style>
+    <script>
+        function updateCustomTabs() {
+            // Détermine l'étape accessible la plus avancée
+            let maxStep = currentStep;
+            // Active/désactive les onglets
+            document.getElementById('tab-etape-1').className = 'custom-tab' + (currentStep >= 0 && currentStep < 4 ? ' active' : '') + '';
+            document.getElementById('tab-etape-2').className = 'custom-tab' + (currentStep >= 4 && currentStep < 6 ? ' active' : '') + (maxStep >= 4 ? '' : ' disabled');
+            document.getElementById('tab-etape-3').className = 'custom-tab' + (currentStep >= 6 && currentStep < 8 ? ' active' : '') + (maxStep >= 6 ? '' : ' disabled');
+            document.getElementById('tab-resume').className = 'custom-tab' + (currentStep === 8 ? ' active' : '') + (maxStep >= 8 ? '' : ' disabled');
+        }
+        function goToStep(step) {
+            // Ne pas permettre d'aller à une étape non accessible
+            if ((step === 4 && currentStep < 4) || (step === 6 && currentStep < 6) || (step === 8 && currentStep < 8)) return;
+            currentStep = step;
+            currentSlide = 0;
+            updateSlider();
+            updateCustomTabs();
+        }
+        // Appeler updateCustomTabs à chaque changement d'étape
+        const _oldUpdateSlider = updateSlider;
+        updateSlider = function () {
+            _oldUpdateSlider.apply(this, arguments);
+            updateCustomTabs();
+        };
+        document.addEventListener('DOMContentLoaded', updateCustomTabs);
     </script>
