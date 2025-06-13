@@ -1203,6 +1203,20 @@
         }
     </style>
     <style>
+        .list-palet {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 36px;
+            width: 400px;
+            margin-left: 10px;
+        }
+
+        .palet-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
         .circle-slider {
             display: flex;
             align-items: center;
@@ -1281,7 +1295,7 @@
         }
 
         .circle-menu.active {
-            height: 410px;
+            height: 810px;
             /* Adjust height based on slider size */
         }
 
@@ -1333,7 +1347,7 @@
                                                 style="background-image: url(&quot;https://paris-performance.com/wp-content/uploads/2024/09/Withroom_frontleft1.jpg&quot;);">
                                                 <div id="car"
                                                     style="background-image: url(&quot;https://paris-performance.com/wp-content/uploads/2024/10/car_default_2.png&quot;);background-size: 80% auto;margin-left: 180px;"
-                                                    class="slider-slide" _ngcontent-bic-c84=""></div>
+                                                    class="slider-slide" _ngcontent-bic-c84=""></div>   
                                                 <div id="loader"
                                                     style="display:none; text-align:center; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">
                                                     <img src="https://paris-performance.com/wp-content/uploads/2024/12/208-1.gif"
@@ -1341,7 +1355,7 @@
                                                 </div>
 
                                             </div>
-                                          
+
                                         </div>
                                         <!--<div class="step-buttons" id="stepButtons">
                                             <button id="prevButton" onclick="previousStep()" disabled><i
@@ -1352,12 +1366,12 @@
                                                     style="font-size: x-large"></i></button>
                                         </div>-->
                                     </div>
-                                  
+
 
                                 </rt-render-slider>
 
-                              
-                              
+
+
                             </div>
 
                             <div _ngcontent-bic-c88="" class="logo-and-controls ng-trigger ng-trigger-fadeInOut">
@@ -1394,7 +1408,7 @@
                                         </div>
                                         <div id="tabGroupContainer" class="tab-group-container">
                                             <mat-tab-group>
-                                                <!-- <mat-tab-header class="mat-tab-header">
+                                                <mat-tab-header class="mat-tab-header">
 
                                                     <div class="mat-tab-label-container">
                                                         <div role="tablist" class="mat-tab-list"
@@ -1436,7 +1450,7 @@
                                                         disabled="">
                                                         <div class="mat-tab-header-pagination-chevron"></div>
                                                     </button>
-                                                </mat-tab-header> -->
+                                                </mat-tab-header> 
                                                 <div class="mat-tab-body-wrapper">
                                                     <mat-tab-body role="tabpanel"
                                                         class="mat-tab-body ng-tns-c37-11  mat-tab-body-active"
@@ -1444,8 +1458,8 @@
                                                         <div cdkscrollable=""
                                                             class="mat-tab-body-content ng-tns-c37-11 ng-trigger ng-trigger-translateTab"
                                                             style="transform: none;">
-                                                          
-                                                          
+
+
                                                         </div>
                                                     </mat-tab-body>
                                                     <mat-tab-body role="tabpanel" class="mat-tab-body ng-tns-c37-12 "
@@ -1453,7 +1467,7 @@
                                                         <div cdkscrollable=""
                                                             class="mat-tab-body-content ng-tns-c37-12 ng-trigger ng-trigger-translateTab"
                                                             style="transform: translate3d(100%, 0px, 0px); min-height: 1px; visibility: hidden;">
-                                                          
+
                                                         </div>
                                                     </mat-tab-body>
                                                     <mat-tab-body role="tabpanel" class="mat-tab-body ng-tns-c37-13 "
@@ -1461,10 +1475,10 @@
                                                         <div cdkscrollable=""
                                                             class="mat-tab-body-content ng-tns-c37-13 ng-trigger ng-trigger-translateTab"
                                                             style="transform: translate3d(100%, 0px, 0px); min-height: 1px; visibility: hidden;">
-                                                          
+
                                                         </div>
                                                     </mat-tab-body>
-                                                  
+
                                                 </div>
                                                 <app-list-item _nghost-bic-c69="" id="region-section"
                                                     style="display: none;">
@@ -1794,7 +1808,7 @@
                                                     </app-list-item>
                                                 </div>
                                             </div>
-                                            <div class="tab-content" id="divPalletOption" style="display:block;">
+                                            <div class="tab-content" id="divPalletOption" style="display:none;">
                                                 <div class="item-container ng-star-inserted" id="0"
                                                     style="margin-top: 50px;">
                                                     <app-list-item _nghost-bic-c69="">
@@ -1819,7 +1833,7 @@
                                                         </div>
 
                                                     </app-list-item>
-                                                    <div id="circleMenu0" class="circle-menu-wheel">
+                                                    <!-- <div id="circleMenu0" class="circle-menu-wheel">
                                                         <div class="circle-slider">
                                                             <button id="leftBtn0" class="slider-btn disabled"
                                                                 onclick="slideLeft(0)">&#10094;</button>
@@ -1836,7 +1850,7 @@
                                                             <button id="rightBtn0" class="slider-btn"
                                                                 onclick="slideRight(0)">&#10095;</button>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                     <app-list-item _nghost-bic-c69="">
                                                         <div _ngcontent-bic-c69="" class="containerParam"
                                                             style="padding: 50px 0 10px;">
@@ -1867,140 +1881,8 @@
 
                                                     </app-list-item>
 
-                                                    <div id="circleMenu1" class="circle-menu-wheel">
-                                                        <div class="circle-slider">
-                                                            <button id="leftBtn1" class="slider-btn disabled"
-                                                                onclick="slideLeft(1)">&#10094;</button>
-                                                            <div class="slider-container-pallet">
-                                                                <div id="sliderTrack1" class="slider-track">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/06/main.29V2-1-scaled-e1718040438520.jpg"
-                                                                        class="wheel-option-1 selected"
-                                                                        onclick="selectWheel(this, 'PP-O1 : LUTECE','https://paris-performance.com/wp-content/uploads/2024/06/main.29V2-1-scaled-e1718040438520.jpg')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/06/main.23-scaled.jpg"
-                                                                        class="wheel-option-1"
-                                                                        onclick="selectWheel(this, 'PP-O2 : BOHEME','https://paris-performance.com/wp-content/uploads/2024/06/main.23-scaled.jpg')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/06/main.28v2-scaled.jpg"
-                                                                        class="wheel-option-1"
-                                                                        onclick="selectWheel(this, 'PP-O3 : SEINE','https://paris-performance.com/wp-content/uploads/2024/06/main.28v2-scaled.jpg')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/06/main.30v2-scaled.jpg"
-                                                                        class="wheel-option-1"
-                                                                        onclick="selectWheel(this, 'PP-O4 : GALION','https://paris-performance.com/wp-content/uploads/2024/06/main.30v2-scaled.jpg')">
-                                                                </div>
-                                                            </div>
-                                                            <button id="rightBtn1" class="slider-btn"
-                                                                onclick="slideRight(1)">&#10095;</button>
-                                                        </div>
-                                                    </div>
-                                                    <div id="circleMenu2" class="circle-menu">
-                                                        <p>GLOSS</p>
-                                                        <div class="circle-slider">
-                                                            <button id="leftBtn2" class="slider-btn disabled"
-                                                                onclick="slideLeft(2)">&#10094;</button>
-                                                            <div class="slider-container-pallet">
-                                                                <div id="sliderTrack2" class="slider-track">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-chrome.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'gloss-chrome')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-metallic-black.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'gloss-metallic-black')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-metallic-silver.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'gloss-metallic-silver')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-white.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'gloss-white')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-anthracite.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'gloss-anthracite')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-champagne-gold-metallic.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'gloss-champagne-gold-metallic')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-gold-glitter.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'gloss-gold-glitter')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-aubergine-bronze.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'gloss-aubergine-bronze')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-cinder-rose-metallic.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'gloss-cinder-rose-metallic')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-amber-gold.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'gloss-amber-gold')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-bronze.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'gloss-bronze')">
-                                                                </div>
-                                                            </div>
-                                                            <button id="rightBtn2" class="slider-btn"
-                                                                onclick="slideRight(2)">&#10095;</button>
-                                                        </div>
-                                                        <p>MATTE</p>
-                                                        <div class="circle-slider">
-                                                            <button id="leftBtn3" class="slider-btn disabled"
-                                                                onclick="slideLeft(3)">&#10094;</button>
-                                                            <div class="slider-container-pallet">
-                                                                <div id="sliderTrack3" class="slider-track">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-silver.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'matte-metallic-silver')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-white.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'matte-white')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-aubergine-bronze.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'matte-aubergine-bronze')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-silver-rose.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'matte-cinder-rose-metallic')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-bronze.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'matte-bronze')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-blue.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'matte-metallic-blue')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-copper-brown.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'matte-metallic-copper-brown')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-grey.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'matte-metallic-grey')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-midnight-purple.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'matte-midnight-purple')">
-                                                                </div>
-                                                            </div>
-                                                            <button id="rightBtn3" class="slider-btn"
-                                                                onclick="slideRight(3)">&#10095;</button>
-                                                        </div>
-                                                        <p>SATIN</p>
-                                                        <div class="circle-slider">
-                                                            <button id="leftBtn4" class="slider-btn disabled"
-                                                                onclick="slideLeft(4)">&#10094;</button>
-                                                            <div class="slider-container-pallet">
-                                                                <div id="sliderTrack4" class="slider-track">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-black.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'satin-black')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-graphite-metallic.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'satin-graphite-metallic')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-dark-basalt-metallic.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'satin-dark-basalt-metallic')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-kaki-green.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'satin-kaki-green')">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-rose-gold.png"
-                                                                        class="circle"
-                                                                        onclick="selectWheelColor(this, 'satin-rose-gold')">
-                                                                </div>
-                                                            </div>
-                                                            <button id="rightBtn4" class="slider-btn"
-                                                                onclick="slideRight(4)">&#10095;</button>
-                                                        </div>
-                                                    </div>
+                                                    
+                                                    
                                                     <!--<app-list-item _nghost-bic-c69="">
                                                     <div _ngcontent-bic-c69="" class="containerParam" style="padding: 50px 0 10px;">
                                                         <div _ngcontent-bic-c69="" class="text-area">
@@ -2315,25 +2197,160 @@
 
                                             </div>
                                             <div class="tab-content" id="divCarColor" style="display: none;">
-                                                <div id="circleMenu0" class="circle-menu-wheel">
-                                                    <div class="circle-slider">
-                                                        <button id="leftBtn0" class="slider-btn disabled"
-                                                            onclick="slideLeft(0)">&#10094;</button>
-                                                        <div class="slider-container">
-                                                            <div id="sliderTrack0" class="slider-track">
-                                                                <div class="car-color"></div>
-                                                                <div class="car-color"></div>
-                                                                <div class="car-color"></div>
-                                                                <div class="car-color"></div>
-                                                                <div class="car-color"></div>
-                                                                <div class="car-color"></div>
-                                                            </div>
+                                                <div id="circleMenu0" class="circle-menu">
+                                                    <div class="arrow arrow-down" onclick="hideSubMenu('divCarColor')">&#9664;
+                                                    </div>
+                                                    <div class="list-palet">
+                                                        <div class="palet-container">
                                                         </div>
-                                                        <button id="rightBtn0" class="slider-btn"
-                                                            onclick="slideRight(0)">&#10095;</button>
                                                     </div>
                                                 </div>
-                                            </div>    
+                                            </div>
+                                            <div class="tab-content" id="divWheelModel" style="display: none;">
+                                            <div class="arrow arrow-down" onclick="hideSubMenu('divWheelModel')">&#9664;</div>
+                                                <div id="circleMenu1" class="circle-menu-wheel" >
+                                                    <div class="circle-slider">
+                                                        <button id="leftBtn1" class="slider-btn disabled"
+                                                            onclick="slideLeft(1)">&#10094;</button>
+                                                        <div class="slider-container-pallet">
+                                                            <div id="sliderTrack1" class="slider-track">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/06/main.29V2-1-scaled-e1718040438520.jpg"
+                                                                    class="wheel-option-1 selected"
+                                                                    onclick="selectWheel(this, 'PP-O1 : LUTECE','https://paris-performance.com/wp-content/uploads/2024/06/main.29V2-1-scaled-e1718040438520.jpg')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/06/main.23-scaled.jpg"
+                                                                    class="wheel-option-1"
+                                                                    onclick="selectWheel(this, 'PP-O2 : BOHEME','https://paris-performance.com/wp-content/uploads/2024/06/main.23-scaled.jpg')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/06/main.28v2-scaled.jpg"
+                                                                    class="wheel-option-1"
+                                                                    onclick="selectWheel(this, 'PP-O3 : SEINE','https://paris-performance.com/wp-content/uploads/2024/06/main.28v2-scaled.jpg')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/06/main.30v2-scaled.jpg"
+                                                                    class="wheel-option-1"
+                                                                    onclick="selectWheel(this, 'PP-O4 : GALION','https://paris-performance.com/wp-content/uploads/2024/06/main.30v2-scaled.jpg')">
+                                                            </div>
+                                                        </div>
+                                                        <button id="rightBtn1" class="slider-btn"
+                                                            onclick="slideRight(1)">&#10095;</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div  class="tab-content" id="divSubMenuWheelColor" style="display: none;">
+                                            <div class="arrow arrow-down" onclick="hideSubMenu('divSubMenuWheelColor')">&#9664;</div>
+                                            <div id="circleMenu2" class="circle-menu" >
+                                                        <p>GLOSS</p>
+                                                        <div class="list-palet">
+                                                        <div class="palet-container">
+                                                        <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-chrome.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'gloss-chrome')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-metallic-black.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'gloss-metallic-black')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-metallic-silver.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'gloss-metallic-silver')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-white.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'gloss-white')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-anthracite.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'gloss-anthracite')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-champagne-gold-metallic.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'gloss-champagne-gold-metallic')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-gold-glitter.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'gloss-gold-glitter')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-aubergine-bronze.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'gloss-aubergine-bronze')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-cinder-rose-metallic.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'gloss-cinder-rose-metallic')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-amber-gold.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'gloss-amber-gold')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-bronze.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'gloss-bronze')">
+                                                        </div>
+                                                        </div>
+                                                        <div class="circle-slider">
+                                                            <button id="leftBtn2" class="slider-btn disabled"
+                                                                onclick="slideLeft(2)">&#10094;</button>
+                                                            <div class="slider-container-pallet">
+                                                                <div id="sliderTrack2" class="slider-track">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <button id="rightBtn2" class="slider-btn"
+                                                                onclick="slideRight(2)">&#10095;</button>
+                                                        </div>
+                                                        <p>MATTE</p>
+                                                        <div class="circle-slider">
+                                                            <button id="leftBtn3" class="slider-btn disabled"
+                                                                onclick="slideLeft(3)">&#10094;</button>
+                                                            <div class="slider-container-pallet">
+                                                                <div id="sliderTrack3" class="slider-track">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-silver.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'matte-metallic-silver')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-white.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'matte-white')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-aubergine-bronze.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'matte-aubergine-bronze')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-silver-rose.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'matte-cinder-rose-metallic')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-bronze.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'matte-bronze')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-blue.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'matte-metallic-blue')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-copper-brown.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'matte-metallic-copper-brown')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-grey.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'matte-metallic-grey')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-midnight-purple.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'matte-midnight-purple')">
+                                                                </div>
+                                                            </div>
+                                                            <button id="rightBtn3" class="slider-btn"
+                                                                onclick="slideRight(3)">&#10095;</button>
+                                                        </div>
+                                                        <p>SATIN</p>
+                                                        <div class="circle-slider">
+                                                            <button id="leftBtn4" class="slider-btn disabled"
+                                                                onclick="slideLeft(4)">&#10094;</button>
+                                                            <div class="slider-container-pallet">
+                                                                <div id="sliderTrack4" class="slider-track">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-black.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'satin-black')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-graphite-metallic.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'satin-graphite-metallic')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-dark-basalt-metallic.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'satin-dark-basalt-metallic')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-kaki-green.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'satin-kaki-green')">
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-rose-gold.png"
+                                                                        class="circle"
+                                                                        onclick="selectWheelColor(this, 'satin-rose-gold')">
+                                                                </div>
+                                                            </div>
+                                                            <button id="rightBtn4" class="slider-btn"
+                                                                onclick="slideRight(4)">&#10095;</button>
+                                                        </div>
+                                                    </div>
+                                            </div>
                                             <div class="tab-content" id="divResume" style="display: none;">
                                                 <div class="item-container ng-star-inserted" style="margin-top: 50px;">
                                                     <app-list-item _nghost-bic-c69="">
@@ -2350,12 +2367,13 @@
                                                                     class="img-container ng-star-inserted">
                                                                     <span
                                                                         style="text-transform: uppercase;font-size: larger;"
-                                                                        id="resume_brand"><span>
+                                                                        id="resume_brand">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </app-list-item>
                                                 </div>
+                                                
                                                 <div class="item-container ng-star-inserted" style="margin-top: 50px;">
                                                     <app-list-item _nghost-bic-c69="">
                                                         <div _ngcontent-bic-c69="" class="containerParam">
@@ -2982,39 +3000,39 @@
                                                 <div class="item-container " id="25">
                                                 </div>
 
-                                              
+
                                             </div>
                                         </div>
                                     </div>
 
                                 </app-navigation>
 
-                              
+
                             </div>
                         </app-configuration-panel>
 
-                      
+
 
                     </div>
 
-                  
-                  
-                  
+
+
+
                 </div>
                 <div _ngcontent-bic-c80="" class="loading-indicator ">
                     <div _ngcontent-bic-c80="" class="slider-container "></div>
                 </div>
                 <div _ngcontent-bic-c80="" class="loading-indicator-spinner "></div>
                 <div _ngcontent-bic-c80="" class="loading-indicator-turntable ">
-                  
-                  
-                  
+
+
+
                 </div>
-              
+
             </app-configuration-area>
-          
+
         </app-model-selection>
-      
+
         <div class="loading-indicator"></div>
     </app-root>
     <script>
@@ -3550,7 +3568,7 @@
         }
         function divWheelOption(value, id) {
             const divWheelOption = document.getElementById(id);
-            divWheelOption.setAttribute("style", "display:" + value + "");
+            divWheelOption.style.display = value;
         }
 
         // Initialize the slider
@@ -3726,7 +3744,7 @@
 
         function selectRegion() {
             let selectedRegion = document.getElementById("region").value;
-            fetchMake(selectedRegion);
+            //fetchMake(selectedRegion);
         }
         function selectYear(element, year) {
             resetSelect('.year-option');
@@ -4066,9 +4084,11 @@
             menu.classList.toggle('active');
             console.log(menu);
             if (menuIndex === 0) {
-                divWheelOption("block", "divCarColor");
+                console.log("menuindex", menuIndex);
+                showSubMenu('divCarColor');
             }
             if (menuIndex === 1) {
+                showSubMenu('divWheelModel');
                 let resume_wheel_option = document.getElementById("resume_wheel_option");
 
                 // Get all images with class 'wheel-option-1'
@@ -4081,6 +4101,9 @@
                         wheelOptions[i].classList.add('selected'); // Adding a class for styling
                     }
                 }
+            }
+            if(menuIndex === 2){
+                showSubMenu('divSubMenuWheelColor');
             }
         }
 
@@ -4105,46 +4128,46 @@
 
         ];
 
-        function updateButtons(menuIndex) {
-            const sliderData = sliders[menuIndex];
-            const leftBtn = document.getElementById('leftBtn' + menuIndex);
-            const rightBtn = document.getElementById('rightBtn' + menuIndex);
-            const maxPosition = sliderData.circleWidth * (sliderData.totalCircles - sliderData.visibleCircles);
+        // function updateButtons(menuIndex) {
+        //     const sliderData = sliders[menuIndex];
+        //     const leftBtn = document.getElementById('leftBtn' + menuIndex);
+        //     const rightBtn = document.getElementById('rightBtn' + menuIndex);
+        //     const maxPosition = sliderData.circleWidth * (sliderData.totalCircles - sliderData.visibleCircles);
 
-            leftBtn.disabled = (sliderData.position === 0);
-            rightBtn.disabled = (sliderData.position >= maxPosition);
+        //     leftBtn.disabled = (sliderData.position === 0);
+        //     rightBtn.disabled = (sliderData.position >= maxPosition);
 
-            leftBtn.classList.toggle('disabled', leftBtn.disabled);
-            rightBtn.classList.toggle('disabled', rightBtn.disabled);
-        }
+        //     leftBtn.classList.toggle('disabled', leftBtn.disabled);
+        //     rightBtn.classList.toggle('disabled', rightBtn.disabled);
+        // }
 
-        function slideLeft(menuIndex) {
-            const sliderTrack = document.getElementById('sliderTrack' + menuIndex);
-            const sliderData = sliders[menuIndex];
+        // function slideLeft(menuIndex) {
+        //     const sliderTrack = document.getElementById('sliderTrack' + menuIndex);
+        //     const sliderData = sliders[menuIndex];
 
-            if (sliderData.position > 0) {
-                sliderData.position -= sliderData.circleWidth;
-                sliderTrack.style.transform = `translateX(-${sliderData.position}px)`;
-            }
+        //     if (sliderData.position > 0) {
+        //         sliderData.position -= sliderData.circleWidth;
+        //         sliderTrack.style.transform = `translateX(-${sliderData.position}px)`;
+        //     }
 
-            updateButtons(menuIndex);
-        }
+        //     updateButtons(menuIndex);
+        // }
 
-        function slideRight(menuIndex) {
-            const sliderTrack = document.getElementById('sliderTrack' + menuIndex);
-            const sliderData = sliders[menuIndex];
-            const maxPosition = sliderData.circleWidth * (sliderData.totalCircles - sliderData.visibleCircles);
+        // function slideRight(menuIndex) {
+        //     const sliderTrack = document.getElementById('sliderTrack' + menuIndex);
+        //     const sliderData = sliders[menuIndex];
+        //     const maxPosition = sliderData.circleWidth * (sliderData.totalCircles - sliderData.visibleCircles);
 
-            if (sliderData.position < maxPosition) {
-                sliderData.position += sliderData.circleWidth;
-                sliderTrack.style.transform = `translateX(-${sliderData.position}px)`;
-            }
+        //     if (sliderData.position < maxPosition) {
+        //         sliderData.position += sliderData.circleWidth;
+        //         sliderTrack.style.transform = `translateX(-${sliderData.position}px)`;
+        //     }
 
-            updateButtons(menuIndex);
-        }
+        //     updateButtons(menuIndex);
+        // }
 
-        // Initialize the button state on page load for each slider
-        sliders.forEach((_, index) => updateButtons(index));
+        // // Initialize the button state on page load for each slider
+        // sliders.forEach((_, index) => updateButtons(index));
     </script>
     <!--<button onclick="generatePDF()">Télécharger</button>-->
 
@@ -4422,4 +4445,37 @@
             updateCustomTabs();
         };
         document.addEventListener('DOMContentLoaded', updateCustomTabs);
+    </script>
+    <script>
+        // Exemple de données couleurs (à adapter selon ton besoin)
+        const carColors = [
+            '#000', '#fff', '#f00', '#0f0', '#00f', '#ff0', '#0ff', '#f0f', '#888', '#444', '#ccc', '#bada55', '#123456', '#abcdef', '#654321'
+        ];
+
+        function renderCarColors(colors) {
+            const container = document.querySelector('.palet-container');
+            if (!container) return;
+            container.innerHTML = '';
+            colors.forEach((color, i) => {
+                const div = document.createElement('div');
+                div.className = 'car-color';
+                div.style.background = color;
+                // Optionnel : gestion du clic ou d'autres attributs
+                container.appendChild(div);
+            });
+        }
+
+        // Appeler cette fonction à l'ouverture du menu couleur
+        function showSubMenu(div) {
+            if(div == 'divCarColor'){
+                renderCarColors(carColors);
+            }
+            divWheelOption('block', div);
+            divWheelOption('none', 'divPalletOption');
+        }
+
+        function hideSubMenu(div) {
+            divWheelOption('none', div);
+            divWheelOption('block', 'divPalletOption');
+        }
     </script>
