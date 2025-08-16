@@ -372,8 +372,7 @@
 
         .nav-bar .mat-tab-labels {
             justify-content: space-between;
-            /* padding: 0 45px */
-            text-align: center;
+            padding: 0 45px
         }
 
         @media (orientation: portrait) and (max-width: 440px) {
@@ -881,36 +880,6 @@
         }
     </style>
     <style>
-        .front-rear-tabs {
-            display: flex;
-            gap: 10px;
-            margin: 10px 50px 0 50px;
-            flex-wrap: nowrap;
-            align-content: center;
-            justify-content: center;
-        }
-
-        .front-rear-tabs .fr-tab {
-            padding: 6px 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            background: #fff;
-            color: #222;
-            cursor: pointer;
-        }
-
-        .front-rear-tabs .fr-tab.active {
-            background: #fff;
-            color: #fff;
-            border-color: #222;
-        }
-
-        .front-rear-tabs .fr-tab.disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-    </style>
-    <style>
         .slider1-container {
             text-align: center;
             /*max-width: 300px;*/
@@ -929,18 +898,6 @@
             display: flex;
             justify-content: center;
             margin-left: 450px;
-        }
-
-        .arrow-previous {
-            cursor: pointer;
-            font-size: 24px;
-            color: #ffffff;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            margin-left: 20px;
-            margin-top: -25px;
-            z-index: 1000;
         }
 
         .arrow-up {
@@ -1115,8 +1072,9 @@
 
         .badge {
             position: absolute;
-            padding: 1px 8px 0px 10px;
-            right: 90px;
+            top: -10px;
+            right: -10px;
+            padding: 5px 10px;
             font-size: 12px;
             border-radius: 50%;
             background-color: #fff;
@@ -1260,7 +1218,6 @@
             margin-bottom: 36px;
             width: 400px;
             margin-left: 10px;
-            margin-top: 71px;
         }
 
         .palet-container {
@@ -1289,18 +1246,18 @@
         }
 
         .car-color {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             background-color: black;
             border-radius: 50%;
-            flex: 0 0 80px;
+            flex: 0 0 50px;
         }
 
         .circle {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
-            flex: 0 0 80px;
+            flex: 0 0 50px;
         }
 
         .circle.selected {
@@ -1496,7 +1453,6 @@
                                                             </div>
                                                             <div class="arrow arrow-down" id="arrow-next"
                                                                 onclick="nextStep()">&#9654;</div>
-
                                                         </div>
                                                     </div>
                                                     <button aria-hidden="true" type="button" mat-ripple="" tabindex="-1"
@@ -1538,368 +1494,189 @@
                                                     <div _ngcontent-bic-c69="" class="containerCarChoice"
                                                         style="text-align: center;">
                                                         <div _ngcontent-bic-c69="" class="text-area">
-                                                            <div
-                                                                style="display: flex;align-items: center;gap: 32px;justify-content: space-around;">
-                                                                <div class="slider-item" style="margin-bottom: 0;">
-                                                                    <label style="margin-right: 8px;">Région</label>
-                                                                    <select name="region" id="region"
-                                                                        onchange="selectRegion()"
-                                                                        style="width: 150px;text-align: center;background-color: #fff;border-color: #aaa;">
-                                                                        <option value="usdm">USA+</option>
-                                                                        <option value="cdm">Canada</option>
-                                                                        <option value="mxndm">Mexico</option>
-                                                                        <option value="ladm">Central & South America
-                                                                        </option>
-                                                                        <option value="eudm" selected>Europe</option>
-                                                                        <option value="russia">Russia+</option>
-                                                                        <option value="jdm">Japan</option>
-                                                                        <option value="chdm">China</option>
-                                                                        <option value="skdm">South Korea</option>
-                                                                        <option value="sam">Southeast Asia</option>
-                                                                        <option value="medm">Middle East</option>
-                                                                        <option value="nadm">North Africa</option>
-                                                                        <option value="sadm">South Africa</option>
-                                                                        <option value="audm">Oceania</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div style="margin-bottom: 0;">
-                                                                    <label for="brandOrder"
-                                                                        style="margin-right: 8px;">Filtrer:</label><br>
-                                                                    <select id="brandOrder" onchange="filterBrands()"
-                                                                        style="width: 180px;height: 40px;text-align: center;background-color: #fff;border-color: #aaa;font-size: 10px;">
+                                                            <div class="slider-item">
+                                                                <label>Région</label>
+                                                                <select name="region" id="region"
+                                                                    onchange="selectRegion()"
+                                                                    style="width: 150px;text-align: center;background-color: #fff;border-color: #aaa;">
+                                                                    <option value="usdm">USA+</option>
+                                                                    <option value="cdm">Canada</option>
+                                                                    <option value="mxndm">Mexico</option>
+                                                                    <option value="ladm">Central & South America
+                                                                    </option>
+                                                                    <option value="eudm" selected>Europe</option>
+                                                                    <option value="russia">Russia+</option>
+                                                                    <option value="jdm">Japan</option>
+                                                                    <option value="chdm">China</option>
+                                                                    <option value="skdm">South Korea</option>
+                                                                    <option value="sam">Southeast Asia</option>
+                                                                    <option value="medm">Middle East</option>
+                                                                    <option value="nadm">North Africa</option>
+                                                                    <option value="sadm">South Africa</option>
+                                                                    <option value="audm">Oceania</option>
+                                                                </select>
 
-                                                                        <option value="popular" selected>Marques
-                                                                            populaires</option>
-                                                                        <option value="alphabetical">Ordre alphabétique
-                                                                        </option>
+
+
+
+
+
+
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </app-list-item>
+                                            </mat-tab-group>
+                                            <div class="tab-content" id="divWheelOption" style="display: none;">
+                                                <div class="item-container ng-star-inserted" id="0"
+                                                    style="margin-top: 50px;">
+                                                    <app-list-item _nghost-bic-c69="">
+                                                        <div _ngcontent-bic-c69="" class="containerParam">
+                                                            <div _ngcontent-bic-c69="" class="text-area">
+                                                                <div _ngcontent-bic-c69="" class="title-section">
+                                                                    <span _ngcontent-bic-c69=""
+                                                                        style="font-size: large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Taille</span>
+                                                                </div>
+                                                            </div>
+                                                            <div _ngcontent-bic-c69="" class="img-area"
+                                                                style="margin-right: 30px;">
+                                                                <div _ngcontent-bic-c69=""
+                                                                    class="img-container ng-star-inserted">
+                                                                    <select class="dynamic-select" id="rim_diameter"
+                                                                        onchange="handleRimOffsetChange(this)">
+                                                                        <!-- Ajoutez d'autres options si nécessaire -->
                                                                     </select>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div style="text-align: right;">
-
-                                                    </div>
-                                                </app-list-item>
-
-                                            </mat-tab-group>
-                                            <div class="tab-content" id="divWheelOption" style="display: none;">
-                                                <div class="front-rear-tabs" id="frontRearTabsWheelOption">
-                                                    <button type="button" class="fr-tab front-tab active" onclick="
-                                                        document.querySelector('.front-tab').classList.add('active');
-                                                        document.querySelector('.rear-tab').classList.remove('active');
-                                                        document.getElementById('divWheelOptionFront').style.display = 'block';
-                                                        document.getElementById('divWheelOptionRear').style.display = 'none';
-                                                    ">Avant</button>
-                                                    <button type="button" class="fr-tab rear-tab" onclick="
-                                                        document.querySelector('.rear-tab').classList.add('active');
-                                                        document.querySelector('.front-tab').classList.remove('active');
-                                                        document.getElementById('divWheelOptionFront').style.display = 'none';
-                                                        document.getElementById('divWheelOptionRear').style.display = 'block';
-                                                    ">Arrière</button>
+                                                    </app-list-item>
                                                 </div>
-                                                <div id="divWheelOptionFront">
-                                                    <div class="item-container ng-star-inserted" id="0"
-                                                        style="margin-top: 50px;">
-                                                        <app-list-item _nghost-bic-c69="">
-                                                            <div _ngcontent-bic-c69="" class="containerParam">
-                                                                <div _ngcontent-bic-c69="" class="text-area">
-                                                                    <div _ngcontent-bic-c69="" class="title-section">
-                                                                        <span _ngcontent-bic-c69=""
-                                                                            style="font-size: large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Taille</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div _ngcontent-bic-c69="" class="img-area"
-                                                                    style="margin-right: 30px;">
-                                                                    <div _ngcontent-bic-c69=""
-                                                                        class="img-container ng-star-inserted">
-                                                                        <select class="dynamic-select" id="rim_diameter"
-                                                                            onchange="handleRimOffsetChange(this)">
-                                                                            <!-- Ajoutez d'autres options si nécessaire -->
-                                                                        </select>
-                                                                    </div>
+                                                <div class="item-container ng-star-inserted" id="1"
+                                                    style="margin-top: 50px;">
+                                                    <app-list-item _nghost-bic-c69="">
+                                                        <div _ngcontent-bic-c69="" class="containerParam">
+                                                            <div _ngcontent-bic-c69="" class="text-area">
+                                                                <div _ngcontent-bic-c69="" class="title-section">
+                                                                    <span _ngcontent-bic-c69=""
+                                                                        style="font-size: large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Alesage
+                                                                        Central</span>
                                                                 </div>
                                                             </div>
-                                                        </app-list-item>
-                                                    </div>
-                                                    <div class="item-container ng-star-inserted" id="1"
-                                                        style="margin-top: 50px;">
-                                                        <app-list-item _nghost-bic-c69="">
-                                                            <div _ngcontent-bic-c69="" class="containerParam">
-                                                                <div _ngcontent-bic-c69="" class="text-area">
-                                                                    <div _ngcontent-bic-c69="" class="title-section">
-                                                                        <span _ngcontent-bic-c69=""
-                                                                            style="font-size: large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Alesage
-                                                                            Central</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div _ngcontent-bic-c69="" class="img-area"
-                                                                    style="margin-right: 30px;">
-                                                                    <div _ngcontent-bic-c69=""
-                                                                        class="img-container ng-star-inserted">
-                                                                        <select class="dynamic-select" id="centre_bore">
-                                                                            <!-- Ajoutez d'autres options si nécessaire -->
-                                                                        </select>
-                                                                    </div>
+                                                            <div _ngcontent-bic-c69="" class="img-area"
+                                                                style="margin-right: 30px;">
+                                                                <div _ngcontent-bic-c69=""
+                                                                    class="img-container ng-star-inserted">
+                                                                    <select class="dynamic-select" id="centre_bore">
+                                                                        <!-- Ajoutez d'autres options si nécessaire -->
+                                                                    </select>
                                                                 </div>
                                                             </div>
-                                                        </app-list-item>
-                                                    </div>
-                                                    <div class="item-container ng-star-inserted" id="2"
-                                                        style="margin-top: 50px;">
-                                                        <app-list-item _nghost-bic-c69="">
-                                                            <div _ngcontent-bic-c69="" class="containerParam">
-                                                                <div _ngcontent-bic-c69="" class="text-area">
-                                                                    <div _ngcontent-bic-c69="" class="title-section">
-                                                                        <span _ngcontent-bic-c69=""
-                                                                            style="font-size: large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Entraxe</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div _ngcontent-bic-c69="" class="img-area"
-                                                                    style="margin-right: 30px;">
-                                                                    <div _ngcontent-bic-c69=""
-                                                                        class="img-container ng-star-inserted">
-                                                                        <select class="dynamic-select"
-                                                                            id="bolt_pattern">
-                                                                            <!-- Ajoutez d'autres options si nécessaire -->
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </app-list-item>
-                                                    </div>
-                                                    <div class="item-container ng-star-inserted" id="3"
-                                                        style="margin-top: 50px;">
-                                                        <app-list-item _nghost-bic-c69="">
-                                                            <div _ngcontent-bic-c69="" class="containerParam">
-                                                                <div _ngcontent-bic-c69="" class="text-area">
-                                                                    <div _ngcontent-bic-c69="" class="title-section">
-                                                                        <span _ngcontent-bic-c69=""
-                                                                            style="font-size: large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Déport</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div _ngcontent-bic-c69="" class="img-area"
-                                                                    style="margin-right: 30px;">
-                                                                    <div _ngcontent-bic-c69=""
-                                                                        class="img-container ng-star-inserted">
-                                                                        <select class="dynamic-select" id="rim_offset">
-                                                                            <!-- Ajoutez d'autres options si nécessaire -->
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </app-list-item>
-                                                    </div>
-                                                    <div class="item-container ng-star-inserted" id="4"
-                                                        style="margin-top: 50px;">
-                                                        <app-list-item _nghost-bic-c69="">
-                                                            <div _ngcontent-bic-c69="" class="containerParam">
-                                                                <div _ngcontent-bic-c69="" class="text-area">
-                                                                    <div _ngcontent-bic-c69="" class="title-section">
-                                                                        <span _ngcontent-bic-c69=""
-                                                                            style="font-size: large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Taille
-                                                                            de Filletage </span>
-                                                                    </div>
-                                                                </div>
-                                                                <div _ngcontent-bic-c69="" class="img-area"
-                                                                    style="margin-right: 30px;">
-                                                                    <div _ngcontent-bic-c69=""
-                                                                        class="img-container ng-star-inserted">
-                                                                        <select class="dynamic-select" id="thread_size">
-                                                                            <!-- Ajoutez d'autres options si nécessaire -->
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </app-list-item>
-                                                    </div>
-                                                    <div class="item-container ng-star-inserted" id="5"
-                                                        style="margin-top: 50px;">
-                                                        <app-list-item _nghost-bic-c69="">
-                                                            <div _ngcontent-bic-c69="" class="containerParam">
-                                                                <div _ngcontent-bic-c69="" class="text-area"
-                                                                    style="margin-left: 15px;">
-                                                                    <div _ngcontent-bic-c69="" class="title-section">
-                                                                        <div class="checkbox">
-                                                                            <span
-                                                                                style="margin-right: 200px;font-size: large;">Conserver
-                                                                                les mêmes paramètres <br>avant et
-                                                                                arrière</span>
-                                                                            <label for="keepParamFrontBack"
-                                                                                class="custom-checkbox">
-                                                                                <input type="checkbox"
-                                                                                    id="keepParamFrontBack" checked>
-                                                                                <i class="fa-solid fa-square"></i>
-                                                                                <i class="fa-solid fa-square-check"></i>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div _ngcontent-bic-c69="" class="img-area"
-                                                                    style="margin-right: 30px;">
-                                                                    <div _ngcontent-bic-c69=""
-                                                                        class="img-container ng-star-inserted">
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </app-list-item>
-                                                    </div>
+                                                        </div>
+                                                    </app-list-item>
                                                 </div>
-                                                <div id="divWheelOptionRear" style="display: none;">
-                                                    <div class="item-container ng-star-inserted" id="0"
-                                                        style="margin-top: 50px;">
-                                                        <app-list-item _nghost-bic-c69="">
-                                                            <div _ngcontent-bic-c69="" class="containerParam">
-                                                                <div _ngcontent-bic-c69="" class="text-area">
-                                                                    <div _ngcontent-bic-c69="" class="title-section">
-                                                                        <span _ngcontent-bic-c69=""
-                                                                            style="font-size: large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Taille</span>
-                                                                    </div>
+                                                <div class="item-container ng-star-inserted" id="2"
+                                                    style="margin-top: 50px;">
+                                                    <app-list-item _nghost-bic-c69="">
+                                                        <div _ngcontent-bic-c69="" class="containerParam">
+                                                            <div _ngcontent-bic-c69="" class="text-area">
+                                                                <div _ngcontent-bic-c69="" class="title-section">
+                                                                    <span _ngcontent-bic-c69=""
+                                                                        style="font-size: large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Entraxe</span>
                                                                 </div>
-                                                                <div _ngcontent-bic-c69="" class="img-area"
-                                                                    style="margin-right: 30px;">
-                                                                    <div _ngcontent-bic-c69=""
-                                                                        class="img-container ng-star-inserted">
-                                                                        <select class="dynamic-select"
-                                                                            id="rim_diameter_rear"
-                                                                            onchange="handleRimOffsetChange(this)">
-                                                                            <!-- Ajoutez d'autres options si nécessaire -->
-                                                                        </select>
+                                                            </div>
+                                                            <div _ngcontent-bic-c69="" class="img-area"
+                                                                style="margin-right: 30px;">
+                                                                <div _ngcontent-bic-c69=""
+                                                                    class="img-container ng-star-inserted">
+                                                                    <select class="dynamic-select" id="bolt_pattern">
+                                                                        <!-- Ajoutez d'autres options si nécessaire -->
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </app-list-item>
+                                                </div>
+                                                <div class="item-container ng-star-inserted" id="3"
+                                                    style="margin-top: 50px;">
+                                                    <app-list-item _nghost-bic-c69="">
+                                                        <div _ngcontent-bic-c69="" class="containerParam">
+                                                            <div _ngcontent-bic-c69="" class="text-area">
+                                                                <div _ngcontent-bic-c69="" class="title-section">
+                                                                    <span _ngcontent-bic-c69=""
+                                                                        style="font-size: large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Déport</span>
+                                                                </div>
+                                                            </div>
+                                                            <div _ngcontent-bic-c69="" class="img-area"
+                                                                style="margin-right: 30px;">
+                                                                <div _ngcontent-bic-c69=""
+                                                                    class="img-container ng-star-inserted">
+                                                                    <select class="dynamic-select" id="rim_offset">
+                                                                        <!-- Ajoutez d'autres options si nécessaire -->
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </app-list-item>
+                                                </div>
+                                                <div class="item-container ng-star-inserted" id="4"
+                                                    style="margin-top: 50px;">
+                                                    <app-list-item _nghost-bic-c69="">
+                                                        <div _ngcontent-bic-c69="" class="containerParam">
+                                                            <div _ngcontent-bic-c69="" class="text-area">
+                                                                <div _ngcontent-bic-c69="" class="title-section">
+                                                                    <span _ngcontent-bic-c69=""
+                                                                        style="font-size: large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Taille
+                                                                        de Filletage </span>
+                                                                </div>
+                                                            </div>
+                                                            <div _ngcontent-bic-c69="" class="img-area"
+                                                                style="margin-right: 30px;">
+                                                                <div _ngcontent-bic-c69=""
+                                                                    class="img-container ng-star-inserted">
+                                                                    <select class="dynamic-select" id="thread_size">
+                                                                        <!-- Ajoutez d'autres options si nécessaire -->
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </app-list-item>
+                                                </div>
+                                                <div class="item-container ng-star-inserted" id="5"
+                                                    style="margin-top: 50px;">
+                                                    <app-list-item _nghost-bic-c69="">
+                                                        <div _ngcontent-bic-c69="" class="containerParam">
+                                                            <div _ngcontent-bic-c69="" class="text-area"
+                                                                style="margin-left: 15px;">
+                                                                <div _ngcontent-bic-c69="" class="title-section">
+                                                                    <div class="checkbox">
+                                                                        <span
+                                                                            style="margin-right: 200px;font-size: large;">Conserver
+                                                                            les mêmes paramètres <br>avant et
+                                                                            arrière</span>
+                                                                        <label for="keepParamFrontBack"
+                                                                            class="custom-checkbox">
+                                                                            <input type="checkbox"
+                                                                                id="keepParamFrontBack" checked>
+                                                                            <i class="fa-solid fa-square"></i>
+                                                                            <i class="fa-solid fa-square-check"></i>
+                                                                        </label>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </app-list-item>
-                                                    </div>
-                                                    <div class="item-container ng-star-inserted" id="1"
-                                                        style="margin-top: 50px;">
-                                                        <app-list-item _nghost-bic-c69="">
-                                                            <div _ngcontent-bic-c69="" class="containerParam">
-                                                                <div _ngcontent-bic-c69="" class="text-area">
-                                                                    <div _ngcontent-bic-c69="" class="title-section">
-                                                                        <span _ngcontent-bic-c69=""
-                                                                            style="font-size: large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Alesage
-                                                                            Central</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div _ngcontent-bic-c69="" class="img-area"
-                                                                    style="margin-right: 30px;">
-                                                                    <div _ngcontent-bic-c69=""
-                                                                        class="img-container ng-star-inserted">
-                                                                        <select class="dynamic-select"
-                                                                            id="centre_bore_rear">
-                                                                            <!-- Ajoutez d'autres options si nécessaire -->
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </app-list-item>
-                                                    </div>
-                                                    <div class="item-container ng-star-inserted" id="2"
-                                                        style="margin-top: 50px;">
-                                                        <app-list-item _nghost-bic-c69="">
-                                                            <div _ngcontent-bic-c69="" class="containerParam">
-                                                                <div _ngcontent-bic-c69="" class="text-area">
-                                                                    <div _ngcontent-bic-c69="" class="title-section">
-                                                                        <span _ngcontent-bic-c69=""
-                                                                            style="font-size: large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Entraxe</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div _ngcontent-bic-c69="" class="img-area"
-                                                                    style="margin-right: 30px;">
-                                                                    <div _ngcontent-bic-c69=""
-                                                                        class="img-container ng-star-inserted">
-                                                                        <select class="dynamic-select"
-                                                                            id="bolt_pattern_rear">
-                                                                            <!-- Ajoutez d'autres options si nécessaire -->
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </app-list-item>
-                                                    </div>
-                                                    <div class="item-container ng-star-inserted" id="3"
-                                                        style="margin-top: 50px;">
-                                                        <app-list-item _nghost-bic-c69="">
-                                                            <div _ngcontent-bic-c69="" class="containerParam">
-                                                                <div _ngcontent-bic-c69="" class="text-area">
-                                                                    <div _ngcontent-bic-c69="" class="title-section">
-                                                                        <span _ngcontent-bic-c69=""
-                                                                            style="font-size: large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Déport</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div _ngcontent-bic-c69="" class="img-area"
-                                                                    style="margin-right: 30px;">
-                                                                    <div _ngcontent-bic-c69=""
-                                                                        class="img-container ng-star-inserted">
-                                                                        <select class="dynamic-select"
-                                                                            id="rim_offset_rear">
-                                                                            <!-- Ajoutez d'autres options si nécessaire -->
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </app-list-item>
-                                                    </div>
-                                                    <div class="item-container ng-star-inserted" id="4"
-                                                        style="margin-top: 50px;">
-                                                        <app-list-item _nghost-bic-c69="">
-                                                            <div _ngcontent-bic-c69="" class="containerParam">
-                                                                <div _ngcontent-bic-c69="" class="text-area">
-                                                                    <div _ngcontent-bic-c69="" class="title-section">
-                                                                        <span _ngcontent-bic-c69=""
-                                                                            style="font-size: large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Taille
-                                                                            de Filletage </span>
-                                                                    </div>
-                                                                </div>
-                                                                <div _ngcontent-bic-c69="" class="img-area"
-                                                                    style="margin-right: 30px;">
-                                                                    <div _ngcontent-bic-c69=""
-                                                                        class="img-container ng-star-inserted">
-                                                                        <select class="dynamic-select"
-                                                                            id="thread_size_rear">
-                                                                            <!-- Ajoutez d'autres options si nécessaire -->
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </app-list-item>
-                                                    </div>
-                                                    <script>
-                                                        // Fonction pour activer/désactiver les selects arrière selon la checkbox
-                                                        function updateRearSelectsDisabledState() {
-                                                            var keepParam = document.getElementById('keepParamFrontBack');
-                                                            var disabled = keepParam && keepParam.checked;
-                                                            var rearSelectIds = [
-                                                                'rim_diameter_rear',
-                                                                'centre_bore_rear',
-                                                                'bolt_pattern_rear',
-                                                                'rim_offset_rear',
-                                                                'thread_size_rear'
-                                                            ];
-                                                            rearSelectIds.forEach(function (id) {
-                                                                var el = document.getElementById(id);
-                                                                if (el) el.disabled = disabled;
-                                                            });
-                                                        }
+                                                            <div _ngcontent-bic-c69="" class="img-area"
+                                                                style="margin-right: 30px;">
+                                                                <div _ngcontent-bic-c69=""
+                                                                    class="img-container ng-star-inserted">
 
-                                                        // Ajoute l'écouteur sur la checkbox
-                                                        document.addEventListener('DOMContentLoaded', function () {
-                                                            var keepParam = document.getElementById('keepParamFrontBack');
-                                                            if (keepParam) {
-                                                                keepParam.addEventListener('change', updateRearSelectsDisabledState);
-                                                                updateRearSelectsDisabledState();
-                                                            }
-                                                        });
-                                                    </script>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </app-list-item>
                                                 </div>
                                             </div>
                                             <div class="tab-content" id="divWheelFreeOption" style="display: none;">
-                                                <div class="front-rear-tabs" id="frontRearTabsWheelFreeOption">
-                                                    <button type="button" class="fr-tab front-tab active">Avant</button>
-                                                    <button type="button" class="fr-tab rear-tab">Arrière</button>
-                                                </div>
-
                                                 <div class="item-container ng-star-inserted" id="0"
                                                     style="margin-top: 50px;">
                                                     <app-list-item _nghost-bic-c69="">
@@ -2066,7 +1843,7 @@
 
                                                     </app-list-item>
                                                     <!-- <div id="circleMenu0" class="circle-menu-wheel">
-                                                        <div >
+                                                        <div class="circle-slider">
                                                             <button id="leftBtn0" class="slider-btn disabled"
                                                                 onclick="slideLeft(0)">&#10094;</button>
                                                             <div class="slider-container">
@@ -2090,9 +1867,9 @@
                                                                 <div _ngcontent-bic-c69="" class="title-section">
                                                                     <span _ngcontent-bic-c69=""
                                                                         style="font-size: large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Jante
-                                                                    </span><br>
+                                                                    </span>
                                                                     <span id="resume_wheelColor_name"
-                                                                        style="font-size: small;margin-left: 50px;"></span>
+                                                                        style="font-size: small;"></span>
                                                                 </div>
                                                             </div>
                                                             <div _ngcontent-bic-c69="" class="img-area"
@@ -2102,7 +1879,7 @@
                                                                     <img src="https://paris-performance.com/wp-content/uploads/2024/09/PNTA_000880227.png"
                                                                         id="resume_wheelColor" onclick="toggleMenu(2)"
                                                                         class="wheel-option"
-                                                                        style="width: 65px;height: 65px;border-radius: 50%;margin-top: -30px;">
+                                                                        style="width: 50px;height: 50px;border-radius: 50%;margin-top: -20px;">
                                                                     <img src="https://paris-performance.com/wp-content/uploads/2024/06/main.29V2-1-scaled-e1718040438520.jpg"
                                                                         id="resume_wheel_option"
                                                                         onclick="toogleMenuJante()" class="wheel-option"
@@ -2142,9 +1919,9 @@
                                                                 <div _ngcontent-bic-c69="" class="title-section">
                                                                     <span _ngcontent-bic-c69=""
                                                                         style="font-size: large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Cache
-                                                                        moyeux</span><br>
+                                                                        moyeux</span>
                                                                     <span id="resume_CM_Color_name"
-                                                                        style="font-size: small;margin-left: 50px;"></span>
+                                                                        style="font-size: small;"></span>
                                                                 </div>
                                                             </div>
                                                             <div _ngcontent-bic-c69="" class="img-area"
@@ -2160,6 +1937,116 @@
                                                         </div>
                                                     </app-list-item>
                                                 </div>
+                                                <div id="circleMenu3" class="circle-menu">
+                                                    <p>GLOSS</p>
+                                                    <div class="circle-slider">
+                                                        <button id="leftBtn5" class="slider-btn disabled"
+                                                            onclick="slideLeft(5)">&#10094;</button>
+                                                        <div class="slider-container-pallet">
+                                                            <div id="sliderTrack5" class="slider-track">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-chrome.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-chrome')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-metallic-black.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-metallic-black')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-metallic-silver.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-metallic-silver')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-white.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-white')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-anthracite.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-anthracite')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-champagne-gold-metallic.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-champagne-gold-metallic')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-gold-glitter.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-gold-glitter')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-aubergine-bronze.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-aubergine-bronze')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-cinder-rose-metallic.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-cinder-rose-metallic')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-amber-gold.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-amber-gold')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-bronze.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-bronze')">
+                                                            </div>
+                                                        </div>
+                                                        <button id="rightBtn5" class="slider-btn"
+                                                            onclick="slideRight(5)">&#10095;</button>
+                                                    </div>
+                                                    <p>MATTE</p>
+                                                    <div class="circle-slider">
+                                                        <button id="leftBtn6" class="slider-btn disabled"
+                                                            onclick="slideLeft(6)">&#10094;</button>
+                                                        <div class="slider-container-pallet">
+                                                            <div id="sliderTrack6" class="slider-track">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-silver.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'matte-metallic-silver')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-white.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'matte-white')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-aubergine-bronze.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'matte-aubergine-bronze')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-silver-rose.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'matte-cinder-rose-metallic')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-bronze.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'matte-bronze')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-blue.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'matte-metallic-blue')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-copper-brown.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'matte-metallic-copper-brown')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-grey.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'matte-metallic-grey')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-midnight-purple.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'matte-midnight-purple')">
+                                                            </div>
+                                                        </div>
+                                                        <button id="rightBtn6" class="slider-btn"
+                                                            onclick="slideRight(6)">&#10095;</button>
+                                                    </div>
+                                                    <p>SATIN</p>
+                                                    <div class="circle-slider">
+                                                        <button id="leftBtn7" class="slider-btn disabled"
+                                                            onclick="slideLeft(7)">&#10094;</button>
+                                                        <div class="slider-container-pallet">
+                                                            <div id="sliderTrack7" class="slider-track">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-black.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'satin-black')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-graphite-metallic.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'satin-graphite-metallic')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-dark-basalt-metallic.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'satin-dark-basalt-metallic')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-kaki-green.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'satin-kaki-green')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-rose-gold.png"
+                                                                    class="circle"
+                                                                    onclick="selectCacheMoyeuxColor(this, 'satin-rose-gold')">
+                                                            </div>
+                                                        </div>
+                                                        <button id="rightBtn7" class="slider-btn"
+                                                            onclick="slideRight(7)">&#10095;</button>
+                                                    </div>
+                                                </div>
                                                 <div class="item-container ng-star-inserted" id="2"
                                                     style="margin-top: 50px;">
                                                     <app-list-item _nghost-bic-c69="">
@@ -2167,9 +2054,7 @@
                                                             <div _ngcontent-bic-c69="" class="text-area">
                                                                 <div _ngcontent-bic-c69="" class="title-section">
                                                                     <span _ngcontent-bic-c69=""
-                                                                        style="font-size: large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Boulons</span><br>
-                                                                    <span id="resume_Boulons_Color_name"
-                                                                        style="font-size: small;margin-left: 50px;"></span>
+                                                                        style="font-size: large;margin-left: 50px;color: rgba(255, 255, 255, 0.84);text-transform: uppercase;">Boulons</span>
                                                                 </div>
                                                             </div>
                                                             <div _ngcontent-bic-c69="" class="img-area"
@@ -2184,6 +2069,116 @@
                                                             </div>
                                                         </div>
                                                     </app-list-item>
+                                                </div>
+                                                <div id="circleMenu4" class="circle-menu">
+                                                    <p>GLOSS</p>
+                                                    <div class="circle-slider">
+                                                        <button id="leftBtn8" class="slider-btn disabled"
+                                                            onclick="slideLeft(8)">&#10094;</button>
+                                                        <div class="slider-container-pallet">
+                                                            <div id="sliderTrack8" class="slider-track">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-chrome.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'gloss-chrome')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-metallic-black.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'gloss-metallic-black')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-metallic-silver.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'gloss-metallic-silver')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-white.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'gloss-white')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-anthracite.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'gloss-anthracite')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-champagne-gold-metallic.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'gloss-champagne-gold-metallic')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-gold-glitter.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'gloss-gold-glitter')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-aubergine-bronze.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'gloss-aubergine-bronze')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-cinder-rose-metallic.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'gloss-cinder-rose-metallic')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-amber-gold.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'gloss-amber-gold')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-bronze.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'gloss-bronze')">
+                                                            </div>
+                                                        </div>
+                                                        <button id="rightBtn8" class="slider-btn"
+                                                            onclick="slideRight(8)">&#10095;</button>
+                                                    </div>
+                                                    <p>MATTE</p>
+                                                    <div class="circle-slider">
+                                                        <button id="leftBtn9" class="slider-btn disabled"
+                                                            onclick="slideLeft(9)">&#10094;</button>
+                                                        <div class="slider-container-pallet">
+                                                            <div id="sliderTrack9" class="slider-track">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-silver.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'matte-metallic-silver')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-white.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'matte-white')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-aubergine-bronze.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'matte-aubergine-bronze')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-silver-rose.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'matte-cinder-rose-metallic')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-bronze.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'matte-bronze')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-blue.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'matte-metallic-blue')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-copper-brown.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'matte-metallic-copper-brown')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-grey.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'matte-metallic-grey')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-midnight-purple.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'matte-midnight-purple')">
+                                                            </div>
+                                                        </div>
+                                                        <button id="rightBtn9" class="slider-btn"
+                                                            onclick="slideRight(9)">&#10095;</button>
+                                                    </div>
+                                                    <p>SATIN</p>
+                                                    <div class="circle-slider">
+                                                        <button id="leftBtn10" class="slider-btn disabled"
+                                                            onclick="slideLeft(10)">&#10094;</button>
+                                                        <div class="slider-container-pallet">
+                                                            <div id="sliderTrack10" class="slider-track">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-black.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'satin-black')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-graphite-metallic.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'satin-graphite-metallic')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-dark-basalt-metallic.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'satin-dark-basalt-metallic')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-kaki-green.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'satin-kaki-green')">
+                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-rose-gold.png"
+                                                                    class="circle"
+                                                                    onclick="selectBoulonsColor(this, 'satin-rose-gold')">
+                                                            </div>
+                                                        </div>
+                                                        <button id="rightBtn10" class="slider-btn"
+                                                            onclick="slideRight(10)">&#10095;</button>
+                                                    </div>
                                                 </div>
                                                 <div class="item-container ng-star-inserted" id="3"
                                                     style="margin-top: 50px;">
@@ -2211,8 +2206,11 @@
 
                                             </div>
                                             <div class="tab-content" id="divCarColor" style="display: none;">
-                                                <div id="circleMenu0" class="circle-menu" style="height: 400px;">
-                                                    <div onclick="hideSubMenu('divCarColor')">
+                                                <div id="circleMenu0" class="circle-menu" style="height: 600px;">
+                                                    <div class="arrow arrow-down" onclick="hideSubMenu('divCarColor')">
+                                                        &#9664;
+                                                    </div>
+                                                    <div class="arrow arrow-down" onclick="hideSubMenu('divCarColor')">
                                                         &#9664;
                                                     </div>
                                                     <div class="list-palet">
@@ -2225,9 +2223,11 @@
                                                 <div class="arrow arrow-down" onclick="hideSubMenu('divWheelModel')">
                                                     &#9664;</div>
                                                 <div id="circleMenu1" class="circle-menu-wheel">
-                                                    <div>
-                                                        <div class="list-palet">
-                                                            <div class="palet-container">
+                                                    <div class="circle-slider">
+                                                        <button id="leftBtn1" class="slider-btn disabled"
+                                                            onclick="slideLeft(1)">&#10094;</button>
+                                                        <div class="slider-container-pallet">
+                                                            <div id="sliderTrack1" class="slider-track">
                                                                 <img src="https://paris-performance.com/wp-content/uploads/2024/06/main.29V2-1-scaled-e1718040438520.jpg"
                                                                     class="wheel-option-1 selected"
                                                                     onclick="selectWheel(this, 'PP-O1 : LUTECE','https://paris-performance.com/wp-content/uploads/2024/06/main.29V2-1-scaled-e1718040438520.jpg')">
@@ -2242,17 +2242,17 @@
                                                                     onclick="selectWheel(this, 'PP-O4 : GALION','https://paris-performance.com/wp-content/uploads/2024/06/main.30v2-scaled.jpg')">
                                                             </div>
                                                         </div>
-
+                                                        <button id="rightBtn1" class="slider-btn"
+                                                            onclick="slideRight(1)">&#10095;</button>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="tab-content" id="divSubMenuWheelColor" style="display: none;">
                                                 <div class="arrow arrow-down"
                                                     onclick="hideSubMenu('divSubMenuWheelColor')">&#9664;</div>
-                                                <div id="circleMenu2" class="circle-menu" style="overflow-y: auto;">
-
-                                                    <div class="list-palet" style="margin-top: 500px;">
-                                                        <p style="text-align: center;">GLOSS</p>
+                                                <div id="circleMenu2" class="circle-menu">
+                                                    <p>GLOSS</p>
+                                                    <div class="list-palet">
                                                         <div class="palet-container">
                                                             <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-chrome.png"
                                                                 class="circle"
@@ -2289,17 +2289,23 @@
                                                                 onclick="selectWheelColor(this, 'gloss-bronze')">
                                                         </div>
                                                     </div>
-                                                    <div>
-                                                        <div class="list-palet">
-                                                            <div class="palet-container">
+                                                    <div class="circle-slider">
+                                                        <button id="leftBtn2" class="slider-btn disabled"
+                                                            onclick="slideLeft(2)">&#10094;</button>
+                                                        <div class="slider-container-pallet">
+                                                            <div id="sliderTrack2" class="slider-track">
 
                                                             </div>
                                                         </div>
+                                                        <button id="rightBtn2" class="slider-btn"
+                                                            onclick="slideRight(2)">&#10095;</button>
                                                     </div>
                                                     <p>MATTE</p>
-                                                    <div>
-                                                        <div class="list-palet">
-                                                            <div class="palet-container">
+                                                    <div class="circle-slider">
+                                                        <button id="leftBtn3" class="slider-btn disabled"
+                                                            onclick="slideLeft(3)">&#10094;</button>
+                                                        <div class="slider-container-pallet">
+                                                            <div id="sliderTrack3" class="slider-track">
                                                                 <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-silver.png"
                                                                     class="circle"
                                                                     onclick="selectWheelColor(this, 'matte-metallic-silver')">
@@ -2329,11 +2335,15 @@
                                                                     onclick="selectWheelColor(this, 'matte-midnight-purple')">
                                                             </div>
                                                         </div>
+                                                        <button id="rightBtn3" class="slider-btn"
+                                                            onclick="slideRight(3)">&#10095;</button>
                                                     </div>
                                                     <p>SATIN</p>
-                                                    <div>
-                                                        <div class="list-palet">
-                                                            <div class="palet-container">
+                                                    <div class="circle-slider">
+                                                        <button id="leftBtn4" class="slider-btn disabled"
+                                                            onclick="slideLeft(4)">&#10094;</button>
+                                                        <div class="slider-container-pallet">
+                                                            <div id="sliderTrack4" class="slider-track">
                                                                 <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-black.png"
                                                                     class="circle"
                                                                     onclick="selectWheelColor(this, 'satin-black')">
@@ -2351,205 +2361,11 @@
                                                                     onclick="selectWheelColor(this, 'satin-rose-gold')">
                                                             </div>
                                                         </div>
+                                                        <button id="rightBtn4" class="slider-btn"
+                                                            onclick="slideRight(4)">&#10095;</button>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="tab-content" id="divSubMenuCacheMoyeux" style="display: none;">
-                                                <div id="circleMenu3" class="circle-menu" style="overflow-y: auto;">
-
-                                                    <div style="margin-top: 500px;">
-                                                        <p style="text-align: center;">GLOSS</p>
-                                                        <div class="list-palet">
-                                                            <div class="palet-container">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-chrome.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-chrome')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-metallic-black.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-metallic-black')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-metallic-silver.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-metallic-silver')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-white.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-white')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-anthracite.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-anthracite')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-champagne-gold-metallic.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-champagne-gold-metallic')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-gold-glitter.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-gold-glitter')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-aubergine-bronze.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-aubergine-bronze')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-cinder-rose-metallic.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-cinder-rose-metallic')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-amber-gold.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-amber-gold')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-bronze.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'gloss-bronze')">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <p>MATTE</p>
-                                                    <div>
-                                                        <div class="list-palet">
-                                                            <div class="palet-container">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-silver.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'matte-metallic-silver')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-white.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'matte-white')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-aubergine-bronze.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'matte-aubergine-bronze')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-silver-rose.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'matte-cinder-rose-metallic')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-bronze.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'matte-bronze')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-blue.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'matte-metallic-blue')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-copper-brown.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'matte-metallic-copper-brown')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-grey.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'matte-metallic-grey')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-midnight-purple.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'matte-midnight-purple')">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <p>SATIN</p>
-                                                    <div>
-                                                        <div class="list-palet">
-                                                            <div class="palet-container">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-black.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'satin-black')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-graphite-metallic.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'satin-graphite-metallic')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-dark-basalt-metallic.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'satin-dark-basalt-metallic')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-kaki-green.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'satin-kaki-green')">
-                                                                <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-rose-gold.png"
-                                                                    class="circle"
-                                                                    onclick="selectCacheMoyeuxColor(this, 'satin-rose-gold')">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tab-content" id="divSubMenuBoulons" style="display: none;">
-                                                <div id="circleMenu4" class="circle-menu" style="overflow-y: auto;">
-                                                    <div class="list-palet" style="margin-top: 500px;">
-                                                        <p style="text-align: center;">GLOSS</p>
-                                                        <div class="palet-container">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-chrome.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'gloss-chrome')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-metallic-black.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'gloss-metallic-black')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-metallic-silver.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'gloss-metallic-silver')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-white.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'gloss-white')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-anthracite.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'gloss-anthracite')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-champagne-gold-metallic.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'gloss-champagne-gold-metallic')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-gold-glitter.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'gloss-gold-glitter')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-aubergine-bronze.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'gloss-aubergine-bronze')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-cinder-rose-metallic.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'gloss-cinder-rose-metallic')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-amber-gold.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'gloss-amber-gold')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-gloss-bronze.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'gloss-bronze')">
-                                                        </div>
-                                                    </div>
-                                                    <p>MATTE</p>
-                                                    <div class="list-palet">
-                                                        <div class="palet-container">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-silver.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'matte-metallic-silver')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-white.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'matte-white')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-aubergine-bronze.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'matte-aubergine-bronze')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-silver-rose.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'matte-cinder-rose-metallic')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-bronze.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'matte-bronze')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-blue.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'matte-metallic-blue')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-copper-brown.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'matte-metallic-copper-brown')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-grey.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'matte-metallic-grey')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-matte-metallic-midnight-purple.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'matte-midnight-purple')">
-                                                        </div>
-                                                    </div>
-                                                    <p>SATIN</p>
-                                                    <div class="list-palet">
-                                                        <div class="palet-container">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-black.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'satin-black')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-graphite-metallic.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'satin-graphite-metallic')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-dark-basalt-metallic.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'satin-dark-basalt-metallic')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-kaki-green.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'satin-kaki-green')">
-                                                            <img src="https://paris-performance.com/wp-content/uploads/2024/10/btn-pp-satin-rose-gold.png"
-                                                                class="circle"
-                                                                onclick="selectBoulonsColor(this, 'satin-rose-gold')">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
                                             <div class="tab-content" id="divResume" style="display: none;">
                                                 <div class="item-container ng-star-inserted" style="margin-top: 50px;">
                                                     <app-list-item _nghost-bic-c69="">
@@ -2909,8 +2725,7 @@
                                                                 <div class="slider1-container">
                                                                     <div class="container" id="divParam"
                                                                         style="margin-top: 150px;margin-left:-30%;display: none">
-                                                                        <div class="card-content"
-                                                                            style="margin-top: 150px;">
+                                                                        <div class="card-content">
                                                                             <button
                                                                                 style="--clr: #ffffff; height: 50px; width: 260px;margin-left: 90px;"
                                                                                 class="param-option"
@@ -2933,7 +2748,190 @@
                                                                                 data-tooltip="Nous vous proposons le plus large choix de paramétrage adapté pour vous ainsi que votre véhicule">?</span>
                                                                         </div>
                                                                     </div>
+                                                                    <!--<div id="divWheelOption" style="margin-left: -50px;display: none">
+                                                                    <div class="card-content" style="margin-left: 35px;">
 
+                                                                        <table>
+                                                                            <tr>
+                                                                                <td><span>Taille :</span></td>
+                                                                                <td>
+                                                                                    <select  class="dynamic-select" id="rim_diameter">
+                                                                                    </select>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Alesage Central :</span></td>
+                                                                                <td>
+                                                                                    <select  class="dynamic-select" id="centre_bore">
+                                                                                    </select>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Entraxe :</span></td>
+                                                                                <td>
+                                                                                    <select  class="dynamic-select" id="bolt_pattern">
+                                                                                    </select>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Déport :</span></td>
+                                                                                <td>
+                                                                                    <select  class="dynamic-select" id="rim_offset">
+                                                                                    </select>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Taille de Filletage :</span></td>
+                                                                                <td>
+                                                                                    <select  class="dynamic-select" id="thread_size">
+                                                                                    </select>
+                                                                                </td>
+                                                                            </tr>
+
+                                                                        </table>
+                                                                        <br>
+
+                                                                        <div class="checkbox">
+                                                                            <span style="margin-right: 200px;">Conserver les mêmes paramètres <br>avant et arrière</span>
+                                                                            <input type="checkbox" id="keepParamFrontBack" checked>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                                <div id="divWheelFreeOption" style="margin-left: -50px;display: none">
+                                                                    <div class="card-content" style="margin-left: 35px;">
+                                                                        <table>
+                                                                            <tr>
+                                                                                <td><span>Taille :</span></td>
+                                                                                <td>
+                                                                                    <input type="text" style="width: 90px;" class="dynamic-select" id="rim_diameter">
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Alesage Central :</span></td>
+                                                                                <td>
+                                                                                    <input type="text" style="width: 90px;" class="dynamic-select" id="centre_bore">
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Entraxe :</span></td>
+                                                                                <td>
+                                                                                    <input type="text" style="width: 90px;" class="dynamic-select" id="bolt_pattern">
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Déport :</span></td>
+                                                                                <td>
+                                                                                    <input type="text" style="width: 90px;" class="dynamic-select" id="rim_offset">
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Taille de Filletage :</span></td>
+                                                                                <td>
+                                                                                    <input type="text" style="width: 90px;" class="dynamic-select" id="thread_size">
+                                                                                </td>
+                                                                            </tr>
+
+                                                                        </table>
+                                                                        <br>
+
+                                                                        <div class="checkbox">
+                                                                            <span style="margin-right: 200px;">Conserver les mêmes paramètres <br>avant et arrière</span>
+                                                                            <input type="checkbox" id="keepParamFrontBack" >
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                                <div id="divResume" style="margin-left: -50px;display: none">
+                                                                    <div class="card-content" style="margin-left: 35px;">
+                                                                        <table>
+                                                                            <tr>
+                                                                                <td colspan="2">VEHICULE</td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Année</span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_year"><span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Marque </span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_brand"><span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Modèle </span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_model"><span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Motorisation </span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_modification"><span>
+                                                                                </td>
+                                                                            </tr>
+
+                                                                        </table>
+                                                                        <br>
+                                                                        <table>
+                                                                            <tr><td colspan="2">PARAMETRES CHOISIS</td></tr>
+                                                                            <tr>
+                                                                                <td><span>Taille </span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_rim_diameter"><span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Alesage Central </span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_centre_bore"><span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Entraxe </span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_bolt_pattern"><span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Déport </span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_rim_offset"><span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Taille de Filletage </span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_thread_size"><span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><span>Conserver les mêmes paramètres <br>avant et arrière </span></td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_keepParamFrontBack"><span>
+                                                                                </td>
+                                                                            </tr>
+
+                                                                        </table>
+                                                                        <br>
+                                                                        <table>
+                                                                            <tr><td colspan="2"> JANTES </td></tr>
+                                                                            <tr>
+                                                                                <td>MODELE</td>
+                                                                                <td style="width: width: 80px;">
+                                                                                    <span style="text-transform: uppercase;font-size: larger;" id="resume_wheel"><span>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+
+                                                                    </div>
+                                                                </div>-->
+                                                                    <!--<div class="arrow arrow-up" onclick="previousSlide()">&#9650;</div>-->
+                                                                    <!--<div class="slider-items" id="sliderItems">
+                                                                </div>-->
                                                                     <div class="tab-content">
                                                                         <div class="item-container ng-star-inserted"
                                                                             style="justify-content: flex-end;">
@@ -3064,7 +3062,6 @@
         // Data for each step
         let yearsData = [];
         let brandsData = [];
-        let brandsBaseData = [];
         let modelsData = [];
         let modificationsData = [];
         let templatesData = [];
@@ -3218,23 +3215,11 @@
                     const select3 = document.getElementById('rim_offset');
                     const select4 = document.getElementById('thread_size');
 
-                    const select_rear = document.getElementById('rim_diameter_rear');
-                    const select1_rear = document.getElementById('centre_bore_rear');
-                    const select2_rear = document.getElementById('bolt_pattern_rear');
-                    const select3_rear = document.getElementById('rim_offset_rear');
-                    const select4_rear = document.getElementById('thread_size_rear');
-
                     select.innerHTML = ""; // Clear previous options
                     select1.innerHTML = ""; // Clear previous options
                     select2.innerHTML = ""; // Clear previous options
                     select3.innerHTML = ""; // Clear previous options
                     select4.innerHTML = ""; // Clear previous options
-
-                    select_rear.innerHTML = ""; // Clear previous options
-                    select1_rear.innerHTML = ""; // Clear previous options
-                    select2_rear.innerHTML = ""; // Clear previous options
-                    select3_rear.innerHTML = ""; // Clear previous options
-                    select4_rear.innerHTML = ""; // Clear previous options
 
                     items = wheelOptions.slice(currentSlide, currentSlide + maxVisibleItems).map(wheelOption => {
 
@@ -3250,7 +3235,6 @@
                             option.value = value + "\"";
                             option.textContent = value + "\"";
                             select.appendChild(option);
-                            select_rear.appendChild(option);
                         });
 
 
@@ -3259,13 +3243,11 @@
                         option1.value = wheelOption.technical.centre_bore; // Use the slug as the value
                         option1.textContent = wheelOption.technical.centre_bore;
                         select1.appendChild(option1);
-                        select1_rear.appendChild(option1);
 
                         let option2 = document.createElement("option");
                         option2.value = wheelOption.technical.bolt_pattern;
                         option2.textContent = wheelOption.technical.bolt_pattern;
                         select2.appendChild(option2);
-                        select2_rear.appendChild(option2);
 
 
 
@@ -3299,7 +3281,6 @@
                             option.value = "ET" + value;
                             option.textContent = "ET" + value;
                             select3.appendChild(option);
-                            select3_rear.appendChild(option);
                         });
 
 
@@ -3308,7 +3289,7 @@
                         option4.value = wheelOption.technical.wheel_fasteners.thread_size; // Use the slug as the value
                         option4.textContent = wheelOption.technical.wheel_fasteners.thread_size;
                         select4.appendChild(option4);
-                        select4_rear.appendChild(option4);
+
                         // save rim for limitation deport
                         let rims = [];
                         for (let i = 0; i < wheelOption.wheels.length; i++) {
@@ -3325,26 +3306,33 @@
                             // Extract the ET value from the matching rim string (e.g., ET53)
                             var etMatch = matchingRim.match(/ET(\d+)/);
                             if (etMatch) {
-                                var etInt = parseInt(etMatch[1], 10);
-                                var etValueStr = `ET${etInt}`;
-                                console.log('Extracted ET value:', etInt);
+                                var etValue = `ET${etMatch[1]}`;
+                                console.log('Extracted ET value:', etValue);
 
                                 // Set the ET value as the selected option in the rim_offset select
                                 var rimOffsetSelect = document.getElementById('rim_offset');
                                 Array.from(rimOffsetSelect.options).forEach(option => {
-                                    option.selected = (option.value === etValueStr);
+                                    if (option.value === etValue) {
+                                        option.selected = true;  // Set this option as selected
+                                    } else {
+                                        option.selected = false; // Deselect others
+                                    }
                                 });
 
-                                var newMin = etInt - 2;
-                                var newMax = etInt + 2;
+                                var newMin = etValue - 2;
+                                var newMax = etValue + 2;
 
                                 // Filter and update rim_offset options
                                 var rimOffsetOptions = Array.from(document.getElementById('rim_offset').options);
                                 rimOffsetOptions.forEach(option => {
-                                    var optionValue = parseInt(option.value.replace("ET", ""), 10);
-                                    option.disabled = (optionValue < newMin || optionValue > newMax);
+                                    var optionValue = parseInt(option.value.replace("ET", ""));
+                                    if (optionValue < newMin || optionValue > newMax) {
+                                        option.disabled = true;  // Disable options outside the range
+                                    } else {
+                                        option.disabled = false; // Enable options within the range
+                                    }
                                 });
-                                console.log('Rim offset option selected:', etValueStr);
+                                console.log('Rim offset option selected:', etValue);
                             }
                         } else {
                             console.log('No matching rim found.');
@@ -3456,11 +3444,13 @@
                 // Remove animation class to trigger fade in
                 sliderItems.classList.remove('animate');
 
-                // Update button states (guard if buttons exist)
-                const prevBtn = document.getElementById('prevButton');
-                const nextBtn = document.getElementById('nextButton');
-                if (prevBtn) prevBtn.disabled = (currentStep === 0 && currentSlide === 0);
-                if (nextBtn) nextBtn.disabled = (currentStep === 0 && brandSlug === null);
+                // Update button states
+                document.getElementById('prevButton').disabled = (currentStep === 0 && currentSlide === 0);
+                if (currentStep === 0 && brandSlug === null) {
+                    document.getElementById('nextButton').disabled = true;
+                } else {
+                    document.getElementById('nextButton').disabled = false;
+                }
             }, 500);  // Wait for the fade-out animation to complete (0.5s)
         }
 
@@ -3516,33 +3506,16 @@
                 fetchWheelOption();
             } else if (currentStep === 5) {
 
-                // Read inputs from the visible container only
-                const sourceContainerId = (param_selected === 'free') ? 'divWheelFreeOption' : 'divWheelOption';
-                const source = document.getElementById(sourceContainerId);
+                taille = document.getElementById('rim_diameter').value;
+                alesageCentral = document.getElementById('centre_bore').value;
+                entraxe = document.getElementById('bolt_pattern').value;
+                deport = document.getElementById('rim_offset').value;
+                filletage = document.getElementById('thread_size').value;
 
-                if (source) {
-                    const getValue = (innerId) => {
-                        const el = source.querySelector('[id="' + innerId + '"]');
-                        return el ? el.value : '';
-                    };
-
-                    taille = getValue('rim_diameter');
-                    alesageCentral = getValue('centre_bore');
-                    entraxe = getValue('bolt_pattern');
-                    deport = getValue('rim_offset');
-                    filletage = getValue('thread_size');
-
-                    taille_rear = getValue('rim_diameter_rear');
-                    alesageCentral_rear = getValue('centre_bore_rear');
-                    entraxe_rear = getValue('bolt_pattern_rear');
-                    deport_rear = getValue('rim_offset_rear');
-                    filletage_rear = getValue('thread_size_rear');
-
-                    const checkbox = source.querySelector('[id="keepParamFrontBack"]');
-                    const isChecked = checkbox ? checkbox.checked : false;
-                    console.log("Checkbox value:", isChecked);
-                    keepParamFrontBack = isChecked;
-                }
+                const checkbox = document.getElementById("keepParamFrontBack");
+                const isChecked = checkbox.checked;
+                console.log("Checkbox value:", isChecked);
+                keepParamFrontBack = isChecked;
                 console.log(taille);
                 currentStep++;
                 currentSlide = 0;
@@ -3591,11 +3564,6 @@
                 currentStep--;
                 currentSlide = 0;
             }
-            updateSlider();
-        }
-
-        function resumePanel() {
-            currentStep = 8;
             updateSlider();
         }
 
@@ -3650,51 +3618,14 @@
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
-                    brandsBaseData = Array.isArray(data.data) ? data.data.slice() : [];
-                    // Appliquer le filtre par défaut (populaire)
-                    filterBrands();
+                    brandsData = data.data;
+                    console.log(brandsData);
+                    updateSlider();
                 })
                 .catch(error => {
                     console.error("Error fetching data:", error);
                 });
 
-        }
-        // Tri des marques par popularité par défaut
-        function sortBrandsByPopular(inputBrands) {
-            const popularOrder = [
-                'audi', 'bmw', 'mercedes-benz', 'volkswagen', 'peugeot', 'renault', 'citroen', 'dacia', 'opel', 'fiat', 'seat', 'skoda', 'toyota', 'nissan', 'ford', 'hyundai', 'kia', 'honda', 'volvo', 'mini', 'porsche', 'land-rover', 'alfa-romeo', 'tesla'
-            ];
-            const rank = new Map(popularOrder.map((slug, idx) => [slug, idx]));
-            const normalizeSlug = (b) => (b && (b.slug || '').toString().toLowerCase()) || '';
-            const normalizeName = (b) => (b && (b.name || '').toString().toLowerCase()) || '';
-            return (inputBrands || []).slice().sort((a, b) => {
-                const sa = normalizeSlug(a); const sb = normalizeSlug(b);
-                const ra = rank.has(sa) ? rank.get(sa) : Number.POSITIVE_INFINITY;
-                const rb = rank.has(sb) ? rank.get(sb) : Number.POSITIVE_INFINITY;
-                if (ra !== rb) return ra - rb;
-                // fallback: alphabetical by name
-                const na = normalizeName(a); const nb = normalizeName(b);
-                if (na < nb) return -1; if (na > nb) return 1; return 0;
-            });
-        }
-        // Tri alphabétique
-        function sortBrandsAlphabetically(inputBrands) {
-            return (inputBrands || []).slice().sort((a, b) => {
-                const na = (a && a.name || '').toString().toLowerCase();
-                const nb = (b && b.name || '').toString().toLowerCase();
-                if (na < nb) return -1; if (na > nb) return 1; return 0;
-            });
-        }
-        // Applique le filtre choisi et met à jour l'affichage
-        function filterBrands() {
-            const select = document.getElementById('brandOrder');
-            const mode = select ? select.value : 'popular';
-            if (mode === 'alphabetical') {
-                brandsData = sortBrandsAlphabetically(brandsBaseData);
-            } else {
-                brandsData = sortBrandsByPopular(brandsBaseData);
-            }
-            updateSlider();
         }
         function fetchModel() {
             let apiUrl = "https://api.wheel-size.com/v2/models/?make=" + brandSlug + "&year=" + selectedYear + "&user_key=a77861354fca6475fa1ec64b00bed407";
@@ -3963,13 +3894,13 @@
             menu.style.display = 'none';
             //button1.style.display = 'block';
             button1.setAttribute("style", "display:block;background-color: rgba(0, 0, 0, 0);")
-            if (stepButtons) stepButtons.style.display = 'none';
+            stepButtons.style.display = 'none';
         });
 
         button1.addEventListener('click', () => {
             menu.style.display = 'block';
             button1.style.display = 'none';
-            if (stepButtons) stepButtons.style.display = 'block';
+            stepButtons.style.display = 'block';
 
         });
 
@@ -4102,7 +4033,11 @@
                     // Set the ET value as the selected option in the rim_offset select
                     var rimOffsetSelect = document.getElementById('rim_offset');
                     Array.from(rimOffsetSelect.options).forEach(option => {
-                        option.selected = (option.value === `ET${etValue}`);
+                        if (option.value === etValue) {
+                            option.selected = true;  // Set this option as selected
+                        } else {
+                            option.selected = false; // Deselect others
+                        }
                     });
 
                     console.log(`Rim offset options updated. Min: ET${newMin}, Max: ET${newMax}`);
@@ -4134,15 +4069,20 @@
     <script>
         async function mergeThreeImages(url1, url2, url3) {
             try {
+                // Vérification des paramètres
                 if (!url1 || !url2 || !url3) {
                     throw new Error('Les trois URLs sont requises');
                 }
-                // Utilise la librairie merge-images injectée via CDN
-                const dataUrl = await mergeImages([url1, url2, url3]);
-                return dataUrl;
+
+                // Fusion des images
+                const resultat = await ImageMerger.mergeAndSaveImages([url1, url2, url3]);
+
+                // Retourne uniquement l'URL de l'image fusionnée
+                return resultat.url;
+
             } catch (error) {
                 console.error('Erreur pendant la fusion:', error);
-                throw error;
+                throw error; // Propagation de l'erreur
             }
         }
 
@@ -4185,35 +4125,27 @@
             }
             if (menuIndex === 1) {
                 showSubMenu('divWheelModel');
-                // let resume_wheel_option = document.getElementById("resume_wheel_option");
+                let resume_wheel_option = document.getElementById("resume_wheel_option");
 
-                // // Get all images with class 'wheel-option-1'
-                // const wheelOptions = document.getElementsByClassName('wheel-option-1');
+                // Get all images with class 'wheel-option-1'
+                const wheelOptions = document.getElementsByClassName('wheel-option-1');
 
-                // // Loop through each image and check if the src matches
-                // for (let i = 0; i < wheelOptions.length; i++) {
-                //     if (wheelOptions[i].src === resume_wheel_option.src) {
-                //         // If src matches, apply a selected style or class
-                //         wheelOptions[i].classList.add('selected'); // Adding a class for styling
-                //     }
-                // }
-                goToStep(6);
+                // Loop through each image and check if the src matches
+                for (let i = 0; i < wheelOptions.length; i++) {
+                    if (wheelOptions[i].src === resume_wheel_option.src) {
+                        // If src matches, apply a selected style or class
+                        wheelOptions[i].classList.add('selected'); // Adding a class for styling
+                    }
+                }
             }
             if (menuIndex === 2) {
                 showSubMenu('divSubMenuWheelColor');
             }
-            if (menuIndex === 3) {
-                showSubMenu('divSubMenuCacheMoyeux');
-            }
-            if (menuIndex === 4) {
-                showSubMenu('divSubMenuBoulons');
-            }
         }
 
         function toogleMenuJante() {
-            // toggleMenu(1);
-            // toggleMenu(2);
-            goToStep(6);
+            toggleMenu(1);
+            toggleMenu(2);
         }
 
         // Horizontal slider functionality for specific sliders with disabling of buttons
@@ -4272,65 +4204,6 @@
 
         // // Initialize the button state on page load for each slider
         // sliders.forEach((_, index) => updateButtons(index));
-    </script>
-    <script>
-        // Gestion des onglets Avant/Arrière en fonction de la case "Conserver les mêmes paramètres avant et arrière"
-        document.addEventListener('DOMContentLoaded', function () {
-            function initFrontRearSection(sectionId) {
-                const section = document.getElementById(sectionId);
-                if (!section) return;
-
-                const tabs = section.querySelector('.front-rear-tabs');
-                if (!tabs) return;
-
-                const frontTab = tabs.querySelector('.front-tab');
-                const rearTab = tabs.querySelector('.rear-tab');
-                if (!frontTab || !rearTab) return;
-
-                // Chercher la checkbox dans la même section
-                const checkbox = section.querySelector('#keepParamFrontBack');
-                if (!checkbox) return;
-
-                function applyState() {
-                    const keepSame = !!checkbox.checked;
-                    if (keepSame) {
-                        // Désactiver l'onglet Arrière et forcer l'état Avant
-                        rearTab.classList.add('disabled');
-                        rearTab.setAttribute('aria-disabled', 'true');
-                        if (!frontTab.classList.contains('active')) {
-                            frontTab.classList.add('active');
-                        }
-                        rearTab.classList.remove('active');
-                    } else {
-                        // Activer l'onglet Arrière
-                        rearTab.classList.remove('disabled');
-                        rearTab.removeAttribute('aria-disabled');
-                    }
-                }
-
-                // Gestion clics sur onglets (simple bascule de style visuel)
-                function handleTabClick(evt, tab) {
-                    const isRear = tab.classList.contains('rear-tab');
-                    if (isRear && tab.classList.contains('disabled')) {
-                        evt.preventDefault();
-                        return;
-                    }
-                    frontTab.classList.toggle('active', tab === frontTab);
-                    rearTab.classList.toggle('active', tab === rearTab);
-                }
-
-                frontTab.addEventListener('click', (e) => handleTabClick(e, frontTab));
-                rearTab.addEventListener('click', (e) => handleTabClick(e, rearTab));
-
-                checkbox.addEventListener('change', applyState);
-                // État initial
-                applyState();
-            }
-
-            // Initialiser pour les deux sections Paramètres
-            initFrontRearSection('divWheelOption');
-            initFrontRearSection('divWheelFreeOption');
-        });
     </script>
     <!--<button onclick="generatePDF()">Télécharger</button>-->
 
@@ -4454,55 +4327,98 @@
     </script>
 
     <script>
-        // Fonction checkout simple et fiable (sans dépendance PHP inline)
-        function checkout() {
-            try {
-                const bodyData = new URLSearchParams({
-                    action: 'woocommerce_ajax_add_to_cart',
-                    product_id: (typeof wheelId !== 'undefined' && wheelId) ? wheelId : 0,
-                    quantity: 1,
-                    selectedBrand: selectedBrand || '',
-                    selectedYear: selectedYear || '',
-                    selectedModel: selectedModel || '',
-                    selectedModification: selectedModification || '',
-                    param_selected: param_selected || '',
-                    taille: taille || '',
-                    alesageCentral: alesageCentral || '',
-                    entraxe: entraxe || '',
-                    deport: deport || '',
-                    filletage: filletage || '',
-                    keepParamFrontBack: !!keepParamFrontBack,
-                    wheelName_selected: wheelName_selected || '',
-                    CM_ColorName_selected: CM_ColorName_selected || '',
-                    Boulons_ColorName_selected: Boulons_ColorName_selected || ''
-                });
+/*function checkout() {
+    // Variables personnalisées
+    const productId = 1101;        // ID produit WooCommerce (si le produit existe déjà)
+    const customPrice = 29.99;    // Prix personnalisé en euros
+    const customQuantity = 2;     // Quantité souhaitée
+    const customDescription = "Mon produit personnalisé"; // Description personnalisée
 
-                const ajaxUrl = (typeof wc_add_to_cart_params !== 'undefined' && wc_add_to_cart_params.ajax_url)
-                    ? wc_add_to_cart_params.ajax_url
-                    : '/?wc-ajax=add_to_cart';
+    // Récupérer l'URL de la page de paiement WooCommerce
+    const checkoutUrl = "<?php echo wc_get_checkout_url(); ?>";
 
-                fetch(ajaxUrl, {
-                    method: 'POST',
-                    credentials: 'same-origin',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: bodyData
-                })
-                    .then(r => r.json().catch(() => ({})))
-                    .then(data => {
-                        if (data && data.success && data.data && data.data.redirect) {
-                            window.location.href = data.data.redirect;
-                        } else {
-                            // Fallback vers la page checkout si la réponse ne contient pas d'URL
-                            window.location.href = '/checkout/';
-                        }
-                    })
-                    .catch(() => {
-                        window.location.href = '/checkout/';
+        // Construire la requête AJAX
+        // On ajoute nos paramètres customPrice et customDescription
+        // Notez l'action 'woocommerce_ajax_add_to_cart' qui sera gérée côté PHP
+        const bodyData =
+            `action=woocommerce_ajax_add_to_cart` +
+            `&product_id=${productId}` +
+            `&quantity=${customQuantity}` +
+            `&price=${encodeURIComponent(customPrice)}` +
+            `&description=${encodeURIComponent(customDescription)}`;
+
+        fetch(wc_add_to_cart_params.ajax_url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: bodyData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log("Produit ajouté au panier avec succès.");
+                    // Redirection vers la page de paiement
+                    window.location.href = checkoutUrl;
+                } else {
+                    console.error("Erreur lors de l'ajout au panier : ", data);
+                }
+            })
+            .catch(error => console.error("Erreur réseau : ", error));
+};*/
+        <?php
+        // Ajoutez ceci dans votre thème ou plugin
+        add_action('wp_footer', 'add_custom_checkout_script');
+        function add_custom_checkout_script()
+        {
+            ?>
+                < script >
+                function checkout() {
+                    const bodyData = new URLSearchParams({
+                        action: 'woocommerce_ajax_add_to_cart',
+                        product_id: wheelId,
+                        quantity: 1,
+                        selectedBrand: selectedBrand,
+                        selectedYear: selectedYear,
+                        selectedModel: selectedModel,
+                        selectedModification: selectedModification,
+                        param_selected: param_selected,
+                        taille: taille,
+                        alesageCentral: alesageCentral,
+                        entraxe: entraxe,
+                        deport: deport,
+                        filletage: filletage,
+                        keepParamFrontBack: keepParamFrontBack,
+                        wheelName_selected: wheelName_selected,
+                        CM_ColorName_selected: CM_ColorName_selected,
+                        Boulons_ColorName_selected: Boulons_ColorName_selected
                     });
-            } catch (e) {
-                window.location.href = '/checkout/';
-            }
+
+                    fetch(wc_add_to_cart_params.ajax_url, {
+                        method: 'POST',
+                        credentials: 'same-origin',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                            'Cache-Control': 'no-cache',
+                        },
+                        body: bodyData
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                window.location.href = data.data.redirect;
+                            } else {
+                                alert("Erreur lors de l'ajout au panier");
+                            }
+                        })
+                        .catch(error => {
+                            alert("Erreur de connexion");
+                        });
+                }
+        </script>
+        <?php
         }
+        ?>
     </script>
 
     <style>
@@ -4592,11 +4508,9 @@
             }
             divWheelOption('block', div);
             divWheelOption('none', 'divPalletOption');
-            document.getElementById('arrow-next').style.display = 'none';
         }
 
         function hideSubMenu(div) {
-
             divWheelOption('none', div);
             divWheelOption('block', 'divPalletOption');
         }
