@@ -3250,7 +3250,11 @@
                             option.value = value + "\"";
                             option.textContent = value + "\"";
                             select.appendChild(option);
-                            select_rear.appendChild(option);
+
+                            let optionRear = document.createElement("option");
+                            optionRear.value = value + "\"";
+                            optionRear.textContent = value + "\"";
+                            select_rear.appendChild(optionRear);
                         });
 
 
@@ -3259,13 +3263,21 @@
                         option1.value = wheelOption.technical.centre_bore; // Use the slug as the value
                         option1.textContent = wheelOption.technical.centre_bore;
                         select1.appendChild(option1);
-                        select1_rear.appendChild(option1);
+
+                        let option1_rear = document.createElement("option");
+                        option1_rear.value = wheelOption.technical.centre_bore; // Use the slug as the value
+                        option1_rear.textContent = wheelOption.technical.centre_bore;
+                        select1_rear.appendChild(option1_rear);
 
                         let option2 = document.createElement("option");
                         option2.value = wheelOption.technical.bolt_pattern;
                         option2.textContent = wheelOption.technical.bolt_pattern;
                         select2.appendChild(option2);
-                        select2_rear.appendChild(option2);
+
+                        let option2_rear = document.createElement("option");
+                        option2_rear.value = wheelOption.technical.bolt_pattern;
+                        option2_rear.textContent = wheelOption.technical.bolt_pattern;
+                        select2_rear.appendChild(option2_rear);
 
 
 
@@ -3299,7 +3311,11 @@
                             option.value = "ET" + value;
                             option.textContent = "ET" + value;
                             select3.appendChild(option);
-                            select3_rear.appendChild(option);
+
+                            let optionRear = document.createElement("option");
+                            optionRear.value = "ET" + value;
+                            optionRear.textContent = "ET" + value;
+                            select3_rear.appendChild(optionRear);
                         });
 
 
@@ -3308,7 +3324,12 @@
                         option4.value = wheelOption.technical.wheel_fasteners.thread_size; // Use the slug as the value
                         option4.textContent = wheelOption.technical.wheel_fasteners.thread_size;
                         select4.appendChild(option4);
-                        select4_rear.appendChild(option4);
+
+                        let option4_rear = document.createElement("option");
+                        option4_rear.value = wheelOption.technical.wheel_fasteners.thread_size; // Use the slug as the value
+                        option4_rear.textContent = wheelOption.technical.wheel_fasteners.thread_size;
+                        select4_rear.appendChild(option4_rear);
+
                         // save rim for limitation deport
                         let rims = [];
                         for (let i = 0; i < wheelOption.wheels.length; i++) {
@@ -4181,10 +4202,22 @@
             console.log(menu);
             if (menuIndex === 0) {
                 console.log("menuindex", menuIndex);
+                
                 showSubMenu('divCarColor');
+                goToStep(6);
+                divWheelOption('none', 'divSubMenuWheelColor');
+                divWheelOption('none', 'divSubMenuCacheMoyeux');
+                divWheelOption('none', 'divSubMenuBoulons');
+                divWheelOption('none', 'divWheelModel');
             }
             if (menuIndex === 1) {
+                
                 showSubMenu('divWheelModel');
+                goToStep(6);
+                divWheelOption('none', 'divSubMenuWheelColor');
+                divWheelOption('none', 'divSubMenuCacheMoyeux');
+                divWheelOption('none', 'divSubMenuBoulons');
+                divWheelOption('none', 'divCarColor');
                 // let resume_wheel_option = document.getElementById("resume_wheel_option");
 
                 // // Get all images with class 'wheel-option-1'
@@ -4197,16 +4230,31 @@
                 //         wheelOptions[i].classList.add('selected'); // Adding a class for styling
                 //     }
                 // }
-                goToStep(6);
             }
             if (menuIndex === 2) {
+
                 showSubMenu('divSubMenuWheelColor');
+                goToStep(6);
+                divWheelOption('none', 'divSubMenuCacheMoyeux');
+                divWheelOption('none', 'divSubMenuBoulons');
+                divWheelOption('none', 'divCarColor');
+                divWheelOption('none', 'divWheelModel');
             }
             if (menuIndex === 3) {
                 showSubMenu('divSubMenuCacheMoyeux');
+                goToStep(6);
+                divWheelOption('none', 'divSubMenuWheelColor');
+                divWheelOption('none', 'divSubMenuBoulons');
+                divWheelOption('none', 'divCarColor');
+                divWheelOption('none', 'divWheelModel');
             }
             if (menuIndex === 4) {
                 showSubMenu('divSubMenuBoulons');
+                goToStep(6);
+                divWheelOption('none', 'divSubMenuWheelColor');
+                divWheelOption('none', 'divSubMenuCacheMoyeux');
+                divWheelOption('none', 'divCarColor');
+                divWheelOption('none', 'divWheelModel');
             }
         }
 
@@ -4214,6 +4262,11 @@
             // toggleMenu(1);
             // toggleMenu(2);
             goToStep(6);
+            divWheelOption('none', 'divSubMenuWheelColor');
+            divWheelOption('none', 'divSubMenuCacheMoyeux');
+            divWheelOption('none', 'divSubMenuBoulons');
+            divWheelOption('none', 'divCarColor');
+            divWheelOption('none', 'divWheelModel');
         }
 
         // Horizontal slider functionality for specific sliders with disabling of buttons
