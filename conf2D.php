@@ -709,7 +709,7 @@
 
         .region[_ngcontent-bic-c69] {
             cursor: pointer;
-            border-image: linear-gradient(to right, rgba(204,204,204,0) 0%, #cccccc61 20%, #cccccc61 80%, rgba(204,204,204,0) 100%);
+            border-image: linear-gradient(to right, rgba(204, 204, 204, 0) 0%, #cccccc61 20%, #cccccc61 80%, rgba(204, 204, 204, 0) 100%);
             border-bottom: 1px solid #cccccc61;
             border-image-slice: 1;
             padding: 10px 0 10px;
@@ -720,7 +720,7 @@
 
         .containerCarChoice[_ngcontent-bic-c69] {
             cursor: pointer;
-            border-image: linear-gradient(to right, rgba(204,204,204,0) 0%, #cccccc61 20%, #cccccc61 80%, rgba(204,204,204,0) 100%);
+            border-image: linear-gradient(to right, rgba(204, 204, 204, 0) 0%, #cccccc61 20%, #cccccc61 80%, rgba(204, 204, 204, 0) 100%);
             border-bottom: 1px solid #cccccc61;
             border-image-slice: 1;
             padding: 10px 0 10px;
@@ -731,7 +731,7 @@
         @media (min-width: 2500px) {
             .containerCarChoice[_ngcontent-bic-c69] {
                 cursor: pointer;
-                border-image: linear-gradient(to right, rgba(204,204,204,0) 0%, #cccccc61 20%, #cccccc61 80%, rgba(204,204,204,0) 100%);
+                border-image: linear-gradient(to right, rgba(204, 204, 204, 0) 0%, #cccccc61 20%, #cccccc61 80%, rgba(204, 204, 204, 0) 100%);
                 border-bottom: 1px solid #cccccc61;
                 border-image-slice: 1;
                 padding: 10px 0 10px;
@@ -742,7 +742,7 @@
 
         .containerParam[_ngcontent-bic-c69] {
             cursor: pointer;
-            border-image: linear-gradient(to right, rgba(204,204,204,0) 0%, #cccccc61 20%, #cccccc61 80%, rgba(204,204,204,0) 100%);
+            border-image: linear-gradient(to right, rgba(204, 204, 204, 0) 0%, #cccccc61 20%, #cccccc61 80%, rgba(204, 204, 204, 0) 100%);
             border-bottom: 1px solid #cccccc61;
             border-image-slice: 1;
             padding: 10px 0 10px;
@@ -753,7 +753,7 @@
         @media (min-width: 2500px) {
             .containerParam[_ngcontent-bic-c69] {
                 cursor: pointer;
-                border-image: linear-gradient(to right, rgba(204,204,204,0) 0%, #cccccc61 20%, #cccccc61 80%, rgba(204,204,204,0) 100%);
+                border-image: linear-gradient(to right, rgba(204, 204, 204, 0) 0%, #cccccc61 20%, #cccccc61 80%, rgba(204, 204, 204, 0) 100%);
                 border-bottom: 1px solid #cccccc61;
                 border-image-slice: 1;
                 padding: 10px 0 10px;
@@ -1049,7 +1049,10 @@
             border: 2px solid transparent;
         } */
         .year-option {
-            height: 40px; text-align: center; font-size: 10px; display: inline-block;
+            height: 40px;
+            text-align: center;
+            font-size: 10px;
+            display: inline-block;
             background: rgba(255, 255, 255, 0.65) !important;
             opacity: 0.76;
             width: 180px;
@@ -1067,6 +1070,30 @@
         }
 
         .year-option.selected {
+            border: 2px solid #000000;
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+
+        .model-option {
+            height: 40px;
+            text-align: center;
+            font-size: 10px;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.65) !important;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            color: #000000;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .model-option:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        .model-option.selected {
             border: 2px solid #000000;
             transform: scale(1.2);
             transition: transform 0.3s ease;
@@ -1108,7 +1135,10 @@
         }
 
         .modif-option {
-            height: 40px; text-align: center; font-size: 10px; display: inline-block;
+            height: 40px;
+            text-align: center;
+            font-size: 10px;
+            display: inline-block;
             background: rgba(255, 255, 255, 0.65) !important;
             opacity: 0.76;
             width: 180px;
@@ -1130,7 +1160,10 @@
         }
 
         .param-option {
-            height: 40px; text-align: center; font-size: 10px; display: inline-block;
+            height: 40px;
+            text-align: center;
+            font-size: 10px;
+            display: inline-block;
             background: rgba(255, 255, 255, 0.65) !important;
             opacity: 0.76;
             width: 180px;
@@ -1186,7 +1219,10 @@
 
         .dynamic-select {
             /* background-color: #ffffff !important; */
-            height: 40px; text-align: center; font-size: 10px; display: inline-block;
+            height: 40px;
+            text-align: center;
+            font-size: 10px;
+            display: inline-block;
             background: rgba(255, 255, 255, 0.65) !important;
             opacity: 0.76;
             box-shadow: 0 2px 4px rgba(11, 15, 50, 0.08);
@@ -1441,7 +1477,8 @@
         .param-option,
         .year-option,
         .make-option,
-        .modif-option {
+        .modif-option,
+        .model-option {
             color: #000 !important;
         }
     </style>
@@ -1565,8 +1602,10 @@
                                                             <div class="arrow arrow-down" id="arrow-next"
                                                                 onclick="nextStep()" style="display: none;">&#9654;
                                                             </div>
-                                                            <button onclick="previousStep()" id="arrow-back" style="display: none; width: 40px; height: 40px; border-radius: 8px; border: none; background: rgba(255, 255, 255, 0.65) !important; display: flex; align-items: center; justify-content: center; padding: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.08);margin-left: 15px;">
-                                                                <i class="fa-solid fa-chevron-left" style="font-size: 22px; color: #fff;"></i>
+                                                            <button onclick="previousStep()" id="arrow-back"
+                                                                style="display: none; width: 40px; height: 40px; border-radius: 8px; border: none; background: rgba(255, 255, 255, 0.65) !important; display: flex; align-items: center; justify-content: center; padding: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.08);margin-left: 15px;">
+                                                                <i class="fa-solid fa-chevron-left"
+                                                                    style="font-size: 22px; color: #fff;"></i>
                                                             </button>
                                                             <button class="btn-plat" id="close-panel"
                                                                 onclick="hideSubMenu('divWheelModel')"
@@ -1707,7 +1746,8 @@
                                                                     <div _ngcontent-bic-c69=""
                                                                         class="img-container ng-star-inserted">
                                                                         <select class="dynamic-select" id="rim_diameter"
-                                                                            onchange="handleRimOffsetChange(this)" style="order-radius: 5px;border-color: white;">
+                                                                            onchange="handleRimOffsetChange(this)"
+                                                                            style="order-radius: 5px;border-color: white;">
                                                                             <!-- Ajoutez d'autres options si nécessaire -->
                                                                         </select>
                                                                     </div>
@@ -2958,11 +2998,13 @@
                                                                 <div _ngcontent-bic-c69="" class="title-section"
                                                                     style="text-align: center;margin-left: 65px;margin-top: -22px;">
                                                                     <button onclick="checkout()"
-                                                                        style="margin-bottom: 15px;font-size: medium;width: 250px;" class="year-option">
+                                                                        style="margin-bottom: 15px;font-size: medium;width: 250px;"
+                                                                        class="year-option">
                                                                         Commander
                                                                     </button><br>
                                                                     <button class="year-option"
-                                                                        style="--clr: #ffffff; height: 40px;width: 250px;" class="year-option">
+                                                                        style="--clr: #ffffff; height: 40px;width: 250px;"
+                                                                        class="year-option">
                                                                         se faire accompagner
                                                                     </button>
                                                                 </div>
@@ -3573,7 +3615,7 @@
                 }
 
 
-                if(currentStep > 0) {
+                if (currentStep > 0) {
                     document.getElementById('arrow-back').style.display = 'block';
                 } else {
                     document.getElementById('arrow-back').style.display = 'none';
@@ -3584,6 +3626,9 @@
 
                 // Remove animation class to trigger fade in
                 sliderItems.classList.remove('animate');
+
+                // Restaurer la sélection visuelle après le rendu
+                restoreSelection();
 
                 // Update button states (guard if buttons exist)
                 const prevBtn = document.getElementById('prevButton');
@@ -4018,7 +4063,7 @@
         }
 
         function selectModel(element, slug, model) {
-            resetSelect('.year-option');
+            resetSelect('.model-option');
             element.classList.add('selected');
             //document.getElementById('stepChoice').textContent = model;
             selectedModel = model;
@@ -4119,6 +4164,77 @@
             const optionType = document.querySelectorAll(option);
             optionType.forEach(option => option.classList.remove('selected'));
 
+        }
+
+        function restoreSelection() {
+            console.log('restoreSelection called - currentStep:', currentStep);
+
+            // Restaurer la sélection de la marque
+            if (currentStep === 0 && selectedBrand && brandSlug) {
+                console.log('Restoring brand selection:', selectedBrand, brandSlug);
+                setTimeout(() => {
+                    const brandElements = document.querySelectorAll('.make-option');
+                    console.log('Found brand elements:', brandElements.length);
+                    brandElements.forEach(element => {
+                        const onclickAttr = element.getAttribute('onclick');
+                        console.log('Brand element onclick:', onclickAttr, 'looking for:', brandSlug);
+                        if (onclickAttr && onclickAttr.includes(`'${brandSlug}'`)) {
+                            element.classList.add('selected');
+                            console.log('Brand selected restored');
+                        }
+                    });
+                }, 100);
+            }
+
+            // Restaurer la sélection de l'année
+            if (currentStep === 1 && selectedYear) {
+                console.log('Restoring year selection:', selectedYear);
+                setTimeout(() => {
+                    const yearElements = document.querySelectorAll('.year-option');
+                    console.log('Found year elements:', yearElements.length);
+                    yearElements.forEach(element => {
+                        console.log('Year element text:', element.textContent.trim(), 'vs selectedYear:', selectedYear.toString());
+                        if (element.textContent.trim() === selectedYear.toString()) {
+                            element.classList.add('selected');
+                            console.log('Year selection restored');
+                        }
+                    });
+                }, 100);
+            }
+
+            // Restaurer la sélection du modèle (utilise .year-option, pas .modif-option)
+            if (currentStep === 2 && selectedModel && modelSlug) {
+                console.log('Restoring model selection:', selectedModel, modelSlug);
+                setTimeout(() => {
+                    const modelElements = document.querySelectorAll('.year-option');
+                    console.log('Found model elements:', modelElements.length);
+                    modelElements.forEach(element => {
+                        const onclickAttr = element.getAttribute('onclick');
+                        console.log('Model element onclick:', onclickAttr, 'looking for:', modelSlug);
+                        if (onclickAttr && onclickAttr.includes(`'${modelSlug}'`)) {
+                            element.classList.add('selected');
+                            console.log('Model selection restored');
+                        }
+                    });
+                }, 100);
+            }
+
+            // Restaurer la sélection de la modification
+            if (currentStep === 3 && selectedModification && modificationId) {
+                console.log('Restoring modification selection:', selectedModification, modificationId);
+                setTimeout(() => {
+                    const modifElements = document.querySelectorAll('.modif-option');
+                    console.log('Found modification elements:', modifElements.length);
+                    modifElements.forEach(element => {
+                        const onclickAttr = element.getAttribute('onclick');
+                        console.log('Modification element onclick:', onclickAttr, 'looking for:', modificationId);
+                        if (onclickAttr && onclickAttr.includes(`'${modificationId}'`)) {
+                            element.classList.add('selected');
+                            console.log('Modification selection restored');
+                        }
+                    });
+                }, 100);
+            }
         }
 
         const button = document.getElementById('menuButton');
