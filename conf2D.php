@@ -709,7 +709,9 @@
 
         .region[_ngcontent-bic-c69] {
             cursor: pointer;
-            border-bottom: solid 1px #cccccc61;
+            border-image: linear-gradient(to right, rgba(204,204,204,0) 0%, #cccccc61 20%, #cccccc61 80%, rgba(204,204,204,0) 100%);
+            border-bottom: 1px solid #cccccc61;
+            border-image-slice: 1;
             padding: 10px 0 10px;
             display: flex;
             justify-content: space-between;
@@ -718,7 +720,9 @@
 
         .containerCarChoice[_ngcontent-bic-c69] {
             cursor: pointer;
-            border-bottom: solid 1px #cccccc61;
+            border-image: linear-gradient(to right, rgba(204,204,204,0) 0%, #cccccc61 20%, #cccccc61 80%, rgba(204,204,204,0) 100%);
+            border-bottom: 1px solid #cccccc61;
+            border-image-slice: 1;
             padding: 10px 0 10px;
             /* display: flex; */
             justify-content: space-between;
@@ -727,7 +731,9 @@
         @media (min-width: 2500px) {
             .containerCarChoice[_ngcontent-bic-c69] {
                 cursor: pointer;
-                border-bottom: solid 1px #cccccc61;
+                border-image: linear-gradient(to right, rgba(204,204,204,0) 0%, #cccccc61 20%, #cccccc61 80%, rgba(204,204,204,0) 100%);
+                border-bottom: 1px solid #cccccc61;
+                border-image-slice: 1;
                 padding: 10px 0 10px;
                 /* display: flex; */
                 justify-content: space-between;
@@ -736,7 +742,9 @@
 
         .containerParam[_ngcontent-bic-c69] {
             cursor: pointer;
-            border-bottom: solid 1px #cccccc61;
+            border-image: linear-gradient(to right, rgba(204,204,204,0) 0%, #cccccc61 20%, #cccccc61 80%, rgba(204,204,204,0) 100%);
+            border-bottom: 1px solid #cccccc61;
+            border-image-slice: 1;
             padding: 10px 0 10px;
             display: flex;
             justify-content: space-between;
@@ -745,7 +753,9 @@
         @media (min-width: 2500px) {
             .containerParam[_ngcontent-bic-c69] {
                 cursor: pointer;
-                border-bottom: solid 1px #cccccc61;
+                border-image: linear-gradient(to right, rgba(204,204,204,0) 0%, #cccccc61 20%, #cccccc61 80%, rgba(204,204,204,0) 100%);
+                border-bottom: 1px solid #cccccc61;
+                border-image-slice: 1;
                 padding: 10px 0 10px;
                 display: flex;
                 justify-content: space-between;
