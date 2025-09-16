@@ -316,8 +316,13 @@
         .nav-bar .tab-group-container .tab-content {
             height: calc(100vh - 139px);
             overflow: auto;
-            margin-top: 10px
+            margin-top: -15px;
+            /* transition: margin-top 0.3s ease; */
         }
+
+        /* .nav-bar .tab-group-container .tab-content:hover {
+            margin-top: 10px;
+        } */
 
         @media (min-width: 2500px) {
             height: calc(100vh - 139px);
@@ -544,7 +549,7 @@
             padding: 0 24px;
             cursor: pointer;
             box-sizing: border-box;
-            opacity: .6;
+            opacity: 1;
             min-width: 160px;
             text-align: center;
             display: inline-flex;
@@ -1025,13 +1030,25 @@
             color: black;
         }
 
-        .year-option {
+        /* .year-option {
             color: #000000;
             height: 50px;
             width: 160px;
             transition: transform 0.2s;
             cursor: pointer;
             border: 2px solid transparent;
+        } */
+        .year-option {
+            height: 40px; text-align: center; font-size: 10px; display: inline-block;
+            background: rgba(255, 255, 255, 0.65) !important;
+            opacity: 0.76;
+            width: 180px;
+            box-shadow: 0 2px 4px rgba(11, 15, 50, 0.08);
+            border: 0px solid rgba(0, 0, 0, 1);
+            border-radius: 5px;
+            background-blend-mode: luminosity;
+            -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(25px);
         }
 
         .year-option:hover {
@@ -1081,10 +1098,16 @@
         }
 
         .modif-option {
+            height: 40px; text-align: center; font-size: 10px; display: inline-block;
+            background: rgba(255, 255, 255, 0.65) !important;
+            opacity: 0.76;
             width: 180px;
-            transition: transform 0.2s;
-            cursor: pointer;
-            border: 2px solid transparent;
+            box-shadow: 0 2px 4px rgba(11, 15, 50, 0.08);
+            border: 0px solid rgba(0, 0, 0, 1);
+            border-radius: 5px;
+            background-blend-mode: luminosity;
+            -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(25px);
         }
 
         .modif-option:hover {
@@ -1097,11 +1120,16 @@
         }
 
         .param-option {
-            width: 150px;
-            height: 150px;
-            transition: transform 0.2s;
-            cursor: pointer;
-            border: 2px solid transparent;
+            height: 40px; text-align: center; font-size: 10px; display: inline-block;
+            background: rgba(255, 255, 255, 0.65) !important;
+            opacity: 0.76;
+            width: 180px;
+            box-shadow: 0 2px 4px rgba(11, 15, 50, 0.08);
+            border: 0px solid rgba(0, 0, 0, 1);
+            border-radius: 5px;
+            background-blend-mode: luminosity;
+            -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(25px);
         }
 
         .param-option:hover {
@@ -1139,7 +1167,6 @@
             display: block;
             opacity: 0;
             transition: opacity 0.2s ease-in-out;
-            text-transform: lowercase;
         }
 
         .badge:hover::after {
@@ -1148,11 +1175,39 @@
         }
 
         .dynamic-select {
-            background-color: #ffffff !important;
+            /* background-color: #ffffff !important; */
+            height: 40px; text-align: center; font-size: 10px; display: inline-block;
+            background: rgba(255, 255, 255, 0.65) !important;
+            opacity: 0.76;
+            box-shadow: 0 2px 4px rgba(11, 15, 50, 0.08);
+            border: 0px solid rgba(0, 0, 0, 1);
+            border-radius: 5px;
+            background-blend-mode: luminosity;
+            -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(25px);
         }
 
         .dynamic-select option {
             background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        select {
+            color: rgba(34, 34, 34, 0.7) !important;
+        }
+
+        select option {
+            background-color: rgba(34, 34, 34, 0.7) !important;
+            color: #ffffff !important;
+        }
+
+        select option:checked {
+            background-color: rgba(34, 34, 34, 0.7) !important;
+            color: #ffffff !important;
+        }
+
+        select option:hover {
+            background-color: rgba(34, 34, 34, 0.7) !important;
+            color: #ffffff !important;
         }
 
         td,
@@ -1234,6 +1289,8 @@
             padding: 10px;
             width: 50px;
             position: relative;
+            margin-right: 15px;
+            margin-top: -35px;
         }
 
         .action-panel i {
@@ -1244,8 +1301,8 @@
         }
 
         .menu {
-            display: none;
-            /* Cacher par défaut */
+            display: block;
+            /* Afficher par défaut */
         }
 
         /* Add class for showing menu */
@@ -1439,7 +1496,7 @@
                                 class="logo-and-controls ng-trigger ng-trigger-fadeInOut background-change">
                                 <div _ngcontent-bic-c88="" class="logo-container">
                                     <img _ngcontent-bic-c88="" id="bgButton"
-                                        style="background-color: white;border-radius: 15px;"
+                                        style="background-color: white;border-radius: 15px;width: 50px;height: 50px;margin-right: 15px;"
                                         src="https://paris-performance.com/wp-content/uploads/2024/09/icon-background.png">
                                 </div>
                             </div>
@@ -1467,13 +1524,13 @@
                                                             style="transform: translateX(0px);">
                                                             <div id="customTabs" class="custom-tabs">
                                                                 <div class="custom-tab" id="tab-etape-1"
-                                                                    onclick="goToStep(0)">Modèle</div>
+                                                                    onclick="goToStep(0)">MODÈLE</div>
                                                                 <div class="custom-tab" id="tab-etape-2"
-                                                                    onclick="goToStep(4)">Paramètres</div>
+                                                                    onclick="goToStep(4)">PARAMÈTRES</div>
                                                                 <div class="custom-tab" id="tab-etape-3"
-                                                                    onclick="goToStep(6)">Finitions</div>
+                                                                    onclick="goToStep(6)">FINITIONS</div>
                                                                 <div class="custom-tab" id="tab-resume"
-                                                                    onclick="goToStep(8)">Résumé</div>
+                                                                    onclick="goToStep(8)">RÉSUMÉ</div>
                                                             </div>
                                                             <div class="mat-tab-labels">
                                                                 <div role="tab" mattablabelwrapper="" mat-ripple=""
@@ -1483,9 +1540,10 @@
                                                                     aria-posinset="1" aria-setsize="3"
                                                                     aria-controls="mat-tab-content-2-0"
                                                                     aria-selected="true" aria-disabled="false">
-                                                                    <div class="mat-tab-label-content">
+                                                                    <div class="mat-tab-label-content"
+                                                                        style="color: #ffffff !important;">
                                                                         <span id="stepDescription"
-                                                                            style="padding-left: 15px;left: 44px;font-size: medium">Choix
+                                                                            style="padding-left: 15px;left: 44px;font-size: medium;text-align: center;color: #ffffff !important;display: block;">Choix
                                                                             du Véhicule - Année</span>
                                                                         <span id="stepChoice"
                                                                             style="margin-top: 70px;padding-left: 15px;font-size: large;"></span>
@@ -1495,8 +1553,13 @@
 
                                                             </div>
                                                             <div class="arrow arrow-down" id="arrow-next"
-                                                                onclick="nextStep()">&#9654;</div>
-
+                                                                onclick="nextStep()" style="display: none;">&#9654;
+                                                            </div>
+                                                            <button class="btn-plat" id="close-panel"
+                                                                onclick="hideSubMenu('divWheelModel')"
+                                                                style="display: none;margin-left: 440px;margin-top: -35px;">
+                                                                <i class="fa-solid fa-close"></i>
+                                                            </button>
                                                         </div>
                                                     </div>
                                                     <button aria-hidden="true" type="button" mat-ripple="" tabindex="-1"
@@ -1539,18 +1602,47 @@
                                                         style="text-align: center;">
                                                         <div _ngcontent-bic-c69="" class="text-area">
                                                             <div
-                                                                style="display: flex;align-items: center;gap: 32px;justify-content: space-around;">
-                                                                <div class="slider-item" style="margin-bottom: 0;">
-                                                                    <label style="margin-right: 8px;">Région</label>
-                                                                    <select name="region" id="region"
-                                                                        onchange="selectRegion()"
-                                                                        style="width: 150px;text-align: center;background-color: #fff;border-color: #aaa;">
+                                                                style="display: flex;align-items: center;gap: 32px;justify-content: center;">
+                                                                <div style="margin-bottom: 0;">
+                                                                    <label for="brandOrder" style="margin-right: 8px;">
+                                                                        &nbsp;</label><br>
+                                                                    <select id="mainFilter"
+                                                                        onchange="handleMainFilterChange()" style="height: 40px; text-align: center; font-size: 10px; display: inline-block;
+                                                                            background: rgba(255, 255, 255, 0.65) !important;
+                                                                            opacity: 0.76;
+                                                                            width: 180px;
+                                                                            box-shadow: 0 2px 4px rgba(11, 15, 50, 0.08);
+                                                                            border: 0px solid rgba(0, 0, 0, 1);
+                                                                            border-radius: 5px;
+                                                                            background-blend-mode: luminosity;
+                                                                            -webkit-backdrop-filter: blur(25px);
+                                                                            backdrop-filter: blur(25px);">
+                                                                        <option value="">Sélectionner un filtre</option>
+                                                                        <option value="region">Région</option>
+                                                                        <option value="popular">Marques populaires
+                                                                        </option>
+                                                                        <option value="alphabetical">Ordre alphabétique
+                                                                        </option>
+                                                                    </select>
+
+                                                                    <select id="regionSelect" onchange="filterBrands()"
+                                                                        style="height: 40px; text-align: center; font-size: 10px; display: none;
+                                                                            background: rgba(255, 255, 255, 0.65) !important;
+                                                                            opacity: 0.76;
+                                                                            box-shadow: 0 2px 4px rgba(11, 15, 50, 0.08);
+                                                                            border: 0px solid rgba(0, 0, 0, 1);
+                                                                            border-radius: 5px;
+                                                                            background-blend-mode: luminosity;
+                                                                            -webkit-backdrop-filter: blur(25px);
+                                                                            backdrop-filter: blur(25px);">
+                                                                        <option value="">Sélectionner une région
+                                                                        </option>
                                                                         <option value="usdm">USA+</option>
                                                                         <option value="cdm">Canada</option>
                                                                         <option value="mxndm">Mexico</option>
                                                                         <option value="ladm">Central & South America
                                                                         </option>
-                                                                        <option value="eudm" selected>Europe</option>
+                                                                        <option value="eudm">Europe</option>
                                                                         <option value="russia">Russia+</option>
                                                                         <option value="jdm">Japan</option>
                                                                         <option value="chdm">China</option>
@@ -1560,18 +1652,6 @@
                                                                         <option value="nadm">North Africa</option>
                                                                         <option value="sadm">South Africa</option>
                                                                         <option value="audm">Oceania</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div style="margin-bottom: 0;">
-                                                                    <label for="brandOrder"
-                                                                        style="margin-right: 8px;">Filtrer:</label><br>
-                                                                    <select id="brandOrder" onchange="filterBrands()"
-                                                                        style="width: 180px;height: 40px;text-align: center;background-color: #fff;border-color: #aaa;font-size: 10px;">
-
-                                                                        <option value="popular" selected>Marques
-                                                                            populaires</option>
-                                                                        <option value="alphabetical">Ordre alphabétique
-                                                                        </option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -1614,7 +1694,7 @@
                                                                     <div _ngcontent-bic-c69=""
                                                                         class="img-container ng-star-inserted">
                                                                         <select class="dynamic-select" id="rim_diameter"
-                                                                            onchange="handleRimOffsetChange(this)">
+                                                                            onchange="handleRimOffsetChange(this)" style="order-radius: 5px;border-color: white;">
                                                                             <!-- Ajoutez d'autres options si nécessaire -->
                                                                         </select>
                                                                     </div>
@@ -2103,7 +2183,7 @@
                                                                         id="resume_wheelColor" onclick="toggleMenu(2)"
                                                                         class="wheel-option"
                                                                         style="width: 65px;height: 65px;border-radius: 50%;margin-top: -30px;">
-                                                                    <img src="https://paris-performance.com/wp-content/uploads/2024/06/main.29V2-1-scaled-e1718040438520.jpg"
+                                                                    <img src="https://paris-performance.com/wp-content/uploads/2025/06/pp01_lutece.png"
                                                                         id="resume_wheel_option"
                                                                         onclick="toogleMenuJante()" class="wheel-option"
                                                                         style="width: 70px;height: 70px;border-radius: 50%;margin-top: -30px;">
@@ -2215,6 +2295,10 @@
                                                     <div onclick="hideSubMenu('divCarColor')">
                                                         &#9664;
                                                     </div>
+                                                    <button class="btn-plat" onclick="hideSubMenu('divWheelModel')">
+                                                        <i class="fa-solid fa-bars"
+                                                            style="font-size: large;color: white"></i>2
+                                                    </button>
                                                     <div class="list-palet">
                                                         <div class="palet-container">
                                                         </div>
@@ -2224,6 +2308,10 @@
                                             <div class="tab-content" id="divWheelModel" style="display: none;">
                                                 <div class="arrow arrow-down" onclick="hideSubMenu('divWheelModel')">
                                                     &#9664;</div>
+                                                <button class="btn-plat" onclick="hideSubMenu('divWheelModel')">
+                                                    <i class="fa-solid fa-bars"
+                                                        style="font-size: large;color: white"></i>3
+                                                </button>
                                                 <div id="circleMenu1" class="circle-menu-wheel">
                                                     <div>
                                                         <div class="list-palet">
@@ -2641,8 +2729,8 @@
                                                         <div _ngcontent-bic-c69="" class="containerParam">
                                                             <div _ngcontent-bic-c69="" class="text-area">
                                                                 <div _ngcontent-bic-c69="" class="title-section">
-                                                                    <span _ngcontent-bic-c69=""
-                                                                        style="font-size: large;margin-left: 50px;color: #f0ebff;text-transform: uppercase;">paramètres
+                                                                    <span _ngcontent-bic-c69="" style="font-size: large;margin-left: 50px;color: #e96868;text-transform: uppercase;text-align: center;display: block;    margin-left: 120px;
+    margin-top: -30px;">paramètres
                                                                         jantes</span>
                                                                 </div>
                                                             </div>
@@ -2763,8 +2851,8 @@
                                                                 <div _ngcontent-bic-c69="" class="title-section">
                                                                     <div class="checkbox">
                                                                         <span
-                                                                            style="padding-left: 20px;font-size: large;">Conserver
-                                                                            les mêmes paramètres avant et arrière</span>
+                                                                            style="padding-left: 20px;font-size: large;">Avant
+                                                                            et Arrière identiques</span>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2786,7 +2874,7 @@
                                                             <div _ngcontent-bic-c69="" class="text-area">
                                                                 <div _ngcontent-bic-c69="" class="title-section">
                                                                     <span _ngcontent-bic-c69=""
-                                                                        style="font-size: large;margin-left: 50px;color: #f0ebff;text-transform: uppercase;">Jante
+                                                                        style="font-size: large;margin-left: 160px;color: #e96868;text-transform: uppercase;text-align: center;display: block;margin-top: -30px;">Jante
                                                                         choisie</span>
                                                                 </div>
                                                             </div>
@@ -2820,8 +2908,8 @@
                                                         <div _ngcontent-bic-c69="" class="containerParam">
                                                             <div _ngcontent-bic-c69="" class="text-area">
                                                                 <div _ngcontent-bic-c69="" class="title-section">
-                                                                    <span _ngcontent-bic-c69=""
-                                                                        style="font-size: large;margin-left: 50px;color: #f0ebff;text-transform: uppercase;">Finition</span>
+                                                                    <span _ngcontent-bic-c69="" style="font-size: large;margin-left: 50px;color: #e96868;text-transform: uppercase;text-align: center;display: block;    margin-left: 190px;
+    margin-top: -30px;">Finition</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2857,13 +2945,11 @@
                                                                 <div _ngcontent-bic-c69="" class="title-section"
                                                                     style="text-align: center;margin-left: 65px;margin-top: -22px;">
                                                                     <button onclick="checkout()"
-                                                                        style="margin-bottom: 15px;">
+                                                                        style="margin-bottom: 15px;font-size: medium">
                                                                         Commander
                                                                     </button><br>
                                                                     <button
-                                                                        style="--clr: #ffffff; height: 40px;width: 180px;margin-left: 10px;font-size: 0.7em;"
-                                                                        class="param-option"
-                                                                        onclick="selectParam(this, 'free')">
+                                                                        style="--clr: #ffffff; height: 40px;width: 250px;margin-left: 10px;">
                                                                         se faire accompagner
                                                                     </button>
                                                                 </div>
@@ -2879,9 +2965,6 @@
                                                                                 onclick="generatePDF()"></i>
 
                                                                             <i class="fas fa-paper-plane menu"></i>
-
-                                                                            <i class="fas fa-ellipsis-vertical"
-                                                                                id="menuToggle"></i>
 
                                                                         </div>
                                                                     </div>
@@ -3389,7 +3472,7 @@
 
                     limit = wheels.length;
                     maxVisibleItems = limit;
-                    items = wheels.slice(currentSlide, currentSlide + maxVisibleItems).map((wheel, index) => `<div class="slider-item"><img src="${wheel.image}" alt="${wheel.name}" class="wheel-option ${index === 0 ? 'selected' : ''}" style="width: 154px;height: 154px;border-radius: 200px;object-fit: cover;" onclick="selectWheel(this, '${wheel.name}','${wheel.image}')"><label style="font-size: large;margin-top: 15px;">${wheel.name}</label></div>`);
+                    items = wheels.slice(currentSlide, currentSlide + maxVisibleItems).map((wheel, index) => `<div class="slider-item"><img src="${wheel.image}" alt="${wheel.name}" class="wheel-option ${index === 0 ? 'selected' : ''}" style="width: 120px;height: 120px;border-radius: 200px;object-fit: cover;" onclick="selectWheel(this, '${wheel.name}','${wheel.image}')"><label style="font-size: large;margin-top: 15px;margin-bottom: 40px;">${wheel.name}</label></div>`);
                     //pagination.innerText = `${currentSlide + 1}/${limit}`;
                     //stepTitle.innerText = 'Finitions';
                     stepDescription.innerText = `Configuration - MODELE`;
@@ -3402,6 +3485,7 @@
                     //stepTitle.innerText = 'Résumé';
                     stepDescription.innerText = `Votre vehicule`;
                     stepChoice.innerText = '';
+                    divWheelOption("none", "divPalletOption");
                 }
 
 
@@ -3441,7 +3525,13 @@
                     divWheelOption("none", "divWheelFreeOption");
                     divWheelOption("none", "divPalletOption");
                     divWheelOption("block", "divResume");
-                    //document.getElementById("menuAction").setAttribute("style", "display:block");
+                    document.getElementById("menuAction").setAttribute("style", "display:block");
+                    hideSubMenu('divCarColor');
+                    divWheelOption('none', 'divSubMenuWheelColor');
+                    divWheelOption('none', 'divSubMenuCacheMoyeux');
+                    divWheelOption('none', 'divSubMenuBoulons');
+                    divWheelOption('none', 'divWheelModel');
+                    divWheelOption("none", "divPalletOption");
                 } else {
                     controlButton("block");
                     divParam("none");
@@ -3596,7 +3686,7 @@
                 document.getElementById('resume_wheel_color_name').textContent = wheelColorName_selected;
                 document.getElementById('resume_wheel_color_img').src = wheelColorImg_selected;
 
-                //document.getElementById("menuAction").setAttribute("style", "display:block");
+                document.getElementById("menuAction").setAttribute("style", "display:block");
 
 
             } else if (currentStep === 8) {
@@ -3706,14 +3796,52 @@
                 if (na < nb) return -1; if (na > nb) return 1; return 0;
             });
         }
-        // Applique le filtre choisi et met à jour l'affichage
-        function filterBrands() {
-            const select = document.getElementById('brandOrder');
-            const mode = select ? select.value : 'popular';
-            if (mode === 'alphabetical') {
+
+        // Gère le changement du filtre principal
+        function handleMainFilterChange() {
+            const mainFilter = document.getElementById('mainFilter');
+            const regionSelect = document.getElementById('regionSelect');
+
+            if (mainFilter.value === 'region') {
+                regionSelect.style.display = 'inline-block';
+            } else {
+                regionSelect.style.display = 'none';
+                regionSelect.value = ''; // Reset la sélection de région
+
+                // Applique directement le filtre pour les autres options
+                if (mainFilter.value === 'popular' || mainFilter.value === 'alphabetical') {
+                    filterBrandsByType(mainFilter.value);
+                }
+            }
+        }
+
+        // Applique le filtre par type (popular ou alphabetical)
+        function filterBrandsByType(type) {
+            if (type === 'alphabetical') {
                 brandsData = sortBrandsAlphabetically(brandsBaseData);
             } else {
                 brandsData = sortBrandsByPopular(brandsBaseData);
+            }
+            updateSlider();
+        }
+
+        // Applique le filtre choisi et met à jour l'affichage
+        function filterBrands() {
+            const regionSelect = document.getElementById('regionSelect');
+            const mainFilter = document.getElementById('mainFilter');
+
+            // Si on filtre par région
+            if (mainFilter.value === 'region' && regionSelect) {
+                const region = regionSelect.value;
+                if (region) {
+                    // Ici vous pouvez ajouter la logique pour filtrer par région
+                    // Pour l'instant, on applique le tri par popularité
+                    brandsData = sortBrandsByPopular(brandsBaseData);
+                }
+            } else {
+                // Filtre par type (popular ou alphabetical)
+                const type = mainFilter ? mainFilter.value : 'popular';
+                filterBrandsByType(type);
             }
             updateSlider();
         }
@@ -4202,7 +4330,7 @@
             console.log(menu);
             if (menuIndex === 0) {
                 console.log("menuindex", menuIndex);
-                
+
                 showSubMenu('divCarColor');
                 goToStep(6);
                 divWheelOption('none', 'divSubMenuWheelColor');
@@ -4211,7 +4339,7 @@
                 divWheelOption('none', 'divWheelModel');
             }
             if (menuIndex === 1) {
-                
+
                 showSubMenu('divWheelModel');
                 goToStep(6);
                 divWheelOption('none', 'divSubMenuWheelColor');
@@ -4564,14 +4692,13 @@
             justify-content: center;
             margin: 20px 0 10px 0;
             gap: 10px;
+            font-size: small;
         }
 
         .custom-tab {
             padding: 10px 24px;
-            background: #fff;
+            background: transparent;
             color: #222;
-            border-radius: 8px 8px 0 0;
-            border: 1px solid #ccc;
             border-bottom: none;
             cursor: pointer;
             font-weight: bold;
@@ -4580,14 +4707,15 @@
         }
 
         .custom-tab.active {
-            background: #222;
+            background: transparent;
             color: #fff;
             opacity: 1;
-            border-bottom: 2px solid #da291c;
+            border-bottom: 4px solid #da291c;
+            box-shadow: -3px 8px 11px -8px rgb(255 61 61);
         }
 
         .custom-tab.disabled {
-            background: #eee;
+            background: transparent;
             color: #aaa;
             cursor: not-allowed;
             opacity: 0.5;
@@ -4605,7 +4733,7 @@
         }
         function goToStep(step) {
             // Ne pas permettre d'aller à une étape non accessible
-            if ((step === 4 && currentStep < 4) || (step === 6 && currentStep < 6) || (step === 8 && currentStep < 8)) return;
+            if ((step === 4 && currentStep < 4) || (step === 6 && currentStep < 6) || (step === 8 && currentStep <= 8)) return;
             currentStep = step;
             currentSlide = 0;
             updateSlider();
@@ -4640,16 +4768,19 @@
 
         // Appeler cette fonction à l'ouverture du menu couleur
         function showSubMenu(div) {
+            document.getElementById('close-panel').style.display = 'block';
+            document.getElementById('arrow-next').style.display = 'none';
+
+
             if (div == 'divCarColor') {
                 renderCarColors(carColors);
             }
             divWheelOption('block', div);
             divWheelOption('none', 'divPalletOption');
-            document.getElementById('arrow-next').style.display = 'none';
         }
 
         function hideSubMenu(div) {
-
+            document.getElementById('close-panel').style.display = 'none';
             divWheelOption('none', div);
             divWheelOption('block', 'divPalletOption');
         }
