@@ -1156,8 +1156,8 @@
             padding: 1px 8px 0px 10px;
             right: 90px;
             font-size: 12px;
-            border-radius: 50%;
-            background-color: #fff;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.65) !important;
             color: #000000;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
@@ -1293,7 +1293,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.65) !important;
             border-radius: 10px;
             box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
             padding: 10px;
@@ -1565,6 +1565,9 @@
                                                             <div class="arrow arrow-down" id="arrow-next"
                                                                 onclick="nextStep()" style="display: none;">&#9654;
                                                             </div>
+                                                            <button onclick="previousStep()" id="arrow-back" style="display: none; width: 40px; height: 40px; border-radius: 8px; border: none; background: rgba(255, 255, 255, 0.65) !important; display: flex; align-items: center; justify-content: center; padding: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.08);margin-left: 15px;">
+                                                                <i class="fa-solid fa-chevron-left" style="font-size: 22px; color: #fff;"></i>
+                                                            </button>
                                                             <button class="btn-plat" id="close-panel"
                                                                 onclick="hideSubMenu('divWheelModel')"
                                                                 style="display: none;margin-left: 440px;margin-top: -35px;">
@@ -2955,11 +2958,11 @@
                                                                 <div _ngcontent-bic-c69="" class="title-section"
                                                                     style="text-align: center;margin-left: 65px;margin-top: -22px;">
                                                                     <button onclick="checkout()"
-                                                                        style="margin-bottom: 15px;font-size: medium">
+                                                                        style="margin-bottom: 15px;font-size: medium;width: 250px;" class="year-option">
                                                                         Commander
                                                                     </button><br>
-                                                                    <button
-                                                                        style="--clr: #ffffff; height: 40px;width: 250px;margin-left: 10px;">
+                                                                    <button class="year-option"
+                                                                        style="--clr: #ffffff; height: 40px;width: 250px;" class="year-option">
                                                                         se faire accompagner
                                                                     </button>
                                                                 </div>
@@ -3570,6 +3573,11 @@
                 }
 
 
+                if(currentStep > 0) {
+                    document.getElementById('arrow-back').style.display = 'block';
+                } else {
+                    document.getElementById('arrow-back').style.display = 'none';
+                }
 
                 // Update slider items
                 sliderItems.innerHTML = items.join('');
