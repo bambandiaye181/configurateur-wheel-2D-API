@@ -1070,7 +1070,7 @@
         }
 
         .year-option.selected {
-            border: 2px solid #000000;
+            border: 2px solid #ffffff;
             transform: scale(1.2);
             transition: transform 0.3s ease;
         }
@@ -1094,7 +1094,7 @@
         }
 
         .model-option.selected {
-            border: 2px solid #000000;
+            border: 2px solid #ffffff;
             transform: scale(1.2);
             transition: transform 0.3s ease;
         }
@@ -1155,7 +1155,7 @@
         }
 
         .modif-option.selected {
-            border: 2px solid #000000;
+            border: 2px solid #ffffff;
             transform: scale(1.1);
         }
 
@@ -1180,7 +1180,7 @@
         }
 
         .param-option.selected {
-            border: 2px solid #000000;
+            border: 2px solid #ffffff;
             transform: scale(1.1);
         }
 
@@ -1284,7 +1284,7 @@
         }
 
         .wheel-option.selected {
-            border: 0.1px solid rgba(0, 0, 0, .08);
+            border: 0.1px solid rgb(248, 248, 248);
             transform: scale(1.1);
             transition: transform 0.3s ease;
         }
@@ -1599,14 +1599,18 @@
                                                                 </div>
 
                                                             </div>
-                                                            <div class="arrow arrow-down" id="arrow-next"
-                                                                onclick="nextStep()" style="display: none;">&#9654;
-                                                            </div>
+                                                            <div style="display: flex;align-items: center;justify-content: space-between;margin: 25px;">
                                                             <button onclick="previousStep()" id="arrow-back"
                                                                 style="display: none; width: 40px; height: 40px; border-radius: 8px; border: none; background: rgba(255, 255, 255, 0.65) !important; display: flex; align-items: center; justify-content: center; padding: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.08);margin-left: 15px;">
                                                                 <i class="fa-solid fa-chevron-left"
                                                                     style="font-size: 22px; color: #fff;"></i>
                                                             </button>
+                                                            <button id="arrow-next"
+                                                                onclick="nextStep()" style="display: none;width: 40px; height: 40px; border-radius: 8px; border: none; background: rgba(255, 255, 255, 0.65) !important; display: flex; align-items: center; justify-content: center; padding: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.08);"> <i class="fa-solid fa-chevron-right"
+                                                                    style="font-size: 22px; color: #fff;"></i>
+                                                            </button>
+                                                           
+                                                            </div>
                                                             <button class="btn-plat" id="close-panel"
                                                                 onclick="hideSubMenu('divWheelModel')"
                                                                 style="display: none;margin-left: 440px;margin-top: -35px;">
